@@ -1,0 +1,9 @@
+<strings>
+    <string id="AppName">RefWatch+</string>
+
+    <string id="prompt">Click the menu button</string>
+
+    <string id="menu_label_1">End Match</string>
+    
+    <string id="menu_label_2">Period Length</string>
+</strings>

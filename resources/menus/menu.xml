@@ -1,0 +1,11 @@
+<menus>
+	<menu id="MainMenu">
+	    <menu-item id="end_match" label="End Match" />
+	    <menu-item id="period_length" label="Period Length" />
+	</menu>
+	
+	<menu id="PeriodLengthSettings">
+	    <menu-item id="increase" label="Increase" />
+	    <menu-item id="decrease" label="Decrease" />
+	</menu>
+</menus>
