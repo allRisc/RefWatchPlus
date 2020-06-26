@@ -128,7 +128,7 @@ class RefWatchView extends Ui.View {
 
     function drawPlayingScreen(dc) {
         var timeRemaining = MatchData.getCurPeriod().getSecRemaining();
-        var timeElapsed   = MatchData.getCurPeriod().getSecElapsed();
+        var timeElapsed   = MatchData.getSecPlayingTime();
         var curStoppage   = MatchData.getCurPeriod().getSecStoppage();
         var curPeriod     = MatchData.getCurPeriodNum();
 

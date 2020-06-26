@@ -1,5 +1,6 @@
 using Toybox.Application.Storage as Store;
 using Toybox.Test;
+using Toybox.WatchUi as Ui;
 
 class AppData {
     hidden static var periodLength;
@@ -8,71 +9,71 @@ class AppData {
     hidden static var breakAlert;
     hidden static var otPeriodLength;
     hidden static var numOTPeriods;
-    
+
     function initialize() {
         AppData.refreshAppData();
     }
 
     static function initAppData() {
-        periodLength   = Store.getValue(Rez.Strings.PeriodLength_StorageID.toString());
+        periodLength   = Store.getValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID));
         if (periodLength == null) {
-            setPeriodLength(Rez.Strings.PeriodLength_StorageID.toString(),     45);
+            setPeriodLength(45);
         }
 
-        numPeriods     = Store.getValue(Rez.Strings.NumPeriods_StorageID.toString());
+        numPeriods     = Store.getValue(Ui.loadResource(Rez.Strings.NumPeriods_StorageID));
         if (numPeriods == null) {
-            setNumPeriods(Rez.Strings.NumPeriods_StorageID.toString(),         2 );
+            setNumPeriods(2);
         }
 
-        breakLength    = Store.getValue(Rez.Strings.BreakLength_StorageID.toString());
+        breakLength    = Store.getValue(Ui.loadResource(Rez.Strings.BreakLength_StorageID));
         if (breakLength == null) {
-            setBreakLength(Rez.Strings.BreakLength_StorageID.toString(),       15);
+            setBreakLength(15);
         }
 
-        breakAlert     = Store.getValue(Rez.Strings.BreakAlert_StorageID.toString());
+        breakAlert     = Store.getValue(Ui.loadResource(Rez.Strings.BreakAlert_StorageID));
         if (breakAlert == null) {
-            setBreakAlert(Rez.Strings.BreakAlert_StorageID.toString(),         3 );
+            setBreakAlert(3);
         }
 
-        otPeriodLength = Store.getValue(Rez.Strings.OTPeriodLength_StorageID.toString());
+        otPeriodLength = Store.getValue(Ui.loadResource(Rez.Strings.OTPeriodLength_StorageID));
         if (otPeriodLength == null) {
-            setOTPeriodLength(Rez.Strings.OTPeriodLength_StorageID.toString(), 15);
+            setOTPeriodLength(15);
         }
 
-        numOTPeriods   = Store.getValue(Rez.Strings.NumOTPeriods_StorageID.toString());
+        numOTPeriods   = Store.getValue(Ui.loadResource(Rez.Strings.NumOTPeriods_StorageID));
         if (numOTPeriods == null) {
-            setNumOTPeriods(Rez.Strings.NumOTPeriods_StorageID.toString(),     0 );
+            setNumOTPeriods(0);
         }
 
     }
 
     static function refreshAppData() {
-        periodLength   = Store.getValue(Rez.Strings.PeriodLength_StorageID.toString());
-        numPeriods     = Store.getValue(Rez.Strings.NumPeriods_StorageID.toString());
-        breakLength    = Store.getValue(Rez.Strings.BreakLength_StorageID.toString());
-        breakAlert     = Store.getValue(Rez.Strings.BreakAlert_StorageID.toString());
-        otPeriodLength = Store.getValue(Rez.Strings.OTPeriodLength_StorageID.toString());
-        numOTPeriods   = Store.getValue(Rez.Strings.NumOTPeriods_StorageID.toString());
+        periodLength   = Store.getValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID));
+        numPeriods     = Store.getValue(Ui.loadResource(Rez.Strings.NumPeriods_StorageID));
+        breakLength    = Store.getValue(Ui.loadResource(Rez.Strings.BreakLength_StorageID));
+        breakAlert     = Store.getValue(Ui.loadResource(Rez.Strings.BreakAlert_StorageID));
+        otPeriodLength = Store.getValue(Ui.loadResource(Rez.Strings.OTPeriodLength_StorageID));
+        numOTPeriods   = Store.getValue(Ui.loadResource(Rez.Strings.NumOTPeriods_StorageID));
     }
 
     static function get(id) {
         switch (id) {
-            case Rez.Strings.PeriodLength_StorageID.toString()   :
+            case Ui.loadResource(Rez.Strings.PeriodLength_StorageID)   :
                 return periodLength;
                 break;
-            case Rez.Strings.NumPeriods_StorageID.toString()     :
+            case Ui.loadResource(Rez.Strings.NumPeriods_StorageID)     :
                 return numPeriods;
                 break;
-            case Rez.Strings.BreakLength_StorageID.toString()    :
+            case Ui.loadResource(Rez.Strings.BreakLength_StorageID)    :
                 return breakLength;
                 break;
-            case Rez.Strings.BreakAlert_StorageID.toString()     :
+            case Ui.loadResource(Rez.Strings.BreakAlert_StorageID)     :
                 return breakAlert;
                 break;
-            case Rez.Strings.OTPeriodLength_StorageID.toString() :
+            case Ui.loadResource(Rez.Strings.OTPeriodLength_StorageID) :
                 return otPeriodLength;
                 break;
-            case Rez.Strings.NumOTPeriods_StorageID.toString()   :
+            case Ui.loadResource(Rez.Strings.NumOTPeriods_StorageID)   :
                 return numOTPeriods;
                 break;
         }
@@ -104,36 +105,35 @@ class AppData {
 
     static function setPeriodLength(val) {
         periodLength = val;
-        Store.setValue(Rez.Strings.PeriodLength_StorageID.toString(), val);
+        Store.setValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID), val);
     }
 
     static function setNumPeriods(val) {
         numPeriods = val;
-        Store.setValue(Rez.Strings.NumPeriods_StorageID.toString(), val);
+        Store.setValue(Ui.loadResource(Rez.Strings.NumPeriods_StorageID), val);
     }
 
     static function setBreakLength(val) {
         breakLength = val;
-        Store.setValue(Rez.Strings.BreakLength_StorageID.toString(), val);
+        Store.setValue(Ui.loadResource(Rez.Strings.BreakLength_StorageID), val);
     }
 
     static function setBreakAlert(val) {
         breakAlert = val;
-        Store.setValue(Rez.Strings.BreakAlert_StorageID.toString(), val);
+        Store.setValue(Ui.loadResource(Rez.Strings.BreakAlert_StorageID), val);
     }
 
     static function setOTPeriodLength(val) {
         otPeriodLength = val;
-        Store.setValue(Rez.Strings.OTPeriodLength_StorageID.toString(), val);
+        Store.setValue(Ui.loadResource(Rez.Strings.OTPeriodLength_StorageID), val);
     }
 
     static function setNumOTPeriods(val) {
         numOTPeriods = val;
-        Store.setValue(Rez.Strings.NumOTPeriods_StorageID.toString(), val);
+        Store.setValue(Ui.loadResource(Rez.Strings.NumOTPeriods_StorageID), val);
     }
 
     static function set(id, val) {
-        Test.assertMessage(id instanceof String, "AppData.set() \'id\' not a String");
         Store.setValue(id, val);
     }
 

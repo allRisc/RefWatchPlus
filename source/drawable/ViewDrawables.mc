@@ -1,6 +1,8 @@
 using Toybox.WatchUi as Ui;
 using Toybox.Graphics as Gfx;
 using Toybox.Position as Pos;
+using Toybox.Lang;
+using Toybox.Math;
 
 using HelperFunctions as func;
 
@@ -56,7 +58,7 @@ module ViewDrawables {
     }
 
     function period(color, per, dc) {
-        var curPeriod = Lang.format("Per: $1$", [Math.ceil(per / 2.0).toNumber()]);
+        var curPeriod = Lang.format("Per: $1$", [per]);
         dc.setColor(color, backgroundColor);
         dc.drawText(dc.getWidth()/2, dc.getHeight()*2/3, Gfx.FONT_MEDIUM, curPeriod, Gfx.TEXT_JUSTIFY_CENTER);
     }

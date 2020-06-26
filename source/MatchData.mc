@@ -3,19 +3,20 @@ using Toybox.WatchUi as Ui;
 using Toybox.Application as app;
 using Toybox.Application.Storage as Store;
 
+using HelperFunctions as func;
 
 module MatchData {
     var actRecSession;
 
     // Match Data
     var curPeriod;
-    var curPeriodNum;
+    var breakPeriod;
     var playingPeriod;
 
     function initMatchData() {
         curPeriod     = null;
-        curPeriodNum  = 0;
-        playingPeriod = false;
+        breakPeriod   = 0;
+        playingPeriod = 0;
 
         AppData.refreshAppData();
     }
@@ -23,7 +24,7 @@ module MatchData {
     // Function which start the match
     function startMatch() {
         // If the match is in progress
-        if (curPeriodNum == 0) {
+        if (playingPeriod == 0) {
             nextPeriod();
 
             actRecSession = ActRec.createSession( { :name=>"Match", :sport=>ActRec.SPORT_RUNNING, :subsport=>ActRec.SUB_SPORT_GENERIC } );
@@ -66,28 +67,29 @@ module MatchData {
 
     // Function which creates the next period
     function nextPeriod() {
-        curPeriodNum++;
-        playingPeriod = !playingPeriod;
-
         if (curPeriod != null) {
             curPeriod.end();
         }
 
 
-        if (curPeriodNum < 2*numPeriods) {
-            if (playingPeriod) {
+        if (playingPeriod < AppData.getNumPeriods()) {
+            if (playingPeriod <= breakPeriod) {
                 curPeriod = new PlayingPeriod( AppData.getPeriodLength() );
+                playingPeriod++;
             } else {
                 curPeriod = new BreakPeriod( AppData.getBreakLength() );
                 curPeriod.start();
+                breakPeriod++;
             }
         } else if ( ( AppData.getNumOTPeriods() != 0 ) &&
-                    ( curPeriodNum < 2 * (AppData.getNumPeriods() + AppData.getNumOTPeriods()) ) ) {
-            if (playingPeriod) {
+                    ( playingPeriod < (AppData.getNumPeriods() + AppData.getNumOTPeriods()) ) ) {
+            if (playingPeriod <= breakPeriod) {
                 curPeriod = new PlayingPeriod( AppData.getOTPeriodLength() );
+                playingPeriod++;
             } else {
                 curPeriod = new BreakPeriod( AppData.getBreakLength() );
                 curPeriod.start();
+                breakPeriod++;
             }
         } else {
             stopMatch();
@@ -96,11 +98,11 @@ module MatchData {
     }
 
     function isPlayingPeriod() {
-        return playingPeriod;
+        return playingPeriod > breakPeriod;
     }
 
     function isStarted() {
-        return curPeriodNum != 0;
+        return playingPeriod != 0;
     }
 
     function getCurPeriod() {
@@ -108,6 +110,20 @@ module MatchData {
     }
 
     function getCurPeriodNum() {
-        return curPeriodNum;
+        return playingPeriod;
+    }
+
+    function getSecPlayingTime() {
+        var pTime = 0;
+        if (playingPeriod <= AppData.getNumPeriods()) {
+            pTime = ((playingPeriod-1) * func.min2sec(AppData.getPeriodLength()));
+        } else {
+            pTime = AppData.getNumPeriods() * func.min2sec(AppData.getPeriodLength());
+            pTime = pTime + ( (playingPeriod - 1 - AppData.getNumPeriods())
+                             * func.min2sec(AppData.getOTPeriodLength()) );
+        }
+
+        pTime = pTime + curPeriod.getSecElapsed();
+        return pTime;
     }
 }

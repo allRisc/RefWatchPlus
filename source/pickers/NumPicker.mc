@@ -13,7 +13,7 @@ class NumPicker extends Ui.Picker {
         Test.assertMessage(prop      instanceof String, "NumPicker: \'prop\' not a string");
         Test.assertMessage(AppData.get(prop) != null, "NumPicker: Invalid Property");
 
-        title = new Ui.Text({:text=>titleName,     :locX=>Ui.LAYOUT_HALIGN_CENTER, :locY=>Ui.LAYOUT_VALIGN_BOTTOM, :color=>Gfx.COLOR_WHITE});
+        title = new Ui.Text({:text=>titleName, :font=>Gfx.FONT_MEDIUM, :locX=>Ui.LAYOUT_HALIGN_CENTER, :locY=>Ui.LAYOUT_VALIGN_BOTTOM, :color=>Gfx.COLOR_WHITE});
 
         var factories = new [1];
 
@@ -36,13 +36,13 @@ class NumPickerDelegate extends Ui.PickerDelegate {
     }
 
     function onCancel() {
-        Ui.popView(WatchUi.SLIDE_IMMEDIATE);
+        Ui.popView(Ui.SLIDE_IMMEDIATE);
     }
 
     function onAccept(values) {
         AppData.set(pickerProperty, values[0]);
         AppData.refreshAppData();
 
-        Ui.popView(WatchUi.SLIDE_IMMEDIATE);
+        Ui.popView(Ui.SLIDE_IMMEDIATE);
     }
 }
