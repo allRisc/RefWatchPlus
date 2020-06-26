@@ -113,6 +113,10 @@ module MatchData {
         return playingPeriod;
     }
 
+    function isOTPeriod() {
+        return playingPeriod >= AppData.getNumPeriods();
+    }
+
     function getSecPlayingTime() {
         var pTime = 0;
         if (playingPeriod <= AppData.getNumPeriods()) {

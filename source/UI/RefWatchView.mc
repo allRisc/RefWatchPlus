@@ -131,12 +131,14 @@ class RefWatchView extends Ui.View {
         var timeElapsed   = MatchData.getSecPlayingTime();
         var curStoppage   = MatchData.getCurPeriod().getSecStoppage();
         var curPeriod     = MatchData.getCurPeriodNum();
+        var periodTime;
 
         // Set the timing information color based on current state of the timer
         var timeRemainingColor = Gfx.COLOR_WHITE;
         var timeElapsedColor   = Gfx.COLOR_WHITE;
         var curStoppageColor   = Gfx.COLOR_WHITE;
         var curPeriodColor     = Gfx.COLOR_WHITE;
+        var ringColor          = Gfx.COLOR_GREEN;
 
         if (MatchData.getCurPeriod().isInStoppage())
         {
@@ -151,6 +153,14 @@ class RefWatchView extends Ui.View {
         {
             curStoppageColor = Gfx.COLOR_ORANGE;
         }
+
+        if (MatchData.isOTPeriod()) {
+            periodTime = func.min2sec(AppData.getOTPeriodLength());
+        } else {
+            periodTime = func.min2sec(AppData.getPeriodLength());
+        }
+
+        draw.timeRemainingRing(ringColor, timeRemaining, periodTime, dc);
 
         draw.topLeftTime(timeRemainingColor, timeRemaining, dc);
         draw.centerTime(timeElapsedColor, timeElapsed, dc);

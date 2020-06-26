@@ -3,6 +3,7 @@ using Toybox.Graphics as Gfx;
 using Toybox.Position as Pos;
 using Toybox.Lang;
 using Toybox.Math;
+using Toybox.System as Sys;
 
 using HelperFunctions as func;
 
@@ -37,6 +38,28 @@ module ViewDrawables {
             return Gfx.COLOR_YELLOW;
         }
         return Gfx.COLOR_DK_RED;
+    }
+
+    function timeRemainingRing(color, timeLeft, timeTotal, dc) {
+        var degrees;
+        var startDeg = 90;
+        var endDeg;
+        var xCenter  = dc.getWidth()/2;
+        var yCenter  = dc.getHeight()/2;
+        var rad      = xCenter;
+
+        if (timeLeft < 0) {
+            degrees = 360;
+        } else {
+            degrees = Math.ceil(360.0 * (timeTotal - timeLeft) / timeTotal);
+        }
+
+        endDeg   = ((startDeg - degrees).toNumber() % 360);
+
+        dc.setColor(color, backgroundColor);
+        dc.drawArc(xCenter, yCenter, rad-1,   Gfx.ARC_CLOCKWISE, startDeg, endDeg);
+        dc.drawArc(xCenter, yCenter, rad-2, Gfx.ARC_CLOCKWISE, startDeg, endDeg);
+        dc.drawArc(xCenter, yCenter, rad-3, Gfx.ARC_CLOCKWISE, startDeg, endDeg);
     }
 
     function centerTime(color, time, dc) {
