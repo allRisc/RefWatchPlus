@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+<pcToLineNum>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="3" lineNum="6" pc="268435456" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="3" lineNum="7" pc="268435460" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="4" lineNum="10" pc="268435479" symbol="onMenuItem"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="4" lineNum="11" pc="268435483" symbol="onMenuItem"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="4" lineNum="13" pc="268435631" symbol="onMenuItem"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="4" lineNum="14" pc="268435647" symbol="onMenuItem"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="4" lineNum="16" pc="268435650" symbol="onMenuItem"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="4" lineNum="19" pc="268435809" symbol="onMenuItem"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="4" lineNum="21" pc="268435812" symbol="onMenuItem"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="4" lineNum="24" pc="268435971" symbol="onMenuItem"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="4" lineNum="26" pc="268435974" symbol="onMenuItem"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="4" lineNum="29" pc="268436133" symbol="onMenuItem"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="4" lineNum="31" pc="268436136" symbol="onMenuItem"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="4" lineNum="34" pc="268436295" symbol="onMenuItem"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="4" lineNum="36" pc="268436298" symbol="onMenuItem"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="4" lineNum="39" pc="268436457" symbol="onMenuItem"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="4" lineNum="41" pc="268436460" symbol="onMenuItem"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="4" lineNum="44" pc="268436619" symbol="onMenuItem"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MenuDelegates.mc" id="4" lineNum="47" pc="268436622" symbol="onMenuItem"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="6" lineNum="9" pc="268436639" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="6" lineNum="10" pc="268436643" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="6" lineNum="12" pc="268436643" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="6" lineNum="13" pc="268436675" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="6" lineNum="14" pc="268436707" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="6" lineNum="16" pc="268436756" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="6" lineNum="18" pc="268436860" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="6" lineNum="20" pc="268436868" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="6" lineNum="22" pc="268436941" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="6" lineNum="23" pc="268436949" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="6" lineNum="25" pc="268437000" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="8" lineNum="32" pc="268437055" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="8" lineNum="33" pc="268437059" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="8" lineNum="34" pc="268437077" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="8" lineNum="35" pc="268437087" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="9" lineNum="38" pc="268437126" symbol="onCancel"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="9" lineNum="39" pc="268437130" symbol="onCancel"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="10" lineNum="42" pc="268437161" symbol="onAccept"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="10" lineNum="43" pc="268437165" symbol="onAccept"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\pickers\\NumPicker.mc" id="10" lineNum="45" pc="268437206" symbol="onAccept"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="12" lineNum="22" pc="268437237" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="12" lineNum="23" pc="268437241" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="12" lineNum="25" pc="268437259" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="12" lineNum="26" pc="268437274" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="12" lineNum="29" pc="268437321" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="13" lineNum="33" pc="268437332" symbol="onLayout"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="13" lineNum="34" pc="268437336" symbol="onLayout"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="13" lineNum="35" pc="268437370" symbol="onLayout"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="14" lineNum="38" pc="268437415" symbol="timerCallback"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="14" lineNum="39" pc="268437419" symbol="timerCallback"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="15" lineNum="45" pc="268437436" symbol="onShow"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="16" lineNum="49" pc="268437441" symbol="onUpdate"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="16" lineNum="50" pc="268437445" symbol="onUpdate"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="16" lineNum="51" pc="268437459" symbol="onUpdate"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="17" lineNum="54" pc="268437472" symbol="handleVibration"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="18" lineNum="72" pc="268437477" symbol="onHide"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="19" lineNum="76" pc="268437482" symbol="drawScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="19" lineNum="77" pc="268437486" symbol="drawScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="19" lineNum="80" pc="268437504" symbol="drawScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="19" lineNum="82" pc="268437525" symbol="drawScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="19" lineNum="84" pc="268437542" symbol="drawScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="19" lineNum="86" pc="268437562" symbol="drawScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="19" lineNum="90" pc="268437579" symbol="drawScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="20" lineNum="95" pc="268437594" symbol="drawIdleScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="20" lineNum="97" pc="268437598" symbol="drawIdleScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="20" lineNum="98" pc="268437644" symbol="drawIdleScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="20" lineNum="99" pc="268437651" symbol="drawIdleScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="20" lineNum="102" pc="268437658" symbol="drawIdleScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="20" lineNum="103" pc="268437672" symbol="drawIdleScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="20" lineNum="104" pc="268437686" symbol="drawIdleScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="20" lineNum="106" pc="268437700" symbol="drawIdleScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="20" lineNum="107" pc="268437718" symbol="drawIdleScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="20" lineNum="108" pc="268437740" symbol="drawIdleScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="20" lineNum="109" pc="268437762" symbol="drawIdleScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="21" lineNum="112" pc="268437785" symbol="drawBreakScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="21" lineNum="113" pc="268437789" symbol="drawBreakScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="21" lineNum="114" pc="268437817" symbol="drawBreakScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="21" lineNum="117" pc="268437836" symbol="drawBreakScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="21" lineNum="118" pc="268437850" symbol="drawBreakScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="21" lineNum="120" pc="268437864" symbol="drawBreakScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="21" lineNum="122" pc="268437893" symbol="drawBreakScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="21" lineNum="125" pc="268437910" symbol="drawBreakScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="21" lineNum="126" pc="268437932" symbol="drawBreakScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="129" pc="268437955" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="130" pc="268437959" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="131" pc="268437987" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="132" pc="268438015" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="133" pc="268438043" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="136" pc="268438062" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="137" pc="268438076" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="138" pc="268438090" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="139" pc="268438104" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="141" pc="268438118" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="143" pc="268438147" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="145" pc="268438164" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="147" pc="268438193" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="150" pc="268438210" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="152" pc="268438239" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="155" pc="268438256" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="156" pc="268438278" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="157" pc="268438300" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchView.mc" id="22" lineNum="159" pc="268438322" symbol="drawPlayingScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="24" lineNum="10" pc="268438345" symbol="clearScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="24" lineNum="11" pc="268438357" symbol="clearScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="24" lineNum="12" pc="268438385" symbol="clearScreen"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="25" lineNum="15" pc="268438398" symbol="gpsRing"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="25" lineNum="16" pc="268438410" symbol="gpsRing"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="25" lineNum="18" pc="268438427" symbol="gpsRing"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="25" lineNum="19" pc="268438460" symbol="gpsRing"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="25" lineNum="20" pc="268438529" symbol="gpsRing"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="25" lineNum="21" pc="268438557" symbol="gpsRing"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="26" lineNum="24" pc="268438627" symbol="getGPSQualityColour"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="26" lineNum="25" pc="268438639" symbol="getGPSQualityColour"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="26" lineNum="26" pc="268438639" symbol="getGPSQualityColour"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="26" lineNum="27" pc="268438646" symbol="getGPSQualityColour"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="26" lineNum="29" pc="268438666" symbol="getGPSQualityColour"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="26" lineNum="32" pc="268438670" symbol="getGPSQualityColour"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="26" lineNum="33" pc="268438694" symbol="getGPSQualityColour"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="26" lineNum="34" pc="268438710" symbol="getGPSQualityColour"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="26" lineNum="35" pc="268438734" symbol="getGPSQualityColour"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="26" lineNum="37" pc="268438750" symbol="getGPSQualityColour"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="27" lineNum="40" pc="268438764" symbol="centerTime"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="27" lineNum="41" pc="268438776" symbol="centerTime"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="27" lineNum="42" pc="268438795" symbol="centerTime"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="27" lineNum="43" pc="268438817" symbol="centerTime"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="28" lineNum="46" pc="268438890" symbol="topLeftTime"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="28" lineNum="47" pc="268438902" symbol="topLeftTime"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="28" lineNum="48" pc="268438921" symbol="topLeftTime"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="28" lineNum="49" pc="268438943" symbol="topLeftTime"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="29" lineNum="52" pc="268439016" symbol="topRightTime"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="29" lineNum="53" pc="268439028" symbol="topRightTime"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="29" lineNum="54" pc="268439047" symbol="topRightTime"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="29" lineNum="55" pc="268439069" symbol="topRightTime"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="30" lineNum="58" pc="268439148" symbol="period"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="30" lineNum="59" pc="268439160" symbol="period"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="30" lineNum="60" pc="268439232" symbol="period"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\drawable\\ViewDrawables.mc" id="30" lineNum="61" pc="268439254" symbol="period"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="32" lineNum="11" pc="268439333" symbol="getIndex"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="32" lineNum="12" pc="268439337" symbol="getIndex"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="32" lineNum="13" pc="268439359" symbol="getIndex"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="33" lineNum="16" pc="268439363" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="33" lineNum="17" pc="268439367" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="33" lineNum="19" pc="268439385" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="33" lineNum="20" pc="268439395" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="33" lineNum="21" pc="268439405" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="33" lineNum="23" pc="268439415" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="33" lineNum="24" pc="268439422" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="33" lineNum="25" pc="268439446" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="33" lineNum="28" pc="268439473" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="33" lineNum="29" pc="268439486" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="33" lineNum="32" pc="268439509" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="33" lineNum="33" pc="268439522" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="34" lineNum="37" pc="268439539" symbol="getDrawable"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="34" lineNum="38" pc="268439543" symbol="getDrawable"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="35" lineNum="41" pc="268439691" symbol="getValue"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="35" lineNum="42" pc="268439695" symbol="getValue"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="36" lineNum="45" pc="268439717" symbol="getSize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\factories\\NumberFactory.mc" id="36" lineNum="46" pc="268439721" symbol="getSize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="8" pc="268439755" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="9" pc="268439759" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="11" pc="268439777" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="12" pc="268439795" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="13" pc="268439802" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="16" pc="268439827" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="17" pc="268439845" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="18" pc="268439852" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="21" pc="268439877" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="22" pc="268439895" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="23" pc="268439902" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="26" pc="268439927" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="27" pc="268439945" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="28" pc="268439952" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="31" pc="268439977" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="32" pc="268439995" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="33" pc="268440002" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="36" pc="268440027" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="37" pc="268440045" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="38" pc="268440052" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="42" pc="268440077" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="45" pc="268440121" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="38" lineNum="48" pc="268440164" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="39" lineNum="52" pc="268440183" symbol="onStart"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="40" lineNum="56" pc="268440188" symbol="onStop"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="40" lineNum="57" pc="268440192" symbol="onStop"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="41" lineNum="61" pc="268440211" symbol="getInitialView"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="41" lineNum="62" pc="268440215" symbol="getInitialView"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchApp.mc" id="42" lineNum="65" pc="268440283" symbol="onPosition"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="44" lineNum="13" pc="268440288" symbol="initMatchData"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="44" lineNum="14" pc="268440300" symbol="initMatchData"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="44" lineNum="15" pc="268440309" symbol="initMatchData"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="44" lineNum="16" pc="268440322" symbol="initMatchData"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="45" lineNum="20" pc="268440333" symbol="startMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="45" lineNum="22" pc="268440345" symbol="startMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="45" lineNum="23" pc="268440362" symbol="startMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="45" lineNum="25" pc="268440374" symbol="startMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="45" lineNum="26" pc="268440456" symbol="startMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="45" lineNum="28" pc="268440469" symbol="startMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="45" lineNum="29" pc="268440473" symbol="startMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="45" lineNum="30" pc="268440473" symbol="startMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="46" lineNum="38" pc="268440505" symbol="stopMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="46" lineNum="39" pc="268440517" symbol="stopMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="46" lineNum="41" pc="268440553" symbol="stopMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="46" lineNum="42" pc="268440557" symbol="stopMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="46" lineNum="43" pc="268440561" symbol="stopMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="46" lineNum="44" pc="268440561" symbol="stopMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="46" lineNum="48" pc="268440588" symbol="stopMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="46" lineNum="49" pc="268440588" symbol="stopMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="46" lineNum="54" pc="268440615" symbol="stopMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="46" lineNum="55" pc="268440624" symbol="stopMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="46" lineNum="58" pc="268440643" symbol="stopMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="46" lineNum="60" pc="268440652" symbol="stopMatch"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="47" lineNum="64" pc="268440665" symbol="nextPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="47" lineNum="65" pc="268440677" symbol="nextPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="47" lineNum="66" pc="268440696" symbol="nextPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="47" lineNum="68" pc="268440713" symbol="nextPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="47" lineNum="69" pc="268440726" symbol="nextPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="47" lineNum="73" pc="268440747" symbol="nextPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="47" lineNum="74" pc="268440794" symbol="nextPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="47" lineNum="75" pc="268440805" symbol="nextPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="47" lineNum="77" pc="268440867" symbol="nextPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="47" lineNum="78" pc="268440926" symbol="nextPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="47" lineNum="80" pc="268440947" symbol="nextPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="47" lineNum="82" pc="268441059" symbol="nextPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="47" lineNum="83" pc="268441070" symbol="nextPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="47" lineNum="85" pc="268441132" symbol="nextPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="47" lineNum="86" pc="268441191" symbol="nextPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="47" lineNum="89" pc="268441212" symbol="nextPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="47" lineNum="90" pc="268441224" symbol="nextPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="48" lineNum="94" pc="268441226" symbol="isPlayingPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="48" lineNum="95" pc="268441238" symbol="isPlayingPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="49" lineNum="98" pc="268441248" symbol="isStarted"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="49" lineNum="99" pc="268441260" symbol="isStarted"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="50" lineNum="102" pc="268441276" symbol="getCurPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="50" lineNum="103" pc="268441288" symbol="getCurPeriod"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="51" lineNum="106" pc="268441298" symbol="getCurPeriodNum"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\MatchData.mc" id="51" lineNum="107" pc="268441310" symbol="getCurPeriodNum"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\BreakPeriod.mc" id="53" lineNum="7" pc="268441320" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\BreakPeriod.mc" id="53" lineNum="8" pc="268441324" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\BreakPeriod.mc" id="54" lineNum="13" pc="268441345" symbol="isNearComplete"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\BreakPeriod.mc" id="54" lineNum="14" pc="268441349" symbol="isNearComplete"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="56" lineNum="10" pc="268441407" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="56" lineNum="11" pc="268441411" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="56" lineNum="13" pc="268441431" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="56" lineNum="14" pc="268441444" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="56" lineNum="15" pc="268441454" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="57" lineNum="22" pc="268441468" symbol="stoppage"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="57" lineNum="23" pc="268441472" symbol="stoppage"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="57" lineNum="25" pc="268441489" symbol="stoppage"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="57" lineNum="26" pc="268441500" symbol="stoppage"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="57" lineNum="28" pc="268441526" symbol="stoppage"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="58" lineNum="33" pc="268441568" symbol="stop"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="58" lineNum="34" pc="268441572" symbol="stop"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="58" lineNum="36" pc="268441590" symbol="stop"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="59" lineNum="45" pc="268441601" symbol="getMSecRemaining"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="59" lineNum="46" pc="268441605" symbol="getMSecRemaining"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="60" lineNum="51" pc="268441636" symbol="getMSecStoppage"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="60" lineNum="52" pc="268441640" symbol="getMSecStoppage"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="60" lineNum="54" pc="268441651" symbol="getMSecStoppage"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="60" lineNum="57" pc="268441688" symbol="getMSecStoppage"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="61" lineNum="62" pc="268441698" symbol="getSecStoppage"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="61" lineNum="63" pc="268441702" symbol="getSecStoppage"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="62" lineNum="68" pc="268441730" symbol="isTrackingStoppage"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="62" lineNum="69" pc="268441734" symbol="isTrackingStoppage"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="63" lineNum="74" pc="268441744" symbol="isNearStoppage"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="63" lineNum="75" pc="268441748" symbol="isNearStoppage"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="64" lineNum="80" pc="268441806" symbol="isInStoppage"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\PlayingPeriod.mc" id="64" lineNum="81" pc="268441810" symbol="isInStoppage"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="66" lineNum="12" pc="268441853" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="66" lineNum="13" pc="268441857" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="66" lineNum="14" pc="268441870" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="67" lineNum="18" pc="268441881" symbol="start"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="67" lineNum="19" pc="268441885" symbol="start"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="68" lineNum="23" pc="268441909" symbol="end"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="68" lineNum="24" pc="268441913" symbol="end"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="69" lineNum="34" pc="268441927" symbol="getMSecElapsed"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="69" lineNum="35" pc="268441931" symbol="getMSecElapsed"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="69" lineNum="36" pc="268441945" symbol="getMSecElapsed"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="69" lineNum="38" pc="268441973" symbol="getMSecElapsed"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="70" lineNum="44" pc="268441980" symbol="getSecElapsed"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="70" lineNum="45" pc="268441984" symbol="getSecElapsed"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="71" lineNum="50" pc="268442012" symbol="getMSecRemaining"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="71" lineNum="51" pc="268442016" symbol="getMSecRemaining"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="72" lineNum="56" pc="268442053" symbol="getSecRemaining"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="72" lineNum="57" pc="268442057" symbol="getSecRemaining"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="73" lineNum="62" pc="268442085" symbol="isStarted"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\Period.mc" id="73" lineNum="63" pc="268442089" symbol="isStarted"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="75" lineNum="10" pc="268442105" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="75" lineNum="11" pc="268442109" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="75" lineNum="13" pc="268442127" symbol="initialize"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="16" pc="268442141" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="17" pc="268442145" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="18" pc="268442194" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="20" pc="268442212" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="21" pc="268442239" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="23" pc="268442260" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="24" pc="268442278" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="25" pc="268442305" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="26" pc="268442321" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="28" pc="268442327" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="30" pc="268442347" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="32" pc="268442376" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="36" pc="268442406" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="38" pc="268442433" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="43" pc="268442442" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="44" pc="268442469" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="46" pc="268442490" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="49" pc="268442496" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="51" pc="268442513" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="52" pc="268442548" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="53" pc="268442566" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="55" pc="268442582" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="57" pc="268442592" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="76" lineNum="60" pc="268442598" symbol="onKey"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="77" lineNum="64" pc="268442602" symbol="onSwipe"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="77" lineNum="65" pc="268442606" symbol="onSwipe"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="77" lineNum="66" pc="268442655" symbol="onSwipe"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="77" lineNum="68" pc="268442673" symbol="onSwipe"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="77" lineNum="69" pc="268442700" symbol="onSwipe"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="77" lineNum="70" pc="268442736" symbol="onSwipe"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="77" lineNum="71" pc="268442788" symbol="onSwipe"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="77" lineNum="72" pc="268442804" symbol="onSwipe"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\RefWatchInputDelegate.mc" id="77" lineNum="75" pc="268442810" symbol="onSwipe"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="79" lineNum="8" pc="268442814" symbol="min2sec"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="79" lineNum="9" pc="268442826" symbol="min2sec"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="80" lineNum="12" pc="268442836" symbol="min2msec"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="80" lineNum="13" pc="268442848" symbol="min2msec"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="81" lineNum="16" pc="268442864" symbol="sec2msec"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="81" lineNum="17" pc="268442876" symbol="sec2msec"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="82" lineNum="20" pc="268442886" symbol="msec2sec"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="82" lineNum="21" pc="268442898" symbol="msec2sec"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="83" lineNum="24" pc="268442923" symbol="msec2sec_ceil"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="83" lineNum="25" pc="268442935" symbol="msec2sec_ceil"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="84" lineNum="28" pc="268442969" symbol="sec2timer"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="84" lineNum="29" pc="268442981" symbol="sec2timer"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="84" lineNum="30" pc="268442988" symbol="sec2timer"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="84" lineNum="31" pc="268442998" symbol="sec2timer"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="84" lineNum="33" pc="268443017" symbol="sec2timer"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="84" lineNum="34" pc="268443028" symbol="sec2timer"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="84" lineNum="37" pc="268443038" symbol="sec2timer"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="84" lineNum="38" pc="268443045" symbol="sec2timer"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="84" lineNum="39" pc="268443115" symbol="sec2timer"/>
+<entry filename="C:\\Users\\benja\\Documents\\Programming\\garmin_dev\\RefWatchPlus\\source\\HelperFunctions.mc" id="84" lineNum="41" pc="268443136" symbol="sec2timer"/>
+<entry filename="Rez" id="92" lineNum="19" pc="268443140" symbol="initialize"/>
+<entry filename="Rez" id="92" lineNum="20" pc="268443144" symbol="initialize"/>
+<entry filename="Rez" id="92" lineNum="21" pc="268443162" symbol="initialize"/>
+<entry filename="Rez" id="92" lineNum="22" pc="268443218" symbol="initialize"/>
+<entry filename="Rez" id="92" lineNum="23" pc="268443274" symbol="initialize"/>
+<entry filename="Rez" id="92" lineNum="24" pc="268443330" symbol="initialize"/>
+<entry filename="Rez" id="92" lineNum="25" pc="268443386" symbol="initialize"/>
+<entry filename="Rez" id="92" lineNum="26" pc="268443442" symbol="initialize"/>
+<entry filename="Rez" id="92" lineNum="27" pc="268443498" symbol="initialize"/>
+</pcToLineNum>
+<symbolTable>
+<entry id="8388639" module="true" symbol="Graphics"/>
+<entry id="65" method="true" symbol="msec2sec"/>
+<entry id="8389626" method="true" symbol="onAccept"/>
+<entry id="93" method="true" symbol="getGPSQualityColour"/>
+<entry field="true" id="87" symbol="mStop"/>
+<entry field="true" id="46" symbol="NumPeriods_PropID"/>
+<entry id="8389346" symbol="text"/>
+<entry id="60" method="true" symbol="drawBreakScreen"/>
+<entry id="82" method="true" symbol="getMSecElapsed"/>
+<entry field="true" id="99" symbol="curPeriodNum"/>
+<entry field="true" id="100" symbol="playingPeriod"/>
+<entry field="true" id="8388731" symbol="startTime"/>
+<entry field="true" id="37" symbol="NumPeriods_MenuLabel"/>
+<entry field="true" id="89" symbol="mFormatString"/>
+<entry id="8388890" symbol="sport"/>
+<entry id="104" method="true" symbol="nextPeriod"/>
+<entry id="71" method="true" symbol="stoppage"/>
+<entry field="true" id="39" symbol="BreakLength_MenuID"/>
+<entry id="76" method="true" symbol="isNearStoppage"/>
+<entry id="94" method="true" symbol="centerTime"/>
+<entry id="25" method="true" symbol="onPosition"/>
+<entry id="8389629" method="true" symbol="getValue"/>
+<entry field="true" id="8388611" module="true" symbol="Toybox"/>
+<entry id="105" method="true" symbol="isPlayingPeriod"/>
+<entry id="8388649" module="true" object="true" symbol="Test"/>
+<entry id="22" object="true" symbol="Period"/>
+<entry id="67" method="true" symbol="sec2timer"/>
+<entry field="true" id="41" symbol="BreakAlert_MenuID"/>
+<entry id="63" method="true" symbol="min2msec"/>
+<entry field="true" id="38" symbol="AppName"/>
+<entry id="8388772" module="true" object="true" symbol="Fonts"/>
+<entry field="true" id="98" symbol="curPeriod"/>
+<entry id="23" object="true" symbol="RefWatchInputDelegate"/>
+<entry field="true" id="45" symbol="NumOTPeriods_MenuID"/>
+<entry id="8388648" module="true" symbol="WatchUi"/>
+<entry id="91" method="true" symbol="clearScreen"/>
+<entry id="73" method="true" symbol="getMSecStoppage"/>
+<entry id="83" method="true" symbol="getSecElapsed"/>
+<entry id="20" object="true" symbol="BreakPeriod"/>
+<entry field="true" id="80" symbol="periodDuration"/>
+<entry id="14" object="true" symbol="NumPickerDelegate"/>
+<entry field="true" id="32" symbol="BreakLength_PropID"/>
+<entry field="true" id="97" symbol="actRecSession"/>
+<entry id="8389124" method="true" symbol="onUpdate"/>
+<entry field="true" id="8389065" symbol="locY"/>
+<entry field="true" id="8389064" symbol="locX"/>
+<entry id="12" object="true" symbol="MainMenuInputDelegate"/>
+<entry id="17" object="true" symbol="NumberFactory"/>
+<entry id="61" method="true" symbol="drawPlayingScreen"/>
+<entry id="8388764" method="true" symbol="format"/>
+<entry id="8388771" module="true" object="true" symbol="Drawables"/>
+<entry id="8389348" symbol="font"/>
+<entry id="8389630" method="true" symbol="getSize"/>
+<entry id="95" method="true" symbol="topLeftTime"/>
+<entry id="27" module="true" symbol="Menus"/>
+<entry field="true" id="48" symbol="BreakAlert_PropID"/>
+<entry id="8389122" method="true" symbol="onLayout"/>
+<entry field="true" id="43" symbol="OTPeriodLength_MenuID"/>
+<entry id="75" method="true" symbol="isTrackingStoppage"/>
+<entry id="8388987" method="true" symbol="vibrate"/>
+<entry id="101" method="true" symbol="initMatchData"/>
+<entry id="18" object="true" symbol="RefWatchApp"/>
+<entry id="8389644" symbol="defaults"/>
+<entry field="true" id="34" symbol="NumOTPeriods_PropID"/>
+<entry id="13" object="true" symbol="NumPicker"/>
+<entry id="15" object="true" symbol="RefWatchView"/>
+<entry field="true" id="40" symbol="BreakLength_MenuLabel"/>
+<entry field="true" id="78" symbol="escPressTime"/>
+<entry field="true" id="52" symbol="CALLBACK_TIMER"/>
+<entry field="true" id="33" symbol="PeriodLength_MenuLabel"/>
+<entry field="true" id="50" symbol="PeriodLength_MenuID"/>
+<entry id="29" object="true" symbol="MainMenu"/>
+<entry id="64" method="true" symbol="sec2msec"/>
+<entry id="8388699" method="true" symbol="stop"/>
+<entry id="21" object="true" symbol="PlayingPeriod"/>
+<entry id="8389628" method="true" symbol="getDrawable"/>
+<entry id="66" method="true" symbol="msec2sec_ceil"/>
+<entry id="79" method="true" symbol="isNearComplete"/>
+<entry id="84" method="true" symbol="getSecRemaining"/>
+<entry field="true" id="51" symbol="pickerProperty"/>
+<entry id="81" method="true" symbol="end"/>
+<entry id="8388769" module="true" object="true" symbol="Rez"/>
+<entry field="true" id="30" symbol="OTPeriodLength_PropID"/>
+<entry id="56" method="true" symbol="timerCallback"/>
+<entry field="true" id="49" symbol="OTPeriodLength_MenuLabel"/>
+<entry field="true" id="36" symbol="EndMatch_MenuLabel"/>
+<entry id="8388640" module="true" symbol="Lang"/>
+<entry id="8390088" module="true" object="true" symbol="JsonData"/>
+<entry id="8389068" method="true" symbol="draw"/>
+<entry field="true" id="28" symbol="LauncherIcon"/>
+<entry id="8389123" method="true" symbol="onShow"/>
+<entry field="true" id="88" symbol="mIncrement"/>
+<entry id="8388643" module="true" symbol="Sensor"/>
+<entry field="true" id="54" symbol="vibProf"/>
+<entry field="true" id="53" symbol="updateTimer"/>
+<entry id="96" method="true" symbol="topRightTime"/>
+<entry id="8388770" module="true" object="true" symbol="Strings"/>
+<entry id="107" method="true" symbol="getCurPeriodNum"/>
+<entry field="true" id="42" symbol="PeriodLength_PropID"/>
+<entry id="19" module="true" symbol="MatchData"/>
+<entry field="true" id="69" symbol="trackingStoppage"/>
+<entry field="true" id="86" symbol="mStart"/>
+<entry id="57" method="true" symbol="handleVibration"/>
+<entry id="8388702" method="true" symbol="initialize"/>
+<entry id="16" module="true" symbol="ViewDrawables"/>
+<entry id="8389279" method="true" symbol="onStart"/>
+<entry field="true" id="68" symbol="stoppageTime"/>
+<entry id="102" method="true" symbol="startMatch"/>
+<entry field="true" id="8388892" symbol="name"/>
+<entry id="8389808" method="true" symbol="period"/>
+<entry id="8388641" module="true" symbol="Math"/>
+<entry id="8389541" method="true" symbol="onCancel"/>
+<entry id="103" method="true" symbol="stopMatch"/>
+<entry field="true" id="44" symbol="NumPeriods_MenuID"/>
+<entry id="106" method="true" symbol="getCurPeriod"/>
+<entry id="8389280" method="true" symbol="getInitialView"/>
+<entry id="85" method="true" symbol="isStarted"/>
+<entry id="72" method="true" symbol="getMSecRemaining"/>
+<entry id="74" method="true" symbol="getSecStoppage"/>
+<entry id="8389281" method="true" symbol="onStop"/>
+<entry field="true" id="8389128" symbol="mFont"/>
+<entry id="8389109" method="true" symbol="onMenuItem"/>
+<entry id="8389347" symbol="color"/>
+<entry id="8389097" method="true" symbol="onKey"/>
+<entry id="90" method="true" symbol="getIndex"/>
+<entry id="8388646" module="true" object="true" symbol="Timer"/>
+<entry id="26" module="true" symbol="Layouts"/>
+<entry id="58" method="true" symbol="drawScreen"/>
+<entry id="8388698" method="true" symbol="start"/>
+<entry id="8389643" symbol="pattern"/>
+<entry field="true" id="35" symbol="EndMatch_MenuID"/>
+<entry id="92" method="true" symbol="gpsRing"/>
+<entry field="true" id="55" symbol="vibStarted"/>
+<entry field="true" id="8389743" symbol="backgroundColor"/>
+<entry id="8389125" method="true" symbol="onHide"/>
+<entry field="true" id="70" symbol="stoppageStartTime"/>
+<entry id="59" method="true" symbol="drawIdleScreen"/>
+<entry id="77" method="true" symbol="isInStoppage"/>
+<entry field="true" id="47" symbol="BreakAlert_MenuLabel"/>
+<entry id="8388635" module="true" symbol="Application"/>
+<entry field="true" id="8389642" symbol="title"/>
+<entry id="24" module="true" symbol="HelperFunctions"/>
+<entry field="true" id="31" symbol="NumOTPeriods_MenuLabel"/>
+<entry id="8389101" method="true" symbol="onSwipe"/>
+<entry id="62" method="true" symbol="min2sec"/>
+<entry id="108" symbol="subsport"/>
+</symbolTable>
+<localVars>
+<entry endPc="268436639" name="item" stackId="1" startPc="268435479"/>
+<entry endPc="268437054" name="factories" stackId="4" startPc="268436643"/>
+<entry endPc="268437054" name="defaults" stackId="5" startPc="268436643"/>
+<entry endPc="268437054" name="title" stackId="3" startPc="268436643"/>
+<entry endPc="268437055" name="titleName" stackId="1" startPc="268436639"/>
+<entry endPc="268437055" name="prop" stackId="2" startPc="268436639"/>
+<entry endPc="268437126" name="prop" stackId="1" startPc="268437055"/>
+<entry endPc="268437237" name="values" stackId="1" startPc="268437161"/>
+<entry endPc="268437415" name="dc" stackId="1" startPc="268437332"/>
+<entry endPc="268437472" name="dc" stackId="1" startPc="268437441"/>
+<entry endPc="268437594" name="dc" stackId="1" startPc="268437482"/>
+<entry endPc="268437784" name="timeRemaining" stackId="2" startPc="268437598"/>
+<entry endPc="268437784" name="curStoppage" stackId="4" startPc="268437598"/>
+<entry endPc="268437784" name="timeElapsed" stackId="3" startPc="268437598"/>
+<entry endPc="268437784" name="curStoppageColor" stackId="7" startPc="268437598"/>
+<entry endPc="268437784" name="timeRemainingColor" stackId="5" startPc="268437598"/>
+<entry endPc="268437784" name="timeElapsedColor" stackId="6" startPc="268437598"/>
+<entry endPc="268437785" name="dc" stackId="1" startPc="268437594"/>
+<entry endPc="268437954" name="timeRemaining" stackId="2" startPc="268437789"/>
+<entry endPc="268437954" name="curPeriodColor" stackId="5" startPc="268437789"/>
+<entry endPc="268437954" name="timeRemainingColor" stackId="4" startPc="268437789"/>
+<entry endPc="268437954" name="curPeriod" stackId="3" startPc="268437789"/>
+<entry endPc="268437955" name="dc" stackId="1" startPc="268437785"/>
+<entry endPc="268438344" name="timeRemaining" stackId="2" startPc="268437959"/>
+<entry endPc="268438344" name="curPeriodColor" stackId="9" startPc="268437959"/>
+<entry endPc="268438344" name="curStoppage" stackId="4" startPc="268437959"/>
+<entry endPc="268438344" name="timeElapsed" stackId="3" startPc="268437959"/>
+<entry endPc="268438344" name="curStoppageColor" stackId="8" startPc="268437959"/>
+<entry endPc="268438344" name="timeRemainingColor" stackId="6" startPc="268437959"/>
+<entry endPc="268438344" name="timeElapsedColor" stackId="7" startPc="268437959"/>
+<entry endPc="268438344" name="curPeriod" stackId="5" startPc="268437959"/>
+<entry endPc="268438345" name="dc" stackId="1" startPc="268437955"/>
+<entry endPc="268438398" name="dc" stackId="1" startPc="268438345"/>
+<entry endPc="268438626" name="gpsinfos" stackId="2" startPc="268438410"/>
+<entry endPc="268438627" name="dc" stackId="1" startPc="268438398"/>
+<entry endPc="268438763" name="gpsnfo" stackId="2" startPc="268438639"/>
+<entry endPc="268438764" name="gpsInfo" stackId="1" startPc="268438627"/>
+<entry endPc="268438890" name="dc" stackId="3" startPc="268438764"/>
+<entry endPc="268438890" name="color" stackId="1" startPc="268438764"/>
+<entry endPc="268438890" name="time" stackId="2" startPc="268438764"/>
+<entry endPc="268439016" name="dc" stackId="3" startPc="268438890"/>
+<entry endPc="268439016" name="color" stackId="1" startPc="268438890"/>
+<entry endPc="268439016" name="time" stackId="2" startPc="268438890"/>
+<entry endPc="268439148" name="dc" stackId="3" startPc="268439016"/>
+<entry endPc="268439148" name="color" stackId="1" startPc="268439016"/>
+<entry endPc="268439148" name="time" stackId="2" startPc="268439016"/>
+<entry endPc="268439332" name="curPeriod" stackId="4" startPc="268439160"/>
+<entry endPc="268439333" name="dc" stackId="3" startPc="268439148"/>
+<entry endPc="268439333" name="per" stackId="2" startPc="268439148"/>
+<entry endPc="268439333" name="color" stackId="1" startPc="268439148"/>
+<entry endPc="268439362" name="index" stackId="2" startPc="268439337"/>
+<entry endPc="268439363" name="value" stackId="1" startPc="268439333"/>
+<entry endPc="268439539" name="increment" stackId="3" startPc="268439363"/>
+<entry endPc="268439539" name="options" stackId="4" startPc="268439363"/>
+<entry endPc="268439539" name="stop" stackId="2" startPc="268439363"/>
+<entry endPc="268439539" name="start" stackId="1" startPc="268439363"/>
+<entry endPc="268439691" name="index" stackId="1" startPc="268439539"/>
+<entry endPc="268439691" name="selected" stackId="2" startPc="268439539"/>
+<entry endPc="268439717" name="index" stackId="1" startPc="268439691"/>
+<entry endPc="268440182" name="sensorsenabled" stackId="2" startPc="268439759"/>
+<entry endPc="268440182" name="prop" stackId="1" startPc="268439759"/>
+<entry endPc="268440188" name="state" stackId="1" startPc="268440183"/>
+<entry endPc="268440211" name="state" stackId="1" startPc="268440188"/>
+<entry endPc="268440498" name="started" stackId="1" startPc="268440469"/>
+<entry endPc="268440640" name="saved" stackId="2" startPc="268440553"/>
+<entry endPc="268440640" name="stopped" stackId="1" startPc="268440553"/>
+<entry endPc="268441345" name="dur" stackId="1" startPc="268441320"/>
+<entry endPc="268441468" name="dur" stackId="1" startPc="268441407"/>
+<entry endPc="268441881" name="dur" stackId="1" startPc="268441853"/>
+<entry endPc="268442595" name="time" stackId="3" startPc="268442469"/>
+<entry endPc="268442601" name="keynum" stackId="2" startPc="268442145"/>
+<entry endPc="268442602" name="evt" stackId="1" startPc="268442141"/>
+<entry endPc="268442807" name="MainMenu" stackId="3" startPc="268442700"/>
+<entry endPc="268442813" name="swipenum" stackId="2" startPc="268442606"/>
+<entry endPc="268442814" name="evt" stackId="1" startPc="268442602"/>
+<entry endPc="268442836" name="m" stackId="1" startPc="268442814"/>
+<entry endPc="268442864" name="m" stackId="1" startPc="268442836"/>
+<entry endPc="268442886" name="s" stackId="1" startPc="268442864"/>
+<entry endPc="268442923" name="ms" stackId="1" startPc="268442886"/>
+<entry endPc="268442969" name="ms" stackId="1" startPc="268442923"/>
+<entry endPc="268443139" name="myParams" stackId="6" startPc="268442981"/>
+<entry endPc="268443139" name="sign" stackId="2" startPc="268442981"/>
+<entry endPc="268443139" name="min" stackId="3" startPc="268442981"/>
+<entry endPc="268443139" name="myString" stackId="7" startPc="268442981"/>
+<entry endPc="268443139" name="sec" stackId="4" startPc="268442981"/>
+<entry endPc="268443139" name="myFormat" stackId="5" startPc="268442981"/>
+<entry endPc="268443140" name="s" stackId="1" startPc="268442969"/>
+</localVars>
+<annotations/>
+<dataEntryOffsetMappings>
+<dataEntry offset="111" parentId="" symbolId="globals" type="module"/>
+<dataEntry offset="262" parentId="globals" symbolId="RefWatchApp" type="class"/>
+<dataEntry offset="341" parentId="globals" symbolId="Rez" type="module"/>
+<dataEntry offset="420" parentId="Rez" symbolId="Drawables" type="module"/>
+<dataEntry offset="459" parentId="Rez" symbolId="Menus" type="module"/>
+<dataEntry offset="498" parentId="Menus" symbolId="MainMenu" type="class"/>
+<dataEntry offset="545" parentId="Rez" symbolId="Fonts" type="module"/>
+<dataEntry offset="576" parentId="Rez" symbolId="Layouts" type="module"/>
+<dataEntry offset="607" parentId="Rez" symbolId="JsonData" type="module"/>
+<dataEntry offset="638" parentId="Rez" symbolId="Strings" type="module"/>
+<dataEntry offset="837" parentId="globals" symbolId="NumPickerDelegate" type="class"/>
+<dataEntry offset="908" parentId="globals" symbolId="RefWatchView" type="class"/>
+<dataEntry offset="1067" parentId="globals" symbolId="HelperFunctions" type="module"/>
+<dataEntry offset="1146" parentId="globals" symbolId="NumPicker" type="class"/>
+<dataEntry offset="1193" parentId="globals" symbolId="PlayingPeriod" type="class"/>
+<dataEntry offset="1328" parentId="globals" symbolId="RefWatchInputDelegate" type="class"/>
+<dataEntry offset="1399" parentId="globals" symbolId="BreakPeriod" type="class"/>
+<dataEntry offset="1454" parentId="globals" symbolId="Period" type="class"/>
+<dataEntry offset="1573" parentId="globals" symbolId="MainMenuInputDelegate" type="class"/>
+<dataEntry offset="1628" parentId="globals" symbolId="NumberFactory" type="class"/>
+<dataEntry offset="1747" parentId="globals" symbolId="ViewDrawables" type="module"/>
+<dataEntry offset="1842" parentId="globals" symbolId="MatchData" type="module"/>
+</dataEntryOffsetMappings>
+<functions>
+<functionEntry accessMode="public" name="initialize" parent="MainMenuInputDelegate">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onMenuItem" parent="MainMenuInputDelegate">
+<param id="item"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="NumPicker">
+<param id="titleName"/>
+<param id="prop"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="NumPickerDelegate">
+<param id="prop"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onCancel" parent="NumPickerDelegate">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onAccept" parent="NumPickerDelegate">
+<param id="values"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="RefWatchView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onLayout" parent="RefWatchView">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="timerCallback" parent="RefWatchView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onShow" parent="RefWatchView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onUpdate" parent="RefWatchView">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="handleVibration" parent="RefWatchView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onHide" parent="RefWatchView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="drawScreen" parent="RefWatchView">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="drawIdleScreen" parent="RefWatchView">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="drawBreakScreen" parent="RefWatchView">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="drawPlayingScreen" parent="RefWatchView">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="clearScreen" parent="ViewDrawables">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="gpsRing" parent="ViewDrawables">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getGPSQualityColour" parent="ViewDrawables">
+<param id="gpsInfo"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="centerTime" parent="ViewDrawables">
+<param id="color"/>
+<param id="time"/>
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="topLeftTime" parent="ViewDrawables">
+<param id="color"/>
+<param id="time"/>
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="topRightTime" parent="ViewDrawables">
+<param id="color"/>
+<param id="time"/>
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="period" parent="ViewDrawables">
+<param id="color"/>
+<param id="per"/>
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getIndex" parent="NumberFactory">
+<param id="value"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="NumberFactory">
+<param id="start"/>
+<param id="stop"/>
+<param id="increment"/>
+<param id="options"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getDrawable" parent="NumberFactory">
+<param id="index"/>
+<param id="selected"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getValue" parent="NumberFactory">
+<param id="index"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getSize" parent="NumberFactory">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="RefWatchApp">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onStart" parent="RefWatchApp">
+<param id="state"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onStop" parent="RefWatchApp">
+<param id="state"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getInitialView" parent="RefWatchApp">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onPosition" parent="RefWatchApp">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initMatchData" parent="MatchData">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="startMatch" parent="MatchData">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="stopMatch" parent="MatchData">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="nextPeriod" parent="MatchData">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="isPlayingPeriod" parent="MatchData">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="isStarted" parent="MatchData">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getCurPeriod" parent="MatchData">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getCurPeriodNum" parent="MatchData">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="BreakPeriod">
+<param id="dur"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="isNearComplete" parent="BreakPeriod">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="PlayingPeriod">
+<param id="dur"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="stoppage" parent="PlayingPeriod">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="stop" parent="PlayingPeriod">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getMSecRemaining" parent="PlayingPeriod">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getMSecStoppage" parent="PlayingPeriod">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getSecStoppage" parent="PlayingPeriod">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="isTrackingStoppage" parent="PlayingPeriod">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="isNearStoppage" parent="PlayingPeriod">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="isInStoppage" parent="PlayingPeriod">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="Period">
+<param id="dur"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="start" parent="Period">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="end" parent="Period">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getMSecElapsed" parent="Period">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getSecElapsed" parent="Period">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getMSecRemaining" parent="Period">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getSecRemaining" parent="Period">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="isStarted" parent="Period">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="RefWatchInputDelegate">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onKey" parent="RefWatchInputDelegate">
+<param id="evt"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onSwipe" parent="RefWatchInputDelegate">
+<param id="evt"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="min2sec" parent="HelperFunctions">
+<param id="m"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="min2msec" parent="HelperFunctions">
+<param id="m"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="sec2msec" parent="HelperFunctions">
+<param id="s"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="msec2sec" parent="HelperFunctions">
+<param id="ms"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="msec2sec_ceil" parent="HelperFunctions">
+<param id="ms"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="sec2timer" parent="HelperFunctions">
+<param id="s"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="MainMenu">
+<documentation/>
+</functionEntry>
+</functions>
+</debugInfo>

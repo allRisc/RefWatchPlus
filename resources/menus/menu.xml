@@ -1,11 +1,11 @@
 <menus>
 	<menu id="MainMenu">
-	    <menu-item id="end_match" label="End Match" />
-	    <menu-item id="period_length" label="Period Length" />
-	</menu>
-	
-	<menu id="PeriodLengthSettings">
-	    <menu-item id="increase" label="Increase" />
-	    <menu-item id="decrease" label="Decrease" />
+	    <menu-item id="EndMatch_MenuID"       label="@Strings.EndMatch_MenuLabel"      />
+	    <menu-item id="PeriodLength_MenuID"   label="@Strings.PeriodLength_MenuLabel"  />
+	    <menu-item id="NumPeriods_MenuID"     label="@Strings.NumPeriods_MenuLabel"    />
+   	    <menu-item id="BreakLength_MenuID"    label="@Strings.BreakLength_MenuLabel"   />
+   	    <menu-item id="BreakAlert_MenuID"     label="@Strings.BreakAlert_MenuLabel"    />
+	    <menu-item id="OTPeriodLength_MenuID" label="@Strings.OTPeriodLength_MenuLabel"/>
+	    <menu-item id="NumOTPeriods_MenuID"   label="@Strings.NumOTPeriods_MenuLabel"  />
 	</menu>
 </menus>

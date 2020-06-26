@@ -8,40 +8,36 @@ class RefWatchApp extends app.AppBase {
     function initialize() {
         AppBase.initialize();
 
-        var prop = getProperty("period_time");
-        if (prop == null) {
-            setProperty("period_time", 45);
+        var prop = getProperty(Rez.Strings.PeriodLength_PropID.toString());
+        if (prop == NULL) {
+            setProperty(Rez.Strings.PeriodLength_PropID.toString(), 45);
         }
 
-        prop = getProperty("num_periods");
-        if (prop == null) {
-            setProperty("num_periods", 2);
+        prop = getProperty(Rez.Strings.NumPeriods_PropID.toString());
+        if (prop == NULL) {
+            setProperty(Rez.Strings.NumPeriods_PropID.toString(), 45);
         }
 
-        prop = getProperty("ot_period_time");
-        if (prop == null) {
-            setProperty("ot_period_time", 15);
+        prop = getProperty(Rez.Strings.BreakLength_PropID.toString());
+        if (prop == NULL) {
+            setProperty(Rez.Strings.BreakLength_PropID.toString(), 45);
         }
 
-        prop = getProperty("num_ot_periods");
-        if (prop == null) {
-            setProperty("num_ot_periods", 2);
+        prop = getProperty(Rez.Strings.BreakAlert_PropID.toString());
+        if (prop == NULL) {
+            setProperty(Rez.Strings.BreakAlert_PropID.toString(), 45);
         }
 
-        prop = getProperty("enable_ot");
-        if (prop == null) {
-            setProperty("enable_ot", true);
+        prop = getProperty(Rez.Strings.OTPeriodLength_PropID.toString());
+        if (prop == NULL) {
+            setProperty(Rez.Strings.OTPeriodLength_PropID.toString(), 45);
         }
 
-        prop = getProperty("break_period_time");
-        if (prop == null) {
-            setProperty("break_period_time", 15);
+        prop = getProperty(Rez.Strings.NumOTPeriods_PropID.toString());
+        if (prop == NULL) {
+            setProperty(Rez.Strings.NumOTPeriods_PropID.toString(), 45);
         }
 
-        prop = getProperty("break_alert");
-        if (prop == null) {
-            setProperty("break_alert", 3);
-        }
 
         // Enable GPS
         Pos.enableLocationEvents( Pos.LOCATION_CONTINUOUS, method(:onPosition));
