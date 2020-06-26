@@ -18,13 +18,13 @@ module ViewDrawables {
     function gpsRing(dc) {
         var gpsinfos = Pos.getInfo();
 
-        dc.setColor(getGPSQualityColour(gpsinfos), backgroundColor);
+        dc.setColor(getGPSQualityColor(gpsinfos), backgroundColor);
         dc.fillCircle(dc.getWidth()/2, dc.getHeight()/2, (dc.getWidth()/2)-1);
         dc.setColor(backgroundColor, backgroundColor);
         dc.fillCircle(dc.getWidth()/2, dc.getHeight()/2, (dc.getWidth()/2)-4);
     }
 
-    function getGPSQualityColour(gpsInfo) {
+    function getGPSQualityColor(gpsInfo) {
         var gpsnfo;
         if( gpsInfo == null ) {
             gpsnfo = Pos.getInfo();
@@ -57,13 +57,20 @@ module ViewDrawables {
         endDeg   = ((startDeg - degrees).toNumber() % 360);
 
         dc.setColor(color, backgroundColor);
-        dc.drawArc(xCenter, yCenter, rad-1,   Gfx.ARC_CLOCKWISE, startDeg, endDeg);
+        dc.drawArc(xCenter, yCenter, rad-1, Gfx.ARC_CLOCKWISE, startDeg, endDeg);
         dc.drawArc(xCenter, yCenter, rad-2, Gfx.ARC_CLOCKWISE, startDeg, endDeg);
         dc.drawArc(xCenter, yCenter, rad-3, Gfx.ARC_CLOCKWISE, startDeg, endDeg);
     }
 
     function centerTime(color, time, dc) {
         time = func.sec2timer(time);
+        dc.setColor(color, backgroundColor);
+        dc.drawText(dc.getWidth()/2, dc.getHeight()/3, Gfx.FONT_NUMBER_THAI_HOT, time, Gfx.TEXT_JUSTIFY_CENTER);
+    }
+
+    function centerClock(color, dc) {
+        var time = func.clockFace();
+
         dc.setColor(color, backgroundColor);
         dc.drawText(dc.getWidth()/2, dc.getHeight()/3, Gfx.FONT_NUMBER_THAI_HOT, time, Gfx.TEXT_JUSTIFY_CENTER);
     }

@@ -6,6 +6,7 @@ using Toybox.Lang;
 using Toybox.Math;
 using Toybox.Position as Pos;
 using Toybox.Application as app;
+using Toybox.System as Sys;
 
 using HelperFunctions as func;
 using ViewDrawables as draw;
@@ -95,17 +96,17 @@ class RefWatchView extends Ui.View {
     function drawIdleScreen(dc) {
 
         var timeRemaining = func.min2sec( AppData.getPeriodLength() );
-        var timeElapsed   = 0;
         var curStoppage   = 0;
 
         // Set the timing information color based on current state of the timer
         var timeRemainingColor = Gfx.COLOR_WHITE;
         var timeElapsedColor   = Gfx.COLOR_WHITE;
         var curStoppageColor   = Gfx.COLOR_WHITE;
+        var secRingColor       = draw.getGPSQualityColor(Pos.getInfo());
 
-        draw.gpsRing(dc);
+        draw.timeRemainingRing(secRingColor, (60-Sys.getClockTime().sec), 60, dc);
         draw.topLeftTime(timeRemainingColor, timeRemaining, dc);
-        draw.centerTime(timeElapsedColor, timeElapsed, dc);
+        draw.centerClock(timeElapsedColor, dc);
         draw.topRightTime(curStoppageColor, curStoppage, dc);
     }
 

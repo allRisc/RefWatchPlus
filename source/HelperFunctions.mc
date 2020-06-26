@@ -40,4 +40,19 @@ module HelperFunctions {
 
         return myString;
     }
+
+    function clockFace() {
+        var curTime = Sys.getClockTime();
+        var hour = curTime.hour;
+
+        if (!Sys.getDeviceSettings().is24Hour) {
+            hour = hour % 12;
+            if (hour == 0) {
+                hour = 12;
+            }
+        }
+
+
+        return hour.format("%02d") + ":" + curTime.min.format("%02d");
+    }
 }
