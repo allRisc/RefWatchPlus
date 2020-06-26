@@ -94,7 +94,7 @@ class RefWatchView extends Ui.View {
 
     function drawIdleScreen(dc) {
 
-        var timeRemaining = func.min2sec(app.getApp().getProperty("period_time"));
+        var timeRemaining = func.min2sec( AppData.getPeriodLength() );
         var timeElapsed   = 0;
         var curStoppage   = 0;
 

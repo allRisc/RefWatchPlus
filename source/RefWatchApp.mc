@@ -8,36 +8,7 @@ class RefWatchApp extends app.AppBase {
     function initialize() {
         AppBase.initialize();
 
-        var prop = getProperty(Rez.Strings.PeriodLength_PropID.toString());
-        if (prop == NULL) {
-            setProperty(Rez.Strings.PeriodLength_PropID.toString(), 45);
-        }
-
-        prop = getProperty(Rez.Strings.NumPeriods_PropID.toString());
-        if (prop == NULL) {
-            setProperty(Rez.Strings.NumPeriods_PropID.toString(), 45);
-        }
-
-        prop = getProperty(Rez.Strings.BreakLength_PropID.toString());
-        if (prop == NULL) {
-            setProperty(Rez.Strings.BreakLength_PropID.toString(), 45);
-        }
-
-        prop = getProperty(Rez.Strings.BreakAlert_PropID.toString());
-        if (prop == NULL) {
-            setProperty(Rez.Strings.BreakAlert_PropID.toString(), 45);
-        }
-
-        prop = getProperty(Rez.Strings.OTPeriodLength_PropID.toString());
-        if (prop == NULL) {
-            setProperty(Rez.Strings.OTPeriodLength_PropID.toString(), 45);
-        }
-
-        prop = getProperty(Rez.Strings.NumOTPeriods_PropID.toString());
-        if (prop == NULL) {
-            setProperty(Rez.Strings.NumOTPeriods_PropID.toString(), 45);
-        }
-
+        AppData.initAppData();
 
         // Enable GPS
         Pos.enableLocationEvents( Pos.LOCATION_CONTINUOUS, method(:onPosition));

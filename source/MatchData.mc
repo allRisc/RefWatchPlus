@@ -1,11 +1,13 @@
 using Toybox.ActivityRecording as ActRec;
 using Toybox.WatchUi as Ui;
 using Toybox.Application as app;
+using Toybox.Application.Storage as Store;
 
 
 module MatchData {
     var actRecSession;
 
+    // Match Data
     var curPeriod;
     var curPeriodNum;
     var playingPeriod;
@@ -14,6 +16,8 @@ module MatchData {
         curPeriod     = null;
         curPeriodNum  = 0;
         playingPeriod = false;
+
+        AppData.refreshAppData();
     }
 
     // Function which start the match
@@ -70,19 +74,19 @@ module MatchData {
         }
 
 
-        if (curPeriodNum < 2*app.getApp().getProperty("num_periods")) {
+        if (curPeriodNum < 2*numPeriods) {
             if (playingPeriod) {
-                curPeriod = new PlayingPeriod(app.getApp().getProperty("period_time"));
+                curPeriod = new PlayingPeriod( AppData.getPeriodLength() );
             } else {
-                curPeriod = new BreakPeriod(app.getApp().getProperty("break_period_time"));
+                curPeriod = new BreakPeriod( AppData.getBreakLength() );
                 curPeriod.start();
             }
-        } else if (app.getApp().getProperty("enable_ot") &&
-                    (curPeriodNum < 2*(app.getApp().getProperty("num_ot_periods") + app.getApp().getProperty("num_periods")))) {
+        } else if ( ( AppData.getNumOTPeriods() != 0 ) &&
+                    ( curPeriodNum < 2 * (AppData.getNumPeriods() + AppData.getNumOTPeriods()) ) ) {
             if (playingPeriod) {
-                curPeriod = new PlayingPeriod(app.getApp().getProperty("ot_period_time"));
+                curPeriod = new PlayingPeriod( AppData.getOTPeriodLength() );
             } else {
-                curPeriod = new BreakPeriod(app.getApp().getProperty("break_period_time"));
+                curPeriod = new BreakPeriod( AppData.getBreakLength() );
                 curPeriod.start();
             }
         } else {

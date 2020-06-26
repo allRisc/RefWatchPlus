@@ -11,6 +11,6 @@ class BreakPeriod extends Period {
     // Determine if the break is almost complete
     // @return [Boolean] True if there are less than RefWatchSettings.breakAlert minutes remaining in the period
     function isNearComplete() {
-        return getSecRemaining() <= func.min2sec(app.getApp().getProperty("break_alert"));
+        return getSecRemaining() <= func.min2sec( AppData.getBreakAlert() );
     }
 }
