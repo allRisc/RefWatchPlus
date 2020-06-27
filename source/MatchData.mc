@@ -5,6 +5,7 @@ using Toybox.Application.Storage as Store;
 
 using HelperFunctions as func;
 
+
 module MatchData {
     var actRecSession;
 
@@ -23,7 +24,7 @@ module MatchData {
 
     // Function which start the match
     function startMatch() {
-        // If the match is in progress
+        // If the match is not in progress
         if (playingPeriod == 0) {
             nextPeriod();
 

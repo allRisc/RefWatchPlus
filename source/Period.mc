@@ -62,4 +62,9 @@ class Period {
     function isStarted() {
         return startTime != 0;
     }
+
+    // Return the expected number of minutes for the period
+    function getPeriodLength() {
+        return periodDuration;
+    }
 }

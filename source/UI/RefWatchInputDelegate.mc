@@ -2,6 +2,7 @@ using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
 
 using HelperFunctions as func;
+using VibrationController as Vib;
 
 class RefWatchInputDelegate extends Ui.InputDelegate {
 
@@ -20,6 +21,7 @@ class RefWatchInputDelegate extends Ui.InputDelegate {
         if (evt.getKey() == Ui.KEY_ENTER) {
             if (!MatchData.isStarted())
             {
+                Vib.startStrongVib();
                 MatchData.startMatch();
                 MatchData.getCurPeriod().start();
                 Ui.requestUpdate();

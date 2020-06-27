@@ -3,12 +3,15 @@ using Toybox.WatchUi;
 using Toybox.Position as Pos;
 using Toybox.Sensor as Sensor;
 
+using VibrationController as Vib;
+
 class RefWatchApp extends app.AppBase {
 
     function initialize() {
         AppBase.initialize();
 
         AppData.initAppData();
+        Vib.initialize();
 
         // Enable GPS
         Pos.enableLocationEvents( Pos.LOCATION_CONTINUOUS, method(:onPosition));

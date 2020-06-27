@@ -10,6 +10,8 @@ using Toybox.System as Sys;
 
 using HelperFunctions as func;
 using ViewDrawables as draw;
+using MatchData;
+using VibrationController as Vib;
 
 class RefWatchView extends Ui.View {
 
@@ -17,17 +19,8 @@ class RefWatchView extends Ui.View {
 
     var updateTimer;
 
-    var vibProf;
-    var vibStarted;
-
     function initialize() {
         View.initialize();
-
-        if (Att has :vibrate) {
-            vibProf = new Att.VibeProfile(75, 1000);
-        }
-
-        vibStarted = false;
     }
 
     // Load your resources here
@@ -50,21 +43,6 @@ class RefWatchView extends Ui.View {
     function onUpdate(dc) {
         drawScreen(dc);
         handleVibration();
-    }
-
-    function handleVibration() {
-//
-//        if ((MatchSession.getSecStoppage() % 10 == 0) && (MatchSession.getSecStoppage() > 0))
-//        {
-//            if ((vibProf != null) && (MatchSession.isTrackingStoppage()) && !vibStarted)
-//            {
-//                Att.vibrate([vibProf]);
-//            }
-//        }
-//        else
-//        {
-//            vibStarted = false;
-//        }
     }
 
     // Called when this View is removed from the screen. Save the
@@ -168,5 +146,95 @@ class RefWatchView extends Ui.View {
         draw.topRightTime(curStoppageColor, curStoppage, dc);
 
         draw.period(curPeriodColor, curPeriod, dc);
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    // Functions to manage vibrations                                     //
+    ////////////////////////////////////////////////////////////////////////
+
+    function handleVibration() {
+
+        if (MatchData.isStarted()) {
+            if (MatchData.isPlayingPeriod()) {
+                if (periodComplete()) {
+                    Vib.startStrongVib();
+                } else if (stoppageComplete()) {
+                    Vib.startStrongVib();
+                } else if (stoppageTrackingStarted()) {
+                    Vib.startWeakVib();
+                } else if (stoppageTrackingReminder()) {
+                    Vib.startMidVib();
+                }
+            } else {
+                if (periodComplete()) {
+                    Vib.startStrongVib();
+                } else if (breakAlert()) {
+                    Vib.startMidVib();
+                }
+            }
+        }
+    }
+
+    hidden var prevElapsedTime = 0;
+    function periodComplete() {
+        var perLen = func.min2sec(MatchData.getCurPeriod().getPeriodLength());
+
+        if ( (prevElapsedTime < perLen) &&
+             (MatchData.getCurPeriod().getSecElapsed() >= perLen) ) {
+            prevElapsedTime = MatchData.getCurPeriod().getSecElapsed();
+            return true;
+        }
+
+        prevElapsedTime = MatchData.getCurPeriod().getSecElapsed();
+        return false;
+    }
+
+    hidden var prevRemainingTime = 0;
+    function stoppageComplete() {
+
+        if ( (prevRemainingTime > 0) &&
+             (MatchData.getCurPeriod().getSecRemaining() <= 0) ) {
+            prevRemainingTime = MatchData.getCurPeriod().getSecRemaining();
+            return true;
+        }
+
+        prevRemainingTime = MatchData.getCurPeriod().getSecRemaining();
+        return false;
+    }
+
+    hidden var prevTrackingStatus = false;
+    function stoppageTrackingStarted() {
+
+        if ( prevTrackingStatus != MatchData.getCurPeriod().isTrackingStoppage() &&
+             MatchData.getCurPeriod().isTrackingStoppage()) {
+            prevTrackingStatus = MatchData.getCurPeriod().isTrackingStoppage();
+            return true;
+        }
+
+        prevTrackingStatus = MatchData.getCurPeriod().isTrackingStoppage();
+        return false;
+    }
+
+    function stoppageTrackingReminder() {
+
+        if (MatchData.getCurPeriod().isTrackingStoppage()) {
+            if (MatchData.getCurPeriod().getSecStoppage() % 10 == 0) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    hidden var prevNearComplete = false;
+    function breakAlert() {
+        if ( prevNearComplete != MatchData.getCurPeriod().isNearComplete() &&
+             MatchData.getCurPeriod().isNearComplete()) {
+            prevNearComplete = MatchData.getCurPeriod().isNearComplete();
+            return true;
+        }
+
+        prevNearComplete = MatchData.getCurPeriod().isNearComplete();
+        return false;
     }
 }
