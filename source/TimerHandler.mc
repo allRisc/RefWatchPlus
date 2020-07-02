@@ -1,34 +1,32 @@
 using Toybox.Timer;
 using Toybox.WatchUi as Ui;
 using Toybox.Lang;
+using Toybox.Test;
 
-class TimerHandler {
-    static var updateTimer;
+module TimerHandler {
+    var updateTimer;
 
-    static const CALLBACK_TIMER = 100;
+    const CALLBACK_TIMER = 100;
 
-    function initialize() {
+    function initTimer() {
         if (updateTimer == null) {
             updateTimer = new Timer.Timer();
         }
     }
 
-    static function initTimer() {
-        if (updateTimer == null) {
-            updateTimer = new Timer.Timer();
-        }
-    }
+    function startUpdateTimer() {
+        Test.assertMessage(updateTimer != null, "updateTimer uninitialized");
 
-    static function startUpdateTimer() {
         var callBack = new Lang.Method(TimerHandler, :updateTimerCallback);
-        updateTimer.start( callBack, CALLBACK_TIMER, true);
+        updateTimer.start(callBack, CALLBACK_TIMER, true);
+
     }
 
-    static function stopUpdateTimer() {
+    function stopUpdateTimer() {
         updateTimer.stop();
     }
 
-    static function updateTimerCallback() {
+    function updateTimerCallback() {
         Ui.requestUpdate();
     }
 }

@@ -1,6 +1,8 @@
 using Toybox.Attention as Att;
 using Toybox.System as Sys;
 
+using HelperFunctions as func;
+
 module VibrationController {
     var weakVibDur;
     var weakVibProf;
@@ -63,5 +65,95 @@ module VibrationController {
             nextVibTime = Sys.getTimer() + strongVibDur;
             Att.vibrate(strongVibProf);
         }
+    }
+
+        ////////////////////////////////////////////////////////////////////////
+    // Functions to manage vibrations                                     //
+    ////////////////////////////////////////////////////////////////////////
+
+    function handleVibration() {
+
+        if (MatchData.isStarted()) {
+            if (MatchData.isPlayingPeriod()) {
+                if (periodComplete()) {
+                    startStrongVib();
+                } else if (stoppageComplete()) {
+                    startStrongVib();
+                } else if (stoppageTrackingStarted()) {
+                    startWeakVib();
+                } else if (stoppageTrackingReminder()) {
+                    startMidVib();
+                }
+            } else {
+                if (periodComplete()) {
+                    startStrongVib();
+                } else if (breakAlert()) {
+                    startMidVib();
+                }
+            }
+        }
+    }
+
+    var prevElapsedTime = 0;
+    function periodComplete() {
+        var perLen = func.min2sec(MatchData.getCurPeriod().getPeriodLength());
+
+        if ( (prevElapsedTime < perLen) &&
+             (MatchData.getCurPeriod().getSecElapsed() >= perLen) ) {
+            prevElapsedTime = MatchData.getCurPeriod().getSecElapsed();
+            return true;
+        }
+
+        prevElapsedTime = MatchData.getCurPeriod().getSecElapsed();
+        return false;
+    }
+
+    var prevRemainingTime = 0;
+    function stoppageComplete() {
+
+        if ( (prevRemainingTime > 0) &&
+             (MatchData.getCurPeriod().getSecRemaining() <= 0) ) {
+            prevRemainingTime = MatchData.getCurPeriod().getSecRemaining();
+            return true;
+        }
+
+        prevRemainingTime = MatchData.getCurPeriod().getSecRemaining();
+        return false;
+    }
+
+    var prevTrackingStatus = false;
+    function stoppageTrackingStarted() {
+
+        if ( prevTrackingStatus != MatchData.getCurPeriod().isTrackingStoppage() &&
+             MatchData.getCurPeriod().isTrackingStoppage()) {
+            prevTrackingStatus = MatchData.getCurPeriod().isTrackingStoppage();
+            return true;
+        }
+
+        prevTrackingStatus = MatchData.getCurPeriod().isTrackingStoppage();
+        return false;
+    }
+
+    function stoppageTrackingReminder() {
+
+        if (MatchData.getCurPeriod().isTrackingStoppage()) {
+            if (MatchData.getCurPeriod().getSecStoppage() % 10 == 0) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    var prevNearComplete = false;
+    function breakAlert() {
+        if ( prevNearComplete != MatchData.getCurPeriod().isNearComplete() &&
+             MatchData.getCurPeriod().isNearComplete()) {
+            prevNearComplete = MatchData.getCurPeriod().isNearComplete();
+            return true;
+        }
+
+        prevNearComplete = MatchData.getCurPeriod().isNearComplete();
+        return false;
     }
 }

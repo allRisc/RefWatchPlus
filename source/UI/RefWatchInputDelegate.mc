@@ -72,6 +72,10 @@ class RefWatchInputDelegate extends Ui.InputDelegate {
             Ui.pushView( MainMenu, new MainMenuInputDelegate(), Ui.SLIDE_UP );
             Ui.requestUpdate();
             return true;
+        } else if (evt.getDirection() == Ui.SWIPE_DOWN) {
+            Ui.pushView( new ActivityInfoView(), new ActivityInfoInputDelegate(), Ui.SLIDE_UP );
+            Ui.requestUpdate();
+            return true;
         }
 
         return false;

@@ -8,7 +8,16 @@ using Toybox.System as Sys;
 using HelperFunctions as func;
 
 module ViewDrawables {
-    var backgroundColor = Gfx.COLOR_BLACK;
+    const backgroundColor = Gfx.COLOR_BLACK;
+    const dividerWidth    = 3;
+
+    function getMidWidth(dc) {
+        return dc.getWidth() / 2;
+    }
+
+    function getMidHeight(dc) {
+        return dc.getHeight() / 2;
+    }
 
     function clearScreen(dc) {
         dc.setColor(backgroundColor, backgroundColor);
@@ -91,5 +100,15 @@ module ViewDrawables {
         var curPeriod = Lang.format("Per: $1$", [per]);
         dc.setColor(color, backgroundColor);
         dc.drawText(dc.getWidth()/2, dc.getHeight()*2/3, Gfx.FONT_MEDIUM, curPeriod, Gfx.TEXT_JUSTIFY_CENTER);
+    }
+
+    function hDivider(color, x, y, len, dc) {
+        dc.setColor(color, backgroundColor);
+        dc.fillRectangle(x, y, len, dividerWidth);
+    }
+
+    function vDivider(color, x, y, len, dc) {
+        dc.setColor(color, backgroundColor);
+        dc.fillRectangle(x, y, dividerWidth, len);
     }
 }

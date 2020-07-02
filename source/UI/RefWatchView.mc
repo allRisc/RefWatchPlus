@@ -25,24 +25,19 @@ class RefWatchView extends Ui.View {
 
     // Load your resources here
     function onLayout(dc) {
-        updateTimer = new Timer.Timer();
-        updateTimer.start( method(:timerCallback), CALLBACK_TIMER, true);
-    }
-
-    function timerCallback() {
-        Ui.requestUpdate();
     }
 
     // Called when this View is brought to the foreground. Restore
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
     function onShow() {
+        TimerHandler.startUpdateTimer();
     }
 
     // Update the view
     function onUpdate(dc) {
         drawScreen(dc);
-        handleVibration();
+        Vib.handleVibration();
     }
 
     // Called when this View is removed from the screen. Save the
@@ -146,95 +141,5 @@ class RefWatchView extends Ui.View {
         draw.topRightTime(curStoppageColor, curStoppage, dc);
 
         draw.period(curPeriodColor, curPeriod, dc);
-    }
-
-    ////////////////////////////////////////////////////////////////////////
-    // Functions to manage vibrations                                     //
-    ////////////////////////////////////////////////////////////////////////
-
-    function handleVibration() {
-
-        if (MatchData.isStarted()) {
-            if (MatchData.isPlayingPeriod()) {
-                if (periodComplete()) {
-                    Vib.startStrongVib();
-                } else if (stoppageComplete()) {
-                    Vib.startStrongVib();
-                } else if (stoppageTrackingStarted()) {
-                    Vib.startWeakVib();
-                } else if (stoppageTrackingReminder()) {
-                    Vib.startMidVib();
-                }
-            } else {
-                if (periodComplete()) {
-                    Vib.startStrongVib();
-                } else if (breakAlert()) {
-                    Vib.startMidVib();
-                }
-            }
-        }
-    }
-
-    hidden var prevElapsedTime = 0;
-    function periodComplete() {
-        var perLen = func.min2sec(MatchData.getCurPeriod().getPeriodLength());
-
-        if ( (prevElapsedTime < perLen) &&
-             (MatchData.getCurPeriod().getSecElapsed() >= perLen) ) {
-            prevElapsedTime = MatchData.getCurPeriod().getSecElapsed();
-            return true;
-        }
-
-        prevElapsedTime = MatchData.getCurPeriod().getSecElapsed();
-        return false;
-    }
-
-    hidden var prevRemainingTime = 0;
-    function stoppageComplete() {
-
-        if ( (prevRemainingTime > 0) &&
-             (MatchData.getCurPeriod().getSecRemaining() <= 0) ) {
-            prevRemainingTime = MatchData.getCurPeriod().getSecRemaining();
-            return true;
-        }
-
-        prevRemainingTime = MatchData.getCurPeriod().getSecRemaining();
-        return false;
-    }
-
-    hidden var prevTrackingStatus = false;
-    function stoppageTrackingStarted() {
-
-        if ( prevTrackingStatus != MatchData.getCurPeriod().isTrackingStoppage() &&
-             MatchData.getCurPeriod().isTrackingStoppage()) {
-            prevTrackingStatus = MatchData.getCurPeriod().isTrackingStoppage();
-            return true;
-        }
-
-        prevTrackingStatus = MatchData.getCurPeriod().isTrackingStoppage();
-        return false;
-    }
-
-    function stoppageTrackingReminder() {
-
-        if (MatchData.getCurPeriod().isTrackingStoppage()) {
-            if (MatchData.getCurPeriod().getSecStoppage() % 10 == 0) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    hidden var prevNearComplete = false;
-    function breakAlert() {
-        if ( prevNearComplete != MatchData.getCurPeriod().isNearComplete() &&
-             MatchData.getCurPeriod().isNearComplete()) {
-            prevNearComplete = MatchData.getCurPeriod().isNearComplete();
-            return true;
-        }
-
-        prevNearComplete = MatchData.getCurPeriod().isNearComplete();
-        return false;
     }
 }

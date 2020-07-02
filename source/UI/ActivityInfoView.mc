@@ -4,6 +4,7 @@ using Toybox.Graphics as Gfx;
 
 using VibrationController as Vib;
 using ViewDrawables as draw;
+using TimerHandler;
 
 class ActivityInfoView extends Ui.View {
     const CALLBACK_TIMER = 100;
@@ -42,8 +43,8 @@ class ActivityInfoView extends Ui.View {
     function drawScreen(dc) {
         draw.clearScreen(dc);
 
-        drawDividers();
-        draw.gpsRing();
+        drawDividers(dc);
+        draw.gpsRing(dc);
 
 
     }
@@ -57,7 +58,7 @@ class ActivityInfoView extends Ui.View {
         var y      = draw.getMidHeight(dc);
         var length = dc.getWidth();
 
-        draw.hDivider(color, x, y, length);
-        draw.vDivider(color, x, y, length);
+        draw.hDivider(color, x, y, length, dc);
+        draw.vDivider(color, x, y, length, dc);
     }
 }

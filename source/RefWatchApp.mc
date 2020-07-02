@@ -12,6 +12,7 @@ class RefWatchApp extends app.AppBase {
 
         AppData.initAppData();
         Vib.initialize();
+        TimerHandler.initTimer();
 
         // Enable GPS
         Pos.enableLocationEvents( Pos.LOCATION_CONTINUOUS, method(:onPosition));
