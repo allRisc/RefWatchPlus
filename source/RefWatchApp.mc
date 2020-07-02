@@ -41,7 +41,7 @@ class RefWatchApp extends app.AppBase {
         return [ new RefWatchView(), new RefWatchInputDelegate() ];
     }
 
-    function onPosition() {
+    function onPosition(info) {
     }
 
 }
