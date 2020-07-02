@@ -5,6 +5,7 @@ using Toybox.Graphics as Gfx;
 using VibrationController as Vib;
 using ViewDrawables as draw;
 using TimerHandler;
+using ActivityTracking as Tracker;
 
 class ActivityInfoView extends Ui.View {
     const CALLBACK_TIMER = 100;
@@ -45,8 +46,9 @@ class ActivityInfoView extends Ui.View {
 
         drawDividers(dc);
         draw.gpsRing(dc);
-
-
+        draw.centerTopClock(Gfx.COLOR_WHITE, dc);
+        draw.bottomLeftHeartRate(Gfx.COLOR_WHITE, Tracker.getCurHeartRate(), dc);
+        draw.bottomRightDist(Gfx.COLOR_WHITE, Tracker.getCurDistMi(), dc);
     }
 
     ///////////////////////////////////////////////////////////////////////////////
@@ -59,6 +61,6 @@ class ActivityInfoView extends Ui.View {
         var length = dc.getWidth();
 
         draw.hDivider(color, x, y, length, dc);
-        draw.vDivider(color, x, y, length, dc);
+        draw.vDivider(color, x, y * 3 / 2, length/2, dc);
     }
 }

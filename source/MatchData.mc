@@ -1,13 +1,11 @@
-using Toybox.ActivityRecording as ActRec;
 using Toybox.WatchUi as Ui;
 using Toybox.Application as app;
 using Toybox.Application.Storage as Store;
 
 using HelperFunctions as func;
-
+using ActivityTracking as Tracker;
 
 module MatchData {
-    var actRecSession;
 
     // Match Data
     var curPeriod;
@@ -28,40 +26,13 @@ module MatchData {
         if (playingPeriod == 0) {
             nextPeriod();
 
-            actRecSession = ActRec.createSession( { :name=>"Match", :sport=>ActRec.SPORT_RUNNING, :subsport=>ActRec.SUB_SPORT_GENERIC } );
-            if( actRecSession != null )
-            {
-                var started = false;
-                do{
-                    started = actRecSession.start();
-                }
-                while(!started);
-            }
+            Tracker.startTracking();
         }
     }
 
     // Function which completely ends the match
     function stopMatch() {
-        if( actRecSession != null && actRecSession.isRecording() )
-        {
-                var stopped = false;
-                var saved   = false;
-                do{
-                stopped = actRecSession.stop();
-                }
-                while(stopped == false);
-
-                do {
-                    saved = actRecSession.save();
-                }
-                while( saved == false );
-
-
-                actRecSession = null;
-                Ui.requestUpdate();
-        }
-
-        actRecSession = null;
+        Tracker.endTracking();
 
         initMatchData();
     }

@@ -7,6 +7,7 @@ using Toybox.System as Sys;
 using Toybox.Test;
 
 using HelperFunctions as func;
+using ActivityTracking as Tracker;
 
 module ViewDrawables {
     const backgroundColor = Gfx.COLOR_BLACK;
@@ -136,6 +137,27 @@ module ViewDrawables {
 
         dc.setColor(color, backgroundColor);
         dc.drawText(getMidWidth(dc), dc.getHeight()/3, Gfx.FONT_NUMBER_THAI_HOT, time, Gfx.TEXT_JUSTIFY_CENTER);
+    }
+
+    function centerTopClock(color, dc) {
+        var time = func.clockFace();
+
+        dc.setColor(color, backgroundColor);
+        dc.drawText(getMidWidth(dc), dc.getHeight()/6, Gfx.FONT_NUMBER_HOT, time, Gfx.TEXT_JUSTIFY_CENTER);
+    }
+
+    function bottomLeftHeartRate(color, hr, dc) {
+        var val = hr.toString();
+
+        dc.setColor(color, backgroundColor);
+        dc.drawText(getMidWidth(dc)/2, getMidHeight(dc)*7/6, Gfx.FONT_NUMBER_MEDIUM, val, Gfx.TEXT_JUSTIFY_CENTER);
+    }
+
+    function bottomRightDist(color, dist, dc) {
+        var val = dist.format("%02.1f");
+
+        dc.setColor(color, backgroundColor);
+        dc.drawText(getMidWidth(dc)*3/2, getMidHeight(dc)*7/6, Gfx.FONT_NUMBER_MEDIUM, val, Gfx.TEXT_JUSTIFY_CENTER);
     }
 
     function topLeftTime(color, time, dc) {

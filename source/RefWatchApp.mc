@@ -4,6 +4,8 @@ using Toybox.Position as Pos;
 using Toybox.Sensor as Sensor;
 
 using VibrationController as Vib;
+using TimerHandler;
+using ActivityTracking as Tracker;
 
 class RefWatchApp extends app.AppBase {
 
@@ -13,6 +15,7 @@ class RefWatchApp extends app.AppBase {
         AppData.initAppData();
         Vib.initialize();
         TimerHandler.initTimer();
+        Tracker.initTracker();
 
         // Enable GPS
         Pos.enableLocationEvents( Pos.LOCATION_CONTINUOUS, method(:onPosition));
