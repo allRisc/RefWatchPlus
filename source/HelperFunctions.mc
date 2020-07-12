@@ -44,7 +44,7 @@ module HelperFunctions {
 
     function sec2timer(s) {
         var sign = "";
-        var min  = s/60;
+        var min  = (s/60).abs();
         var sec  = (s % 60).abs();
 
         if (s < 0) {
