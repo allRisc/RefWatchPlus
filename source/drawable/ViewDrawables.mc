@@ -86,8 +86,10 @@ module ViewDrawables {
             return;
         }
 
-        Test.assertMessage(degs >=   0, "Degrees for arc out of range (low)");
-        Test.assertMessage(degs <= 360, "Degrees for arc out of range (high)");
+        if (Toybox has :Test) {
+            Test.assertMessage(degs >=   0, "Degrees for arc out of range (low)");
+            Test.assertMessage(degs <= 360, "Degrees for arc out of range (high)");
+        }
 
         dc.setColor(color, backgroundColor);
         if (degs <= 90) {

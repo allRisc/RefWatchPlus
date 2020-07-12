@@ -26,9 +26,11 @@ class NumPicker extends Ui.Picker {
     function initialize(titleName, prop) {
         var title;
 
-        Test.assertMessage(titleName instanceof String, "NumPicker: \'titleName\' not a string");
-        Test.assertMessage(prop      instanceof String, "NumPicker: \'prop\' not a string");
-        Test.assertMessage(AppData.get(prop) != null, "NumPicker: Invalid Property");
+        if (Toybox has :Test) {
+            Test.assertMessage(titleName instanceof String, "NumPicker: \'titleName\' not a string");
+            Test.assertMessage(prop      instanceof String, "NumPicker: \'prop\' not a string");
+            Test.assertMessage(AppData.get(prop) != null, "NumPicker: Invalid Property");
+        }
 
         title = new Ui.Text({:text=>titleName, :font=>Gfx.FONT_MEDIUM, :locX=>Ui.LAYOUT_HALIGN_CENTER, :locY=>Ui.LAYOUT_VALIGN_BOTTOM, :color=>Gfx.COLOR_WHITE});
 
@@ -47,9 +49,12 @@ class NumPickerDelegate extends Ui.PickerDelegate {
     var pickerProperty;
 
     function initialize(prop) {
+        if (Toybox has :Test) {
+            Test.assertMessage(pickerProperty instanceof String, "NumPickerDelegate \'prop\' not a string");
+        }
+
         PickerDelegate.initialize();
         pickerProperty = prop;
-        Test.assertMessage(pickerProperty instanceof String, "NumPickerDelegate \'prop\' not a string");
     }
 
     function onCancel() {

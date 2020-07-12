@@ -33,7 +33,9 @@ module TimerHandler {
     }
 
     function startUpdateTimer() {
-        Test.assertMessage(updateTimer != null, "updateTimer uninitialized");
+        if (Toybox has :Test) {
+            Test.assertMessage(updateTimer != null, "updateTimer uninitialized");
+        }
 
         var callBack = new Lang.Method(TimerHandler, :updateTimerCallback);
         updateTimer.start(callBack, CALLBACK_TIMER, true);
