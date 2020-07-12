@@ -33,9 +33,9 @@ module VibrationController {
     function initialize() {
         if (Att has :vibrate) {
             weakVibDur  = 1000;
-            weakVibProf = [new Att.VibeProfile( 50, 250),
+            weakVibProf = [new Att.VibeProfile( 75, 250),
                            new Att.VibeProfile(  0, 250),
-                           new Att.VibeProfile( 50, 250)];
+                           new Att.VibeProfile( 75, 250)];
 
             midVibDur  = 1500;
             midVibProf = [new Att.VibeProfile( 75, 250),
@@ -44,14 +44,14 @@ module VibrationController {
                           new Att.VibeProfile(  0, 250),
                           new Att.VibeProfile( 75, 250)];
 
-            strongVibDur  = 2000;
-            strongVibProf = [new Att.VibeProfile(100, 500),
+            strongVibDur  = 3000;
+            strongVibProf = [new Att.VibeProfile(100, 750),
                              new Att.VibeProfile(  0, 125),
                              new Att.VibeProfile( 75, 125),
                              new Att.VibeProfile(  0, 125),
                              new Att.VibeProfile( 75, 125),
                              new Att.VibeProfile(  0, 125),
-                             new Att.VibeProfile(100, 625)];
+                             new Att.VibeProfile(100, 1500)];
 
             strongVibDur  = 2000;
         }
@@ -97,9 +97,9 @@ module VibrationController {
                 } else if (stoppageComplete()) {
                     startStrongVib();
                 } else if (stoppageTrackingStarted()) {
-                    startWeakVib();
-                } else if (stoppageTrackingReminder()) {
                     startMidVib();
+                } else if (stoppageTrackingReminder()) {
+                    startWeakVib();
                 }
             } else {
                 if (periodComplete()) {
