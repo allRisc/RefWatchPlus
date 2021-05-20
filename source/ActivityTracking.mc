@@ -30,13 +30,11 @@ module ActivityTracking {
 
     function startTracking() {
         actRecSession = ActRec.createSession( { :name=>"Match", :sport=>ActRec.SPORT_SOCCER, :subsport=>ActRec.SUB_SPORT_GENERIC } );
-        if( actRecSession != null )
-        {
+        if( actRecSession != null ) {
             var started = false;
-            do{
+            do {
                 started = actRecSession.start();
-            }
-            while(!started);
+            } while(!started);
         }
     }
 
@@ -45,15 +43,13 @@ module ActivityTracking {
         {
             var stopped = false;
             var saved   = false;
-            do{
-            stopped = actRecSession.stop();
-            }
-            while(stopped == false);
+            do {
+            	stopped = actRecSession.stop();
+            } while(stopped == false);
 
             do {
                 saved = actRecSession.save();
-            }
-            while( saved == false );
+            } while( saved == false );
 
 
             actRecSession = null;

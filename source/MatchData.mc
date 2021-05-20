@@ -103,7 +103,7 @@ module MatchData {
     }
 
     function isOTPeriod() {
-        return playingPeriod >= AppData.getNumPeriods();
+        return playingPeriod > AppData.getNumPeriods();
     }
 
     function getSecPlayingTime() {

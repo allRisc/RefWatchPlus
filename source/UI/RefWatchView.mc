@@ -61,24 +61,18 @@ class RefWatchView extends Ui.View {
     // Called when this View is removed from the screen. Save the
     // state of this View here. This includes freeing resources from
     // memory.
-    function onHide() {
-    }
+    function onHide() {}
 
     // Control function for main display panel
     function drawScreen(dc) {
         draw.clearScreen(dc);
 
         // Get current timing Information
-        if (!MatchData.isStarted())
-        {
+        if (!MatchData.isStarted()) {
             drawIdleScreen(dc);
-        }
-        else if (MatchData.isPlayingPeriod())
-        {
+        } else if (MatchData.isPlayingPeriod()) {
             drawPlayingScreen(dc);
-        }
-        else
-        {
+        } else {
             drawBreakScreen(dc);
         }
 
@@ -109,8 +103,7 @@ class RefWatchView extends Ui.View {
         var timeRemainingColor = Gfx.COLOR_WHITE;
         var curPeriodColor     = Gfx.COLOR_WHITE;
 
-        if (MatchData.getCurPeriod().isNearComplete())
-        {
+        if (MatchData.getCurPeriod().isNearComplete()) {
             timeRemainingColor = Gfx.COLOR_RED;
         }
 
@@ -132,17 +125,13 @@ class RefWatchView extends Ui.View {
         var curPeriodColor     = Gfx.COLOR_WHITE;
         var ringColor          = Gfx.COLOR_GREEN;
 
-        if (MatchData.getCurPeriod().isInStoppage())
-        {
+        if (MatchData.getCurPeriod().isInStoppage()) {
             timeElapsedColor = Gfx.COLOR_RED;
-        }
-        else if (MatchData.getCurPeriod().isNearStoppage())
-        {
+        } else if (MatchData.getCurPeriod().isNearStoppage()) {
             timeElapsedColor = Gfx.COLOR_YELLOW;
         }
 
-        if (MatchData.getCurPeriod().isTrackingStoppage())
-        {
+        if (MatchData.getCurPeriod().isTrackingStoppage()) {
             curStoppageColor = Gfx.COLOR_ORANGE;
         }
 

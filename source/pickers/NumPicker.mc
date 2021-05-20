@@ -50,7 +50,7 @@ class NumPickerDelegate extends Ui.PickerDelegate {
 
     function initialize(prop) {
         if (Toybox has :Test) {
-            Test.assertMessage(pickerProperty instanceof String, "NumPickerDelegate \'prop\' not a string");
+            Test.assertMessage(prop instanceof String, "NumPickerDelegate \'prop\' not a string");
         }
 
         PickerDelegate.initialize();

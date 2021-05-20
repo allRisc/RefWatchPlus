@@ -53,9 +53,7 @@ class ActivityInfoView extends Ui.View {
     // Called when this View is removed from the screen. Save the
     // state of this View here. This includes freeing resources from
     // memory.
-    function onHide() {
-
-    }
+    function onHide() {}
 
     // Control function for main display panel
     function drawScreen(dc) {

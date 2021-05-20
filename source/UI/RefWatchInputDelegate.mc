@@ -31,27 +31,28 @@ class RefWatchInputDelegate extends Ui.InputDelegate {
         escPressTime = 0;
     }
 
+	// Handle a keyed input
     function onKey(evt) {
-        var keynum = Lang.format("K $1$", [evt.getKey()]);
-        Sys.println(keynum);
+        // var keynum = Lang.format("K $1$", [evt.getKey()]);
+        // Sys.println(keynum);
 
+		// If the start key is hit
         if (evt.getKey() == Ui.KEY_ENTER) {
-            if (!MatchData.isStarted())
-            {
+            // Start the match
+            if (!MatchData.isStarted()) {
                 Vib.startStrongVib();
                 MatchData.startMatch();
                 MatchData.getCurPeriod().start();
                 Ui.requestUpdate();
                 return true;
             }
-            else if (MatchData.isPlayingPeriod())
-            {
-                if ( MatchData.getCurPeriod().isStarted() )
-                {
+            else if (MatchData.isPlayingPeriod()) {
+            	// If the playing period is already underway toggle the stoppage counter
+            	// Else start it
+                if ( MatchData.getCurPeriod().isStarted() ) {
                     MatchData.getCurPeriod().stoppage();
-                }
-                else
-                {
+                } else {
+                	Vib.startStrongVib();
                     MatchData.getCurPeriod().start();
                 }
                 return true;
@@ -59,9 +60,9 @@ class RefWatchInputDelegate extends Ui.InputDelegate {
 
         }
 
+		// Handle the escape key for moving to next period. Only works on double press
         if (evt.getKey() == Ui.KEY_ESC) {
-            if (!MatchData.isStarted())
-            {
+            if (!MatchData.isStarted()) {
                 return false;
             }
 
@@ -75,26 +76,39 @@ class RefWatchInputDelegate extends Ui.InputDelegate {
             }
             return true;
         }
+        
+        if (evt.getKey() == Ui.KEY_DOWN) {
+        	return dispMainMenu();
+    	} else if (evt.getKey() == Ui.KEY_UP) {
+    		return dispActivityView();
+    	}
 
         return false;
     }
 
 
     function onSwipe(evt) {
-        var swipenum = Lang.format("S $1$", [evt.getDirection()]);
-        Sys.println(swipenum);
-
         if (evt.getDirection() == Ui.SWIPE_UP) {
-            var MainMenu= new Rez.Menus.MainMenu();
-            Ui.pushView( MainMenu, new MainMenuInputDelegate(), Ui.SLIDE_UP );
-            Ui.requestUpdate();
-            return true;
+            return dispMainMenu();
         } else if (evt.getDirection() == Ui.SWIPE_DOWN) {
-            Ui.pushView( new ActivityInfoView(), new ActivityInfoInputDelegate(), Ui.SLIDE_UP );
-            Ui.requestUpdate();
-            return true;
+            return dispActivityView();
         }
 
         return false;
+    }
+    
+    // Display the main menu
+    function dispMainMenu() {
+    	var MainMenu= new Rez.Menus.MainMenu();
+        Ui.pushView( MainMenu, new MainMenuInputDelegate(), Ui.SLIDE_UP );
+        Ui.requestUpdate();
+        return true;
+    }
+    
+    // Display the activity view
+    function dispActivityView() {
+   	 	Ui.pushView( new ActivityInfoView(), new ActivityInfoInputDelegate(), Ui.SLIDE_UP );
+        Ui.requestUpdate();
+    	return true;
     }
 }

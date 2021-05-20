@@ -29,28 +29,22 @@ class ActivityInfoInputDelegate extends Ui.InputDelegate {
 
         escPressTime = 0;
     }
-
+    
+	// Handle a Key Press
     function onKey(evt) {
-        var keynum = Lang.format("K $1$", [evt.getKey()]);
-        Sys.println(keynum);
 
         if (evt.getKey() == Ui.KEY_ENTER) {
-            if (!MatchData.isStarted())
-            {
+            if (!MatchData.isStarted()) {
                 Vib.startStrongVib();
                 MatchData.startMatch();
                 MatchData.getCurPeriod().start();
                 Ui.requestUpdate();
                 return true;
-            }
-            else if (MatchData.isPlayingPeriod())
-            {
-                if ( MatchData.getCurPeriod().isStarted() )
-                {
+            } else if (MatchData.isPlayingPeriod()) {
+                if ( MatchData.getCurPeriod().isStarted() ) {
                     MatchData.getCurPeriod().stoppage();
-                }
-                else
-                {
+                } else {
+                	Vib.startStrongVib();
                     MatchData.getCurPeriod().start();
                 }
                 return true;
@@ -74,20 +68,27 @@ class ActivityInfoInputDelegate extends Ui.InputDelegate {
             }
             return true;
         }
+        
+        if (evt.getKey() == Ui.KEY_DOWN) {
+        	return dispBack();
+    	}
 
         return false;
     }
 
     function onSwipe(evt) {
-        var swipenum = Lang.format("S $1$", [evt.getDirection()]);
-        Sys.println(swipenum);
-
         if (evt.getDirection() == Ui.SWIPE_UP) {
-            Ui.popView(Ui.SLIDE_DOWN);
-            Ui.requestUpdate();
-            return true;
+            return dispBack();
         }
 
         return false;
     }
+  
+  
+  	function dispBack() {
+        Ui.popView(Ui.SLIDE_DOWN);
+        Ui.requestUpdate();
+  	
+  		return true;
+  	}
 }
