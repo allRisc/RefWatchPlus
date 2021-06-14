@@ -1,0 +1,12 @@
+<strings>
+    <string id="AppName">RefWatch+</string>
+
+	<string id="BatterySaver_StorageID"  >batter_saver</string>
+
+    <string id="PeriodLength_StorageID"  >period_len</string>    
+    <string id="NumPeriods_StorageID"    >num_periods</string>
+    <string id="BreakLength_StorageID"   >break_len</string>
+    <string id="BreakAlert_StorageID"    >break_alert</string>
+    <string id="OTPeriodLength_StorageID">period_ot_len</string>    
+    <string id="NumOTPeriods_StorageID"  >num_ot_periods</string>
+</strings>

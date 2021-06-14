@@ -16,7 +16,6 @@
  ***************************************************************************/
 
 using Toybox.WatchUi as Ui;
-using Toybox.Timer as Timer;
 using Toybox.Graphics as Gfx;
 using Toybox.Attention as Att;
 using Toybox.Lang;
@@ -29,7 +28,7 @@ using HelperFunctions as func;
 using ViewDrawables as draw;
 using MatchData;
 using VibrationController as Vib;
-using TimerHandler;
+using RefreshTimer;
 
 class RefWatchView extends Ui.View {
 
@@ -49,7 +48,7 @@ class RefWatchView extends Ui.View {
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
     function onShow() {
-        TimerHandler.startUpdateTimer();
+        RefreshTimer.startTimer();
     }
 
     // Update the view
@@ -89,10 +88,10 @@ class RefWatchView extends Ui.View {
         var curStoppageColor   = Gfx.COLOR_WHITE;
         var secRingColor       = draw.getGPSQualityColor(Pos.getInfo());
 
-        draw.timeRemainingRing(secRingColor, (60-Sys.getClockTime().sec), 60, dc);
         draw.topLeftTime(timeRemainingColor, timeRemaining, dc);
         draw.centerClock(timeElapsedColor, dc);
         draw.topRightTime(curStoppageColor, curStoppage, dc);
+        draw.timeRemainingRing(secRingColor, (60-Sys.getClockTime().sec), 60, dc);
     }
 
     function drawBreakScreen(dc) {
@@ -141,12 +140,12 @@ class RefWatchView extends Ui.View {
             periodTime = func.min2sec(AppData.getPeriodLength());
         }
 
-        draw.timeRemainingRing(ringColor, timeRemaining, periodTime, dc);
-
         draw.topLeftTime(timeRemainingColor, timeRemaining, dc);
         draw.centerTime(timeElapsedColor, timeElapsed, dc);
         draw.topRightTime(curStoppageColor, curStoppage, dc);
 
         draw.period(curPeriodColor, curPeriod, dc);
+        
+        draw.timeRemainingRing(ringColor, timeRemaining, periodTime, dc);
     }
 }

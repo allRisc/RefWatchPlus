@@ -22,7 +22,7 @@ using Toybox.Sensor as Sensor;
 using Toybox.System as Sys;
 
 using VibrationController as Vib;
-using TimerHandler;
+using RefreshTimer;
 using ActivityTracking as Tracker;
 
 class RefWatchApp extends app.AppBase {
@@ -32,7 +32,8 @@ class RefWatchApp extends app.AppBase {
 
         AppData.initAppData();
         Vib.initialize();
-        TimerHandler.initTimer();
+        var bsMode = AppData.getBatterySaver();
+        RefreshTimer.initTimer(bsMode);
         Tracker.initTracker();
 
         // Enable GPS
@@ -46,8 +47,7 @@ class RefWatchApp extends app.AppBase {
     }
 
     // onStart() is called on application start up
-    function onStart(state) {
-    }
+    function onStart(state) {}
 
     // onStop() is called when your application is exiting
     function onStop(state) {
@@ -59,7 +59,6 @@ class RefWatchApp extends app.AppBase {
         return [ new RefWatchView(), new RefWatchInputDelegate() ];
     }
 
-    function onPosition(info) {
-    }
+    function onPosition(info) {}
 
 }

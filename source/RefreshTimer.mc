@@ -21,32 +21,59 @@ using Toybox.Lang;
 using Toybox.Test;
 using Toybox.System as Sys;
 
-module TimerHandler {
+module RefreshTimer {
     var updateTimer = null;
+    var batterySaverMode;
+    var modeUpdated;
+    var running;
 
-    const CALLBACK_TIMER = 100;
+    const PERFORMANCE_TIMER = 100;
+    const BATTERY_SAVER_TIMER = 500;
 
-    function initTimer() {
+    function initTimer(batterySaver) {
         if (updateTimer == null) {
             updateTimer = new Timer.Timer();
         }
+        
+        batterySaverMode = batterySaver;
+        running = false;
+        modeUpdated = false;
     }
 
-    function startUpdateTimer() {
+    function startTimer() {
         if (Toybox has :Test) {
             Test.assertMessage(updateTimer != null, "updateTimer uninitialized");
         }
 
-        var callBack = new Lang.Method(TimerHandler, :updateTimerCallback);
-        updateTimer.start(callBack, CALLBACK_TIMER, true);
-
+        var callBack = new Lang.Method(RefreshTimer, :updateTimerCallback);
+        
+        if (!running) {
+        	if (batterySaverMode) {
+        		updateTimer.start(callBack, BATTERY_SAVER_TIMER, true);
+        	} else {
+        		updateTimer.start(callBack, PERFORMANCE_TIMER, true);	
+        	}
+    	}
+        
+        running = true;
     }
 
-    function stopUpdateTimer() {
+    function stopTimer() {
         updateTimer.stop();
+        running = false;
     }
+
+	function updateMode(batterySaver) {
+		modeUpdated = true;
+		batterySaverMode = batterySaver;
+	}
 
     function updateTimerCallback() {
+    	if (modeUpdated) {
+    		stopTimer();
+    		startTimer();
+    		modeUpdated = false;
+    	}
         Ui.requestUpdate();
     }
 }

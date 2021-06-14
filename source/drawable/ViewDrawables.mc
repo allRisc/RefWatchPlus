@@ -24,18 +24,17 @@ using Toybox.System as Sys;
 using Toybox.Test;
 
 using HelperFunctions as func;
-using ActivityTracking as Tracker;
 
 module ViewDrawables {
     const backgroundColor = Gfx.COLOR_BLACK;
     const dividerWidth    = 3;
 
     function getMidWidth(dc) {
-        return dc.getWidth() / 2;
+        return dc.getWidth() / 2.0 + 0.5;
     }
 
     function getMidHeight(dc) {
-        return dc.getHeight() / 2;
+        return dc.getHeight() / 2.0 + 0.5;
     }
 
     function getRadius(dc) {
@@ -69,6 +68,7 @@ module ViewDrawables {
         return Gfx.COLOR_DK_RED;
     }
 
+	// Generate a ring for a given timeleft vs timetotal set
     function timeRemainingRing(color, timeLeft, timeTotal, dc) {
         var degrees;
 
@@ -81,6 +81,7 @@ module ViewDrawables {
         ring(color, degrees, getRadius(dc), dc);
     }
 
+	// Create a ring with the given color, arg degree, and radius
     function ring(color, degs, rad, dc) {
         if (degs == 0) {
             return;
@@ -92,65 +93,27 @@ module ViewDrawables {
         }
 
         dc.setColor(color, backgroundColor);
-        if (degs <= 90) {
-            upperRightArc(degs, rad, dc);
-        } else if (degs <= 180) {
-            upperRightArc(90, rad, dc);
-            lowerRightArc(degs-90, rad, dc);
-        } else if (degs <= 270) {
-            upperRightArc(90, rad, dc);
-            lowerRightArc(90, rad, dc);
-            lowerLeftArc (degs-180, rad, dc);
-        } else if (degs <= 360) {
-            upperRightArc(90, rad, dc);
-            lowerRightArc(90, rad, dc);
-            lowerLeftArc (90, rad, dc);
-            upperLeftArc (degs-270, rad, dc);
-        }
-    }
-
-    function upperRightArc(degs, rad, dc) {
-        var xCenter = getMidWidth(dc);
-        var yCenter = getMidHeight(dc) - 1;
-
-        dc.drawArc(xCenter, yCenter, rad  , Gfx.ARC_CLOCKWISE, 90, 90-degs);
-        dc.drawArc(xCenter, yCenter, rad-1, Gfx.ARC_CLOCKWISE, 90, 90-degs);
-        dc.drawArc(xCenter, yCenter, rad-2, Gfx.ARC_CLOCKWISE, 90, 90-degs);
-    }
-
-    function lowerRightArc(degs, rad, dc) {
+        
         var xCenter = getMidWidth(dc);
         var yCenter = getMidHeight(dc);
-
-        dc.drawArc(xCenter, yCenter, rad  , Gfx.ARC_CLOCKWISE, 0, 360-degs);
-        dc.drawArc(xCenter, yCenter, rad-1, Gfx.ARC_CLOCKWISE, 0, 360-degs);
-        dc.drawArc(xCenter, yCenter, rad-2, Gfx.ARC_CLOCKWISE, 0, 360-degs);
+        
+        var degOffset = ((360-degs) + 90);
+        var degFinish = degOffset.abs().toNumber() % 360;
+        
+        dc.drawArc(xCenter, yCenter, rad + 1, Gfx.ARC_CLOCKWISE, 90, degFinish);
+        dc.drawArc(xCenter, yCenter, rad    , Gfx.ARC_CLOCKWISE, 90, degFinish);
+        dc.drawArc(xCenter, yCenter, rad - 1, Gfx.ARC_CLOCKWISE, 90, degFinish);
+        dc.drawArc(xCenter, yCenter, rad - 2, Gfx.ARC_CLOCKWISE, 90, degFinish);
     }
 
-    function lowerLeftArc(degs, rad, dc) {
-        var xCenter = getMidWidth(dc) - 1;
-        var yCenter = getMidHeight(dc);
-
-        dc.drawArc(xCenter, yCenter, rad  , Gfx.ARC_CLOCKWISE, 270, 270-degs);
-        dc.drawArc(xCenter, yCenter, rad-1, Gfx.ARC_CLOCKWISE, 270, 270-degs);
-        dc.drawArc(xCenter, yCenter, rad-2, Gfx.ARC_CLOCKWISE, 270, 270-degs);
-    }
-
-    function upperLeftArc(degs, rad, dc) {
-        var xCenter = getMidWidth(dc)  - 1;
-        var yCenter = getMidHeight(dc) - 1;
-
-        dc.drawArc(xCenter, yCenter, rad  , Gfx.ARC_CLOCKWISE, 180, 180-degs);
-        dc.drawArc(xCenter, yCenter, rad-1, Gfx.ARC_CLOCKWISE, 180, 180-degs);
-        dc.drawArc(xCenter, yCenter, rad-2, Gfx.ARC_CLOCKWISE, 180, 180-degs);
-    }
-
+	// Place a time value in the center
     function centerTime(color, time, dc) {
         time = func.sec2timer(time);
         dc.setColor(color, backgroundColor);
         dc.drawText(getMidWidth(dc), dc.getHeight()/3, Gfx.FONT_NUMBER_THAI_HOT, time, Gfx.TEXT_JUSTIFY_CENTER);
     }
 
+	// Place the current time in the center
     function centerClock(color, dc) {
         var time = func.clockFace();
 
@@ -158,13 +121,15 @@ module ViewDrawables {
         dc.drawText(getMidWidth(dc), dc.getHeight()/3, Gfx.FONT_NUMBER_THAI_HOT, time, Gfx.TEXT_JUSTIFY_CENTER);
     }
 
+	// Place a the current time in the top center
     function centerTopClock(color, dc) {
         var time = func.clockFace();
 
         dc.setColor(color, backgroundColor);
-        dc.drawText(getMidWidth(dc), dc.getHeight()/6, Gfx.FONT_NUMBER_HOT, time, Gfx.TEXT_JUSTIFY_CENTER);
+        dc.drawText(getMidWidth(dc), dc.getHeight()/7, Gfx.FONT_NUMBER_HOT, time, Gfx.TEXT_JUSTIFY_CENTER);
     }
 
+	// Place a heartrate value in the bottom left corner
     function bottomLeftHeartRate(color, hr, dc) {
         var val = hr.toString();
 
@@ -172,6 +137,7 @@ module ViewDrawables {
         dc.drawText(getMidWidth(dc)/2, getMidHeight(dc)*7/6, Gfx.FONT_NUMBER_MEDIUM, val, Gfx.TEXT_JUSTIFY_CENTER);
     }
 
+	// Place a distance value in the bottom right corner
     function bottomRightDist(color, dist, dc) {
         var val = dist.format("%02.1f");
 
@@ -179,24 +145,28 @@ module ViewDrawables {
         dc.drawText(getMidWidth(dc)*3/2, getMidHeight(dc)*7/6, Gfx.FONT_NUMBER_MEDIUM, val, Gfx.TEXT_JUSTIFY_CENTER);
     }
 
+	// Places a time value into the top-left point
     function topLeftTime(color, time, dc) {
         time = func.sec2timer(time);
         dc.setColor(color, backgroundColor);
         dc.drawText(dc.getWidth()/3, dc.getHeight()/6, Gfx.FONT_LARGE, time, Gfx.TEXT_JUSTIFY_CENTER);
     }
 
+	// Places a time value into the top-right corner
     function topRightTime(color, time, dc) {
         time = func.sec2timer(time);
         dc.setColor(color, backgroundColor);
         dc.drawText(dc.getWidth() * 2/3, dc.getHeight()/6, Gfx.FONT_LARGE, time, Gfx.TEXT_JUSTIFY_CENTER);
     }
 
+	// Function to display the current period
     function period(color, per, dc) {
         var curPeriod = Lang.format("Per: $1$", [per]);
         dc.setColor(color, backgroundColor);
         dc.drawText(getMidWidth(dc), dc.getHeight()*2/3, Gfx.FONT_MEDIUM, curPeriod, Gfx.TEXT_JUSTIFY_CENTER);
     }
 
+	// Create a horizontal divider on screen
     function hDivider(color, x, y, len, dc) {
         var yLoc = y - Math.floor(dividerWidth/2);
         var xLoc = x - Math.floor(len/2);
@@ -204,6 +174,7 @@ module ViewDrawables {
         dc.fillRectangle(xLoc, yLoc, len, dividerWidth);
     }
 
+	// Create vertical divider on screen
     function vDivider(color, x, y, len, dc) {
         var xLoc = x - Math.floor(dividerWidth/2);
         var yLoc = y - Math.floor(len/2);

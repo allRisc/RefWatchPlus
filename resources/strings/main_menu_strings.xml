@@ -1,0 +1,7 @@
+<strings>
+	<string id="EndMatch_MenuID"   >end_match_id</string>
+    
+    <string id="EndMatch_MenuLabel">End Match</string>
+    <string id="TimingMenu_MenuLabel">Match Times</string>
+    <string id="BatterySaver_MenuLabel">Battery Saver</string>
+</strings>

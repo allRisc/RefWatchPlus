@@ -26,8 +26,8 @@ class NumberFactory extends WatchUi.PickerFactory {
     hidden var fontOpts;
 
     function getIndex(value) {
-        var index = (value / incVal) - startNum
-;
+        var index = (value / incVal) - startNum;
+        
         return index;
     }
 

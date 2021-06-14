@@ -20,6 +20,7 @@ using Toybox.Test;
 using Toybox.WatchUi as Ui;
 
 class AppData {
+	hidden static var batterySaver;
     hidden static var periodLength;
     hidden static var numPeriods;
     hidden static var breakLength;
@@ -32,6 +33,11 @@ class AppData {
     }
 
     static function initAppData() {
+    	batterySaver   = Store.getValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID));
+        if (batterySaver == null) {
+            setBatterySaver(false);
+        }
+    
         periodLength   = Store.getValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID));
         if (periodLength == null) {
             setPeriodLength(45);
@@ -75,6 +81,9 @@ class AppData {
 
     static function get(id) {
         switch (id) {
+        	case Ui.loadResource(Rez.Strings.BatterySaver_StorageID)   :
+        		return batterySaver;
+        		break;
             case Ui.loadResource(Rez.Strings.PeriodLength_StorageID)   :
                 return periodLength;
                 break;
@@ -95,6 +104,37 @@ class AppData {
                 break;
         }
     }
+    
+    static function set(id, val) {
+        switch (id) {
+        	case Ui.loadResource(Rez.Strings.BatterySaver_StorageID)   :
+        		setBatterySaver(val);
+        		break;
+            case Ui.loadResource(Rez.Strings.PeriodLength_StorageID)   :
+                setPeriodLength(val);
+                break;
+            case Ui.loadResource(Rez.Strings.NumPeriods_StorageID)     :
+                setNumPeriods(val);
+                break;
+            case Ui.loadResource(Rez.Strings.BreakLength_StorageID)    :
+                setBreakLength(val);
+                break;
+            case Ui.loadResource(Rez.Strings.BreakAlert_StorageID)     :
+                setBreakAlert(val);
+                break;
+            case Ui.loadResource(Rez.Strings.OTPeriodLength_StorageID) :
+                setOTPeriodLength(val);
+                break;
+            case Ui.loadResource(Rez.Strings.NumOTPeriods_StorageID)   :
+                setNumOTPeriods(val);
+                break;
+        }
+    }
+    
+    // Getter Methods
+	static function getBatterySaver() {
+		return batterySaver;
+	}
 
     static function getPeriodLength() {
         return periodLength;
@@ -119,6 +159,12 @@ class AppData {
     static function getNumOTPeriods() {
         return numOTPeriods;
     }
+
+	// Setter Methods
+	static function setBatterySaver(val) {
+		batterySaver = val;
+        Store.setValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID), val);		
+	}
 
     static function setPeriodLength(val) {
         periodLength = val;
@@ -148,10 +194,6 @@ class AppData {
     static function setNumOTPeriods(val) {
         numOTPeriods = val;
         Store.setValue(Ui.loadResource(Rez.Strings.NumOTPeriods_StorageID), val);
-    }
-
-    static function set(id, val) {
-        Store.setValue(id, val);
     }
 
 }

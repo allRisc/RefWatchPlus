@@ -45,26 +45,3 @@ class NumPicker extends Ui.Picker {
     }
 }
 
-class NumPickerDelegate extends Ui.PickerDelegate {
-    var pickerProperty;
-
-    function initialize(prop) {
-        if (Toybox has :Test) {
-            Test.assertMessage(prop instanceof String, "NumPickerDelegate \'prop\' not a string");
-        }
-
-        PickerDelegate.initialize();
-        pickerProperty = prop;
-    }
-
-    function onCancel() {
-        Ui.popView(Ui.SLIDE_IMMEDIATE);
-    }
-
-    function onAccept(values) {
-        AppData.set(pickerProperty, values[0]);
-        AppData.refreshAppData();
-
-        Ui.popView(Ui.SLIDE_IMMEDIATE);
-    }
-}
