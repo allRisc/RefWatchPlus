@@ -88,9 +88,9 @@ class RefWatchView extends Ui.View {
         var curStoppageColor   = Gfx.COLOR_WHITE;
         var secRingColor       = draw.getGPSQualityColor(Pos.getInfo());
 
-        draw.topLeftTime(timeRemainingColor, timeRemaining, dc);
-        draw.centerClock(timeElapsedColor, dc);
-        draw.topRightTime(curStoppageColor, curStoppage, dc);
+        draw.topLeft(timeRemainingColor, func.sec2timer(timeRemaining), dc);
+        draw.center(timeElapsedColor, func.clockFace(), dc);
+        draw.topRight(curStoppageColor, func.sec2timer(curStoppage), dc);
         draw.timeRemainingRing(secRingColor, (60-Sys.getClockTime().sec), 60, dc);
     }
 
@@ -106,7 +106,7 @@ class RefWatchView extends Ui.View {
             timeRemainingColor = Gfx.COLOR_RED;
         }
 
-        draw.centerTime(timeRemainingColor, timeRemaining, dc);
+        draw.center(timeRemainingColor, func.sec2timer(timeRemaining), dc);
         draw.period(curPeriodColor, curPeriod, dc);
     }
 
@@ -140,9 +140,9 @@ class RefWatchView extends Ui.View {
             periodTime = func.min2sec(AppData.getPeriodLength());
         }
 
-        draw.topLeftTime(timeRemainingColor, timeRemaining, dc);
-        draw.centerTime(timeElapsedColor, timeElapsed, dc);
-        draw.topRightTime(curStoppageColor, curStoppage, dc);
+        draw.topLeft(timeRemainingColor, func.sec2timer(timeRemaining), dc);
+        draw.center(timeRemainingColor, func.sec2timer(timeElapsed), dc);
+        draw.topRight(curStoppageColor, func.sec2timer(curStoppage), dc);
 
         draw.period(curPeriodColor, curPeriod, dc);
         

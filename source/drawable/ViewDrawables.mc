@@ -106,75 +106,53 @@ module ViewDrawables {
         dc.drawArc(xCenter, yCenter, rad - 2, Gfx.ARC_CLOCKWISE, 90, degFinish);
     }
 
-	// Place a time value in the center
-    function centerTime(color, time, dc) {
-        time = func.sec2timer(time);
-        dc.setColor(color, backgroundColor);
-        dc.drawText(getMidWidth(dc), dc.getHeight()/3, Gfx.FONT_NUMBER_THAI_HOT, time, Gfx.TEXT_JUSTIFY_CENTER);
-    }
-
-	// Place the current time in the center
-    function centerClock(color, dc) {
-        var time = func.clockFace();
-
-        dc.setColor(color, backgroundColor);
-        dc.drawText(getMidWidth(dc), dc.getHeight()/3, Gfx.FONT_NUMBER_THAI_HOT, time, Gfx.TEXT_JUSTIFY_CENTER);
-    }
-
-	// Place a the current time in the top center
-    function centerTopClock(color, dc) {
-        var time = func.clockFace();
-
-        dc.setColor(color, backgroundColor);
-        dc.drawText(getMidWidth(dc), dc.getHeight()/7, Gfx.FONT_NUMBER_HOT, time, Gfx.TEXT_JUSTIFY_CENTER);
-    }
-
-	// Place a heartrate value in the bottom left corner
-    function bottomLeftHeartRate(color, hr, dc) {
-        var val = hr.toString();
-
-        dc.setColor(color, backgroundColor);
-        dc.drawText(getMidWidth(dc)/2, getMidHeight(dc)*7/6, Gfx.FONT_NUMBER_MEDIUM, val, Gfx.TEXT_JUSTIFY_CENTER);
-    }
-
-	// Place a distance value in the bottom right corner
-    function bottomRightDist(color, dist, dc) {
-        var val = dist.format("%02.1f");
-
-        dc.setColor(color, backgroundColor);
-        dc.drawText(getMidWidth(dc)*3/2, getMidHeight(dc)*7/6, Gfx.FONT_NUMBER_MEDIUM, val, Gfx.TEXT_JUSTIFY_CENTER);
-    }
-
-	// Places a time value into the top-left point
-    function topLeftTime(color, time, dc) {
-        time = func.sec2timer(time);
-        dc.setColor(color, backgroundColor);
-        dc.drawText(dc.getWidth()/3, dc.getHeight()/6, Gfx.FONT_LARGE, time, Gfx.TEXT_JUSTIFY_CENTER);
-    }
-
-	// Places a time value into the top-right corner
-    function topRightTime(color, time, dc) {
-        time = func.sec2timer(time);
-        dc.setColor(color, backgroundColor);
-        dc.drawText(dc.getWidth() * 2/3, dc.getHeight()/6, Gfx.FONT_LARGE, time, Gfx.TEXT_JUSTIFY_CENTER);
+	// Place a text value in the center
+    function center(color, txt, dc) {
+        dc.setColor(color, Gfx.COLOR_TRANSPARENT);
+        dc.drawText(getMidWidth(dc), dc.getHeight()/3, Gfx.FONT_NUMBER_THAI_HOT, txt, Gfx.TEXT_JUSTIFY_CENTER);
     }
 
 	// Function to display the current period
     function period(color, per, dc) {
         var curPeriod = Lang.format("Per: $1$", [per]);
-        dc.setColor(color, backgroundColor);
+        dc.setColor(color, Gfx.COLOR_TRANSPARENT);
         dc.drawText(getMidWidth(dc), dc.getHeight()*2/3, Gfx.FONT_MEDIUM, curPeriod, Gfx.TEXT_JUSTIFY_CENTER);
     }
     
+    // Display text at the center top of the screen
     function centerTop(color, txt, dc) {
-    	dc.setColor(color, backgroundColor);
+    	dc.setColor(color, Gfx.COLOR_TRANSPARENT);
         dc.drawText(getMidWidth(dc), dc.getHeight()/7, Gfx.FONT_NUMBER_HOT, txt, Gfx.TEXT_JUSTIFY_CENTER);
     }
     
+    function centerTopLabel(color, label, dc) {
+        dc.setColor(color, Gfx.COLOR_TRANSPARENT);
+    	dc.drawText(getMidWidth(dc), dc.getHeight()/14, Gfx.FONT_MEDIUM, label, Gfx.TEXT_JUSTIFY_CENTER);
+    }
+    
+    // Display text at the center bottom of the screen
     function centerBottom(color, txt, dc) {
-    	dc.setColor(color, backgroundColor);
+    	dc.setColor(color, Gfx.COLOR_TRANSPARENT);
         dc.drawText(getMidWidth(dc), dc.getHeight()*4/7, Gfx.FONT_NUMBER_HOT, txt, Gfx.TEXT_JUSTIFY_CENTER);
     }
+    
+    function centerBottomLabel(color, label, dc) {
+        dc.setColor(color, Gfx.COLOR_TRANSPARENT);
+    	dc.drawText(getMidWidth(dc), dc.getHeight()/2, Gfx.FONT_MEDIUM, label, Gfx.TEXT_JUSTIFY_CENTER);    	
+    }
+
+	// Places a text value into the top-left point    
+    function topLeft(color, txt, dc) {
+    	dc.setColor(color, Gfx.COLOR_TRANSPARENT);
+    	dc.drawText(dc.getWidth()/3, dc.getHeight()/6, Gfx.FONT_LARGE, txt, Gfx.TEXT_JUSTIFY_CENTER);
+    }
+
+	// Places a time value into the top-right corner
+	function topRight(color, txt, dc) {
+        dc.setColor(color, Gfx.COLOR_TRANSPARENT);
+        dc.drawText(dc.getWidth() * 2/3, dc.getHeight()/6, Gfx.FONT_LARGE, txt, Gfx.TEXT_JUSTIFY_CENTER);
+	}
+
 
 	// Create a horizontal divider on screen
     function hDivider(color, x, y, len, dc) {

@@ -21,6 +21,7 @@ using Toybox.Graphics as Gfx;
 using Toybox.System as Sys;
 
 using VibrationController as Vib;
+using HelperFunctions as func;
 using ViewDrawables as draw;
 using RefreshTimer;
 using ActivityTracking as Tracker;
@@ -55,10 +56,8 @@ class DeviceInfoView extends Ui.View {
     function drawScreen(dc) {
         draw.clearScreen(dc);
 
-		var bat = Sys.getSystemStats().battery;
-
-        draw.centerTopClock(Gfx.COLOR_WHITE, dc);
-        draw.centerBottom(Gfx.COLOR_WHITE, Lang.format("$1$%", [bat.format("%02.0f")]), dc);
+        drawTime(dc);
+        drawBattery(dc);
         drawDividers(dc);
         draw.gpsRing(dc);
     }
@@ -74,4 +73,23 @@ class DeviceInfoView extends Ui.View {
 
         draw.hDivider(color, x, y, length, dc);
     }
+    
+    function drawTime(dc) {
+    	draw.centerTop(Gfx.COLOR_WHITE, func.clockFace(), dc);
+    }
+    
+    function drawBattery(dc) {
+    	var batColor = Gfx.COLOR_WHITE;
+    	var bat = Sys.getSystemStats().battery;
+    	var batTxt = Lang.format("$1$%", [bat.format("%02.0f")]);
+    	
+    	if (bat <= 10.0) {
+    		batColor = Gfx.COLOR_RED;
+		} else if (bat <= 25.0) {
+			batColor = Gfx.COLOR_YELLOW;
+		}
+		
+		draw.centerBottomLabel(Gfx.COLOR_WHITE, "Battery", dc);
+		draw.centerBottom(batColor, batTxt, dc);
+	}
 }
