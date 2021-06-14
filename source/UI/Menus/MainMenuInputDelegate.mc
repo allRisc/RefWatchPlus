@@ -36,6 +36,11 @@ class MainMenuInputDelegate extends Ui.MenuInputDelegate {
         					 new TimingMenuInputDelegate(), 
         					 Ui.SLIDE_LEFT );
 			 	break;
+		 	case :NCAAMode_MenuID       :
+                Ui.pushView(new YesNoPicker(Ui.loadResource(Rez.Strings.NCAAMode_MenuLabel), Ui.loadResource(Rez.Strings.NCAAMode_StorageID)),
+                            new YesNoPickerDelegate(Ui.loadResource(Rez.Strings.NCAAMode_StorageID)),
+                            Ui.SLIDE_LEFT);
+                break;
  			case :BatterySaver_MenuID       :
                 Ui.pushView(new YesNoPicker(Ui.loadResource(Rez.Strings.BatterySaver_MenuLabel), Ui.loadResource(Rez.Strings.BatterySaver_StorageID)),
                             new YesNoPickerDelegate(Ui.loadResource(Rez.Strings.BatterySaver_StorageID)),

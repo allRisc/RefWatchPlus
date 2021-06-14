@@ -114,14 +114,19 @@ module VibrationController {
     var prevElapsedTime = 0;
     function periodComplete() {
         var perLen = func.min2sec(MatchData.getCurPeriod().getPeriodLength());
+        var elapsedTime = MatchData.getCurPeriod().getSecElapsed();
+        
+        if (AppData.getNCAAMode()) {
+        	elapsedTime = MatchData.getCurPeriod().getSecElapsedNCAA();
+        }
 
         if ( (prevElapsedTime < perLen) &&
-             (MatchData.getCurPeriod().getSecElapsed() >= perLen) ) {
-            prevElapsedTime = MatchData.getCurPeriod().getSecElapsed();
+             (elapsedTime >= perLen) ) {
+            prevElapsedTime = elapsedTime;
             return true;
         }
 
-        prevElapsedTime = MatchData.getCurPeriod().getSecElapsed();
+        prevElapsedTime = elapsedTime;
         return false;
     }
 

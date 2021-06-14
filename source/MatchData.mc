@@ -116,7 +116,11 @@ module MatchData {
                              * func.min2sec(AppData.getOTPeriodLength()) );
         }
 
-        pTime = pTime + curPeriod.getSecElapsed();
+		if(!AppData.getNCAAMode()) {
+        	pTime = pTime + curPeriod.getSecElapsed();
+    	} else {
+    		pTime = pTime + curPeriod.getSecElapsedNCAA();
+		}
         return pTime;
     }
 }

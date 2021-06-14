@@ -33,8 +33,8 @@ class GenericDelegate extends Ui.InputDelegate {
 
 	// Handle a keyed input
     function onKey(evt) {
-        var keynum = Lang.format("K $1$", [evt.getKey()]);
-        Sys.println(keynum);
+        // var keynum = Lang.format("K $1$", [evt.getKey()]);
+        // Sys.println(keynum);
 
 		// If the start key is hit
         if (evt.getKey() == Ui.KEY_ENTER) {

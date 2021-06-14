@@ -61,6 +61,12 @@ class Period {
     function getSecElapsed() {
         return func.msec2sec(getMSecElapsed());
     }
+    
+    // Get the number of seconds since the match started in NCAA mode (without stoppages)
+    // @return [Number] the number of seconds since the start of the match (discounting stoppage)
+    function getSecElapsedNCAA() {
+    	return func.msec2sec(getMSecElapsed());
+    }
 
     // Get the number of milliseconds until the end of the current period
     // @return [Number] The number of milliseconds until the end of the current period

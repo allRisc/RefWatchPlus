@@ -21,6 +21,7 @@ using Toybox.WatchUi as Ui;
 
 class AppData {
 	hidden static var batterySaver;
+	hidden static var ncaaMode;
     hidden static var periodLength;
     hidden static var numPeriods;
     hidden static var breakLength;
@@ -36,6 +37,11 @@ class AppData {
     	batterySaver   = Store.getValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID));
         if (batterySaver == null) {
             setBatterySaver(false);
+        }
+        
+        ncaaMode       = Store.getValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID));
+        if (ncaaMode == null) {
+            setNCAAMode(false);
         }
     
         periodLength   = Store.getValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID));
@@ -71,6 +77,8 @@ class AppData {
     }
 
     static function refreshAppData() {
+        ncaaMode       = Store.getValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID));
+    	batterySaver   = Store.getValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID));
         periodLength   = Store.getValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID));
         numPeriods     = Store.getValue(Ui.loadResource(Rez.Strings.NumPeriods_StorageID));
         breakLength    = Store.getValue(Ui.loadResource(Rez.Strings.BreakLength_StorageID));
@@ -83,6 +91,9 @@ class AppData {
         switch (id) {
         	case Ui.loadResource(Rez.Strings.BatterySaver_StorageID)   :
         		return batterySaver;
+        		break;
+    		case Ui.loadResource(Rez.Strings.NCAAMode_StorageID)   :
+        		return ncaaMode;
         		break;
             case Ui.loadResource(Rez.Strings.PeriodLength_StorageID)   :
                 return periodLength;
@@ -110,6 +121,9 @@ class AppData {
         	case Ui.loadResource(Rez.Strings.BatterySaver_StorageID)   :
         		setBatterySaver(val);
         		break;
+    		case Ui.loadResource(Rez.Strings.NCAAMode_StorageID)   :
+        		setNCAAMode(val);
+        		break;
             case Ui.loadResource(Rez.Strings.PeriodLength_StorageID)   :
                 setPeriodLength(val);
                 break;
@@ -134,6 +148,10 @@ class AppData {
     // Getter Methods
 	static function getBatterySaver() {
 		return batterySaver;
+	}
+	
+	static function getNCAAMode() {
+		return ncaaMode;
 	}
 
     static function getPeriodLength() {
@@ -164,6 +182,11 @@ class AppData {
 	static function setBatterySaver(val) {
 		batterySaver = val;
         Store.setValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID), val);		
+	}
+	
+	static function setNCAAMode(val) {
+		ncaaMode = val;
+		Store.setValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID), val);
 	}
 
     static function setPeriodLength(val) {

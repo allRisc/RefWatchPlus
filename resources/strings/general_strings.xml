@@ -2,6 +2,7 @@
     <string id="AppName">RefWatch+</string>
 
 	<string id="BatterySaver_StorageID"  >batter_saver</string>
+	<string id="NCAAMode_StorageID"  >ncaa_mode</string>
 
     <string id="PeriodLength_StorageID"  >period_len</string>    
     <string id="NumPeriods_StorageID"    >num_periods</string>

@@ -73,6 +73,7 @@ module RefreshTimer {
     		stopTimer();
     		startTimer();
     		modeUpdated = false;
+    		Sys.println("Mode updated");
     	}
         Ui.requestUpdate();
     }

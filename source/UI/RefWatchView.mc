@@ -32,10 +32,6 @@ using RefreshTimer;
 
 class RefWatchView extends Ui.View {
 
-    const CALLBACK_TIMER = 100;
-
-    var updateTimer;
-
     function initialize() {
         View.initialize();
     }
@@ -141,7 +137,7 @@ class RefWatchView extends Ui.View {
         }
 
         draw.topLeft(timeRemainingColor, func.sec2timer(timeRemaining), dc);
-        draw.center(timeRemainingColor, func.sec2timer(timeElapsed), dc);
+        draw.center(timeElapsedColor, func.sec2timer(timeElapsed), dc);
         draw.topRight(curStoppageColor, func.sec2timer(curStoppage), dc);
 
         draw.period(curPeriodColor, curPeriod, dc);

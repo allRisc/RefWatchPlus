@@ -80,7 +80,13 @@ class PlayingPeriod extends Period {
         return func.msec2sec(getMSecStoppage());
     }
 
-        // Determine if the session is currently recording stoppage time
+    // Get the number of seconds since the match started in NCAA mode (without stoppages)
+    // @return [Number] the number of seconds since the start of the match (discounting stoppage)
+    function getSecElapsedNCAA() {
+    	return func.msec2sec(getMSecElapsed() - getMSecStoppage());
+    }	
+
+    // Determine if the session is currently recording stoppage time
     // @return [Boolean] True if currently recording stoppage time
     function isTrackingStoppage() {
         return trackingStoppage;
