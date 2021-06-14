@@ -21,94 +21,33 @@ using Toybox.System as Sys;
 using HelperFunctions as func;
 using VibrationController as Vib;
 
-class RefWatchInputDelegate extends Ui.InputDelegate {
-
-    var escPressTime;
+class RefWatchInputDelegate extends GenericDelegate {
 
     function initialize() {
-        InputDelegate.initialize();
-
-        escPressTime = 0;
+        GenericDelegate.initialize();
     }
 
 	// Handle a keyed input
     function onKey(evt) {
-        // var keynum = Lang.format("K $1$", [evt.getKey()]);
-        // Sys.println(keynum);
-
-		// If the start key is hit
-        if (evt.getKey() == Ui.KEY_ENTER) {
-            // Start the match
-            if (!MatchData.isStarted()) {
-                Vib.startStrongVib();
-                MatchData.startMatch();
-                MatchData.getCurPeriod().start();
-                Ui.requestUpdate();
-                return true;
-            }
-            else if (MatchData.isPlayingPeriod()) {
-            	// If the playing period is already underway toggle the stoppage counter
-            	// Else start it
-                if ( MatchData.getCurPeriod().isStarted() ) {
-                    MatchData.getCurPeriod().stoppage();
-                } else {
-                	Vib.startStrongVib();
-                    MatchData.getCurPeriod().start();
-                }
-                return true;
-            }
-
-        }
-
-		// Handle the escape key for moving to next period. Only works on double press
-        if (evt.getKey() == Ui.KEY_ESC) {
-            if (!MatchData.isStarted()) {
-                return false;
-            }
-
-            var time = Sys.getTimer();
-
-            if (time - escPressTime <= func.sec2msec(1)) {
-                MatchData.nextPeriod();
-                escPressTime = 0;
-            } else {
-                escPressTime = time;
-            }
-            return true;
-        }
-        
-        if (evt.getKey() == Ui.KEY_DOWN) {
-        	return dispMainMenu();
+        if (GenericDelegate.onKey(evt)) {
+    		return true;
+        } else if (evt.getKey() == Ui.KEY_DOWN) {
+        	return dispDevInfoView();
     	} else if (evt.getKey() == Ui.KEY_UP) {
     		return dispActivityView();
-    	}
+    	} 
 
         return false;
     }
 
-
+	// Handle a swipe input
     function onSwipe(evt) {
         if (evt.getDirection() == Ui.SWIPE_UP) {
-            return dispMainMenu();
+            return dispDevInfoView();
         } else if (evt.getDirection() == Ui.SWIPE_DOWN) {
             return dispActivityView();
         }
 
         return false;
-    }
-    
-    // Display the main menu
-    function dispMainMenu() {
-    	var MainMenu= new Rez.Menus.MainMenu();
-        Ui.pushView( MainMenu, new MainMenuInputDelegate(), Ui.SLIDE_UP );
-        Ui.requestUpdate();
-        return true;
-    }
-    
-    // Display the activity view
-    function dispActivityView() {
-   	 	Ui.pushView( new ActivityInfoView(), new ActivityInfoInputDelegate(), Ui.SLIDE_UP );
-        Ui.requestUpdate();
-    	return true;
     }
 }

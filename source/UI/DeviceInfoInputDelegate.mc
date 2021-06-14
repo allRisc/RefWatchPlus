@@ -21,7 +21,7 @@ using Toybox.System as Sys;
 using HelperFunctions as func;
 using VibrationController as Vib;
 
-class ActivityInfoInputDelegate extends GenericDelegate {
+class DeviceInfoInputDelegate extends GenericDelegate {
 
     function initialize() {
         GenericDelegate.initialize();
@@ -31,7 +31,7 @@ class ActivityInfoInputDelegate extends GenericDelegate {
     function onKey(evt) {
         if (GenericDelegate.onKey(evt)) {
     		return true;
-        } else if (evt.getKey() == Ui.KEY_DOWN) {
+        } else if (evt.getKey() == Ui.KEY_UP) {
         	return dispBack();
     	}
 

@@ -18,21 +18,20 @@
 using Toybox.WatchUi as Ui;
 using Toybox.Timer;
 using Toybox.Graphics as Gfx;
+using Toybox.System as Sys;
 
 using VibrationController as Vib;
 using ViewDrawables as draw;
 using RefreshTimer;
 using ActivityTracking as Tracker;
 
-class ActivityInfoView extends Ui.View {
-
+class DeviceInfoView extends Ui.View {
     function initialize() {
         View.initialize();
     }
 
     // Load your resources here
-    function onLayout(dc) {
-    }
+    function onLayout(dc) {}
 
     // Called when this View is brought to the foreground. Restore
     // the state of this View and prepare it to be shown. This includes
@@ -56,10 +55,11 @@ class ActivityInfoView extends Ui.View {
     function drawScreen(dc) {
         draw.clearScreen(dc);
 
-        drawDividers(dc);
+		var bat = Sys.getSystemStats().battery;
+
         draw.centerTopClock(Gfx.COLOR_WHITE, dc);
-        draw.bottomLeftHeartRate(Gfx.COLOR_WHITE, Tracker.getCurHeartRate(), dc);
-        draw.bottomRightDist(Gfx.COLOR_WHITE, Tracker.getCurDistMi(), dc);
+        draw.centerBottom(Gfx.COLOR_WHITE, Lang.format("$1$%", [bat.format("%02.0f")]), dc);
+        drawDividers(dc);
         draw.gpsRing(dc);
     }
 
@@ -73,6 +73,5 @@ class ActivityInfoView extends Ui.View {
         var length = dc.getWidth();
 
         draw.hDivider(color, x, y, length, dc);
-        draw.vDivider(color, x, y * 3 / 2, length/2, dc);
     }
 }

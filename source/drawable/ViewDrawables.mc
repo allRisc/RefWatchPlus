@@ -45,7 +45,7 @@ module ViewDrawables {
         dc.setColor(backgroundColor, backgroundColor);
         dc.clear();
     }
-
+	
     function gpsRing(dc) {
         var gpsinfos = Pos.getInfo();
 
@@ -164,6 +164,16 @@ module ViewDrawables {
         var curPeriod = Lang.format("Per: $1$", [per]);
         dc.setColor(color, backgroundColor);
         dc.drawText(getMidWidth(dc), dc.getHeight()*2/3, Gfx.FONT_MEDIUM, curPeriod, Gfx.TEXT_JUSTIFY_CENTER);
+    }
+    
+    function centerTop(color, txt, dc) {
+    	dc.setColor(color, backgroundColor);
+        dc.drawText(getMidWidth(dc), dc.getHeight()/7, Gfx.FONT_NUMBER_HOT, txt, Gfx.TEXT_JUSTIFY_CENTER);
+    }
+    
+    function centerBottom(color, txt, dc) {
+    	dc.setColor(color, backgroundColor);
+        dc.drawText(getMidWidth(dc), dc.getHeight()*4/7, Gfx.FONT_NUMBER_HOT, txt, Gfx.TEXT_JUSTIFY_CENTER);
     }
 
 	// Create a horizontal divider on screen
