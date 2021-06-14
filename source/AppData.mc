@@ -39,7 +39,7 @@ class AppData {
             setBatterySaver(false);
         }
         
-        ncaaMode       = Store.getValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID));
+        ncaaMode       = Store.getValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID));
         if (ncaaMode == null) {
             setNCAAMode(false);
         }
