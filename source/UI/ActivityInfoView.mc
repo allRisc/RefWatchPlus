@@ -100,7 +100,19 @@ class ActivityInfoView extends Ui.View {
     }
     
     function drawDist(dc) {
-    	draw.centerBottomLabel(draw.DEFAULT_COLOR, "Distance (mi):", dc);
-    	draw.centerBottom(draw.DEFAULT_COLOR, Tracker.getCurDistMi().format("%02.1f"), dc);
+    	var devSettings = Sys.getDeviceSettings();
+    	var label;
+    	var dist;
+    	
+    	if (devSettings.distanceUnits == Sys.UNIT_STATUTE) {
+    		label = "Distance (mi)";
+    		dist = Tracker.getCurDistMi();
+    	} else {
+    		label = "Distance (km)";
+    		dist = Tracker.getCurDistKM();
+    	}
+    
+    	draw.centerBottomLabel(draw.DEFAULT_COLOR, label, dc);
+    	draw.centerBottom(draw.DEFAULT_COLOR, dist.format("%02.1f"), dc);
     }
 }
