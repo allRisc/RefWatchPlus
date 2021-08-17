@@ -68,7 +68,7 @@ class ActivityInfoView extends Ui.View {
     // Functions for drawing                                                     //
     ///////////////////////////////////////////////////////////////////////////////
     function drawDividers(dc) {
-        var color  = Gfx.COLOR_WHITE;
+        var color  = draw.DEFAULT_COLOR;
         var x      = draw.getMidWidth(dc);
         var y      = draw.getMidHeight(dc);
         var length = dc.getWidth();
@@ -78,11 +78,11 @@ class ActivityInfoView extends Ui.View {
     
     function drawHR(dc) {
 		var hr = Tracker.getCurHeartRate();
-		var hrColor = Gfx.COLOR_WHITE;
+		var hrColor = draw.DEFAULT_COLOR;
 		var zoneInfo = Usr.getHeartRateZones(Usr.HR_ZONE_SPORT_RUNNING);
 		
     	if (hr <= zoneInfo[0]) {
-    		hrColor = Gfx.COLOR_WHITE;
+    		hrColor = draw.DEFAULT_COLOR;
     	} else if (hr <= zoneInfo [1]) {
     		hrColor = Gfx.COLOR_LT_GRAY;
     	} else if (hr <= zoneInfo[2]) {
@@ -95,12 +95,12 @@ class ActivityInfoView extends Ui.View {
     		hrColor = Gfx.COLOR_RED;
     	}
     
-        draw.centerTopLabel(Gfx.COLOR_WHITE, "HR (bpm):", dc);
+        draw.centerTopLabel(draw.DEFAULT_COLOR, "HR (bpm):", dc);
         draw.centerTop(hrColor, hr.toString(), dc);
     }
     
     function drawDist(dc) {
-    	draw.centerBottomLabel(Gfx.COLOR_WHITE, "Distance (mi):", dc);
-    	draw.centerBottom(Gfx.COLOR_WHITE, Tracker.getCurDistMi().format("%02.1f"), dc);
+    	draw.centerBottomLabel(draw.DEFAULT_COLOR, "Distance (mi):", dc);
+    	draw.centerBottom(draw.DEFAULT_COLOR, Tracker.getCurDistMi().format("%02.1f"), dc);
     }
 }

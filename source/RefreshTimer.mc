@@ -63,7 +63,7 @@ module RefreshTimer {
         running = false;
     }
 
-	function updateMode(batterySaver) {
+	function updateBatterSaver(batterySaver) {
 		modeUpdated = true;
 		batterySaverMode = batterySaver;
 	}
@@ -73,7 +73,6 @@ module RefreshTimer {
     		stopTimer();
     		startTimer();
     		modeUpdated = false;
-    		Sys.println("Mode updated");
     	}
         Ui.requestUpdate();
     }

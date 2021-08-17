@@ -79,9 +79,9 @@ class RefWatchView extends Ui.View {
         var curStoppage   = 0;
 
         // Set the timing information color based on current state of the timer
-        var timeRemainingColor = Gfx.COLOR_WHITE;
-        var timeElapsedColor   = Gfx.COLOR_WHITE;
-        var curStoppageColor   = Gfx.COLOR_WHITE;
+        var timeRemainingColor = draw.DEFAULT_COLOR;
+        var timeElapsedColor   = draw.DEFAULT_COLOR;
+        var curStoppageColor   = draw.DEFAULT_COLOR;
         var secRingColor       = draw.getGPSQualityColor(Pos.getInfo());
 
         draw.topLeft(timeRemainingColor, func.sec2timer(timeRemaining), dc);
@@ -95,8 +95,8 @@ class RefWatchView extends Ui.View {
         var curPeriod     = MatchData.getCurPeriodNum();
 
         // Set the timing information color based on current state of the timer
-        var timeRemainingColor = Gfx.COLOR_WHITE;
-        var curPeriodColor     = Gfx.COLOR_WHITE;
+        var timeRemainingColor = draw.DEFAULT_COLOR;
+        var curPeriodColor     = draw.DEFAULT_COLOR;
 
         if (MatchData.getCurPeriod().isNearComplete()) {
             timeRemainingColor = Gfx.COLOR_RED;
@@ -114,10 +114,10 @@ class RefWatchView extends Ui.View {
         var periodTime;
 
         // Set the timing information color based on current state of the timer
-        var timeRemainingColor = Gfx.COLOR_WHITE;
-        var timeElapsedColor   = Gfx.COLOR_WHITE;
-        var curStoppageColor   = Gfx.COLOR_WHITE;
-        var curPeriodColor     = Gfx.COLOR_WHITE;
+        var timeRemainingColor = draw.DEFAULT_COLOR;
+        var timeElapsedColor   = draw.DEFAULT_COLOR;
+        var curStoppageColor   = draw.DEFAULT_COLOR;
+        var curPeriodColor     = draw.DEFAULT_COLOR;
         var ringColor          = Gfx.COLOR_GREEN;
 
         if (MatchData.getCurPeriod().isInStoppage()) {

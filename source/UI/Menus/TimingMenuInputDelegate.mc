@@ -18,14 +18,14 @@
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
 
-class TimingMenuInputDelegate extends Ui.MenuInputDelegate {
+class TimingMenuInputDelegate extends Ui.Menu2InputDelegate {
 
     function initialize() {
-        MenuInputDelegate.initialize();
+        Menu2InputDelegate.initialize();
     }
 
-    function onMenuItem(item) {
-        switch (item) {
+    function onSelect(item) {
+        switch (item.getId()) {
             case :PeriodLength_MenuID   :
                 Ui.pushView(new NumPicker(Ui.loadResource(Rez.Strings.PeriodLength_MenuLabel), Ui.loadResource(Rez.Strings.PeriodLength_StorageID)),
                             new NumPickerDelegate(Ui.loadResource(Rez.Strings.PeriodLength_StorageID)),

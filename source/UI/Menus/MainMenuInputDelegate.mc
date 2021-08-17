@@ -18,34 +18,37 @@
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
 
-class MainMenuInputDelegate extends Ui.MenuInputDelegate {
+using Menus;
+
+class MainMenuInputDelegate extends Ui.Menu2InputDelegate {
 
     function initialize() {
-        MenuInputDelegate.initialize();
+        Menu2InputDelegate.initialize();
     }
 
-    function onMenuItem(item) {
-        switch (item) {
+    function onSelect(item) {
+        switch (item.getId()) {
             case :EndMatch_MenuID       :
                 Ui.pushView(new Ui.Confirmation("Quit Match?"),
                             new ExitConfirmationDelegate(),
                             Ui.SLIDE_IMMEDIATE);
                 break;
         	case :TimingMenu_MenuID     :
-        		Ui.pushView( new Rez.Menus.TimingMenu(), 
+        		Ui.pushView( Menus.getTimingMenu(), 
         					 new TimingMenuInputDelegate(), 
         					 Ui.SLIDE_LEFT );
 			 	break;
 		 	case :NCAAMode_MenuID       :
-                Ui.pushView(new YesNoPicker(Ui.loadResource(Rez.Strings.NCAAMode_MenuLabel), Ui.loadResource(Rez.Strings.NCAAMode_StorageID)),
-                            new YesNoPickerDelegate(Ui.loadResource(Rez.Strings.NCAAMode_StorageID)),
-                            Ui.SLIDE_LEFT);
+		 		AppData.setNCAAMode(item.isEnabled());
                 break;
- 			case :BatterySaver_MenuID       :
-                Ui.pushView(new YesNoPicker(Ui.loadResource(Rez.Strings.BatterySaver_MenuLabel), Ui.loadResource(Rez.Strings.BatterySaver_StorageID)),
-                            new YesNoPickerDelegate(Ui.loadResource(Rez.Strings.BatterySaver_StorageID)),
-                            Ui.SLIDE_LEFT);
+ 			case :BatterySaver_MenuID   :
+                AppData.setBatterySaver(item.isEnabled());
                 break;
+            case :DarkMode_MenuID       :
+            	AppData.setDarkMode(item.isEnabled());
+				break;
+			default:
+				Sys.println(item.getId());
         }
 
         Ui.requestUpdate();

@@ -26,8 +26,21 @@ using Toybox.Test;
 using HelperFunctions as func;
 
 module ViewDrawables {
-    const backgroundColor = Gfx.COLOR_BLACK;
+    // Custom Declarations for coloring
+    var backgroundColor = Gfx.COLOR_BLACK;
+	var DEFAULT_COLOR   = Gfx.COLOR_WHITE;
+    
     const dividerWidth    = 3;
+
+	function setDarkMode(darkMode) {
+		if (darkMode) {
+			backgroundColor = Gfx.COLOR_BLACK;
+			DEFAULT_COLOR   = Gfx.COLOR_WHITE;
+		} else {
+			backgroundColor = Gfx.COLOR_WHITE;
+			DEFAULT_COLOR   = Gfx.COLOR_BLACK;
+		}
+	}
 
     function getMidWidth(dc) {
         return dc.getWidth() / 2.0 + 0.5;

@@ -18,10 +18,16 @@
 using Toybox.Application.Storage as Store;
 using Toybox.Test;
 using Toybox.WatchUi as Ui;
+using Toybox.Graphics as Gfx;
+
+using RefreshTimer as RTime;
+using ViewDrawables as draw;
 
 class AppData {
 	hidden static var batterySaver;
 	hidden static var ncaaMode;
+	hidden static var darkMode;
+	
     hidden static var periodLength;
     hidden static var numPeriods;
     hidden static var breakLength;
@@ -34,42 +40,47 @@ class AppData {
     }
 
     static function initAppData() {
-    	batterySaver   = Store.getValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID));
+    	batterySaver    = Store.getValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID));
         if (batterySaver == null) {
             setBatterySaver(false);
         }
         
-        ncaaMode       = Store.getValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID));
+        ncaaMode        = Store.getValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID));
         if (ncaaMode == null) {
             setNCAAMode(false);
         }
     
-        periodLength   = Store.getValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID));
+		darkMode        = Store.getValue(Ui.loadResource(Rez.Strings.DarkMode_StorageID));
+		if (darkMode == null) {
+			setDarkMode(false);
+		}
+    
+        periodLength    = Store.getValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID));
         if (periodLength == null) {
             setPeriodLength(45);
         }
 
-        numPeriods     = Store.getValue(Ui.loadResource(Rez.Strings.NumPeriods_StorageID));
+        numPeriods      = Store.getValue(Ui.loadResource(Rez.Strings.NumPeriods_StorageID));
         if (numPeriods == null) {
             setNumPeriods(2);
         }
 
-        breakLength    = Store.getValue(Ui.loadResource(Rez.Strings.BreakLength_StorageID));
+        breakLength     = Store.getValue(Ui.loadResource(Rez.Strings.BreakLength_StorageID));
         if (breakLength == null) {
             setBreakLength(15);
         }
 
-        breakAlert     = Store.getValue(Ui.loadResource(Rez.Strings.BreakAlert_StorageID));
+        breakAlert      = Store.getValue(Ui.loadResource(Rez.Strings.BreakAlert_StorageID));
         if (breakAlert == null) {
             setBreakAlert(3);
         }
 
-        otPeriodLength = Store.getValue(Ui.loadResource(Rez.Strings.OTPeriodLength_StorageID));
+        otPeriodLength  = Store.getValue(Ui.loadResource(Rez.Strings.OTPeriodLength_StorageID));
         if (otPeriodLength == null) {
             setOTPeriodLength(15);
         }
 
-        numOTPeriods   = Store.getValue(Ui.loadResource(Rez.Strings.NumOTPeriods_StorageID));
+        numOTPeriods    = Store.getValue(Ui.loadResource(Rez.Strings.NumOTPeriods_StorageID));
         if (numOTPeriods == null) {
             setNumOTPeriods(0);
         }
@@ -78,7 +89,13 @@ class AppData {
 
     static function refreshAppData() {
         ncaaMode       = Store.getValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID));
+    	
     	batterySaver   = Store.getValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID));
+    	RTime.updateBatterSaver(batterySaver);
+    	
+    	darkMode       = Store.getValue(Ui.loadResource(Rez.Strings.DarkMode_StorageID));
+		draw.setDarkMode(darkMode);
+    	
         periodLength   = Store.getValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID));
         numPeriods     = Store.getValue(Ui.loadResource(Rez.Strings.NumPeriods_StorageID));
         breakLength    = Store.getValue(Ui.loadResource(Rez.Strings.BreakLength_StorageID));
@@ -94,6 +111,9 @@ class AppData {
         		break;
     		case Ui.loadResource(Rez.Strings.NCAAMode_StorageID)   :
         		return ncaaMode;
+        		break;
+    		case Ui.loadResource(Rez.Strings.DarkMode_StorageID)   :
+        		return darkMode;
         		break;
             case Ui.loadResource(Rez.Strings.PeriodLength_StorageID)   :
                 return periodLength;
@@ -124,6 +144,9 @@ class AppData {
     		case Ui.loadResource(Rez.Strings.NCAAMode_StorageID)   :
         		setNCAAMode(val);
         		break;
+    		case Ui.loadResource(Rez.Strings.DarkMode_StorageID)   :
+        		setDarkMode(val);
+        		break;
             case Ui.loadResource(Rez.Strings.PeriodLength_StorageID)   :
                 setPeriodLength(val);
                 break;
@@ -153,6 +176,10 @@ class AppData {
 	static function getNCAAMode() {
 		return ncaaMode;
 	}
+	
+	static function getDarkMode() {
+		return darkMode;
+	}
 
     static function getPeriodLength() {
         return periodLength;
@@ -181,12 +208,19 @@ class AppData {
 	// Setter Methods
 	static function setBatterySaver(val) {
 		batterySaver = val;
+		RTime.updateBatterSaver(val);
         Store.setValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID), val);		
 	}
 	
 	static function setNCAAMode(val) {
 		ncaaMode = val;
 		Store.setValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID), val);
+	}
+	
+	static function setDarkMode(val) {
+		darkMode= val;
+		draw.setDarkMode(val);
+		Store.setValue(Ui.loadResource(Rez.Strings.DarkMode_StorageID), val);
 	}
 
     static function setPeriodLength(val) {

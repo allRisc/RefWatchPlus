@@ -66,7 +66,7 @@ class DeviceInfoView extends Ui.View {
     // Functions for drawing                                                     //
     ///////////////////////////////////////////////////////////////////////////////
     function drawDividers(dc) {
-        var color  = Gfx.COLOR_WHITE;
+        var color  = draw.DEFAULT_COLOR;
         var x      = draw.getMidWidth(dc);
         var y      = draw.getMidHeight(dc);
         var length = dc.getWidth();
@@ -75,11 +75,11 @@ class DeviceInfoView extends Ui.View {
     }
     
     function drawTime(dc) {
-    	draw.centerTop(Gfx.COLOR_WHITE, func.clockFace(), dc);
+    	draw.centerTop(draw.DEFAULT_COLOR, func.clockFace(), dc);
     }
     
     function drawBattery(dc) {
-    	var batColor = Gfx.COLOR_WHITE;
+    	var batColor = draw.DEFAULT_COLOR;
     	var bat = Sys.getSystemStats().battery;
     	var batTxt = Lang.format("$1$%", [bat.format("%02.0f")]);
     	
@@ -89,7 +89,7 @@ class DeviceInfoView extends Ui.View {
 			batColor = Gfx.COLOR_YELLOW;
 		}
 		
-		draw.centerBottomLabel(Gfx.COLOR_WHITE, "Battery", dc);
+		draw.centerBottomLabel(draw.DEFAULT_COLOR, "Battery", dc);
 		draw.centerBottom(batColor, batTxt, dc);
 	}
 }

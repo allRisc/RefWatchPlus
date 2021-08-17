@@ -21,6 +21,8 @@ using Toybox.Application;
 using Toybox.System as Sys;
 using Toybox.Test;
 
+using ViewDrawables as draw;
+
 class NumPicker extends Ui.Picker {
 
     function initialize(titleName, prop) {

@@ -1,17 +1,2 @@
 <menus>
-	<menu id="MainMenu">
-	    <menu-item id="EndMatch_MenuID"       label="@Strings.EndMatch_MenuLabel"      />
-	    <menu-item id="TimingMenu_MenuID"     label="@Strings.TimingMenu_MenuLabel"    />
-	    <menu-item id="NCAAMode_MenuID"       label="@Strings.NCAAMode_MenuLabel"      />
-	    <menu-item id="BatterySaver_MenuID"   label="@Strings.BatterySaver_MenuLabel"  />
-	</menu>
-
-	<menu id="TimingMenu">
-	    <menu-item id="PeriodLength_MenuID"   label="@Strings.PeriodLength_MenuLabel"  />
-	    <menu-item id="NumPeriods_MenuID"     label="@Strings.NumPeriods_MenuLabel"    />
-   	    <menu-item id="BreakLength_MenuID"    label="@Strings.BreakLength_MenuLabel"   />
-   	    <menu-item id="BreakAlert_MenuID"     label="@Strings.BreakAlert_MenuLabel"    />
-	    <menu-item id="OTPeriodLength_MenuID" label="@Strings.OTPeriodLength_MenuLabel"/>
-	    <menu-item id="NumOTPeriods_MenuID"   label="@Strings.NumOTPeriods_MenuLabel"  />
-	</menu>
 </menus>

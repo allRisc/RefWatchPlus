@@ -20,6 +20,7 @@ using Toybox.System as Sys;
 
 using HelperFunctions as func;
 using VibrationController as Vib;
+using Menus;
 
 class GenericDelegate extends Ui.InputDelegate {
 
@@ -86,7 +87,7 @@ class GenericDelegate extends Ui.InputDelegate {
     
     // Display the main menu
     function dispMainMenu() {
-    	var MainMenu= new Rez.Menus.MainMenu();
+    	var MainMenu = Menus.getMainMenu(); //new Rez.Menus.MainMenu(); 
         Ui.pushView( MainMenu, new MainMenuInputDelegate(), Ui.SLIDE_RIGHT );
         Ui.requestUpdate();
         return true;
