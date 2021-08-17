@@ -39,7 +39,7 @@ class DeviceInfoInputDelegate extends GenericDelegate {
     }
 
     function onSwipe(evt) {
-        if (evt.getDirection() == Ui.SWIPE_UP) {
+        if (evt.getDirection() == Ui.SWIPE_DOWN) {
             return dispBack();
         }
 
