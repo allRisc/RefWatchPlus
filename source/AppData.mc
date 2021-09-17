@@ -27,6 +27,7 @@ class AppData {
 	hidden static var batterySaver;
 	hidden static var ncaaMode;
 	hidden static var darkMode;
+	hidden static var thickRing;
 	
     hidden static var periodLength;
     hidden static var numPeriods;
@@ -53,6 +54,11 @@ class AppData {
 		darkMode        = Store.getValue(Ui.loadResource(Rez.Strings.DarkMode_StorageID));
 		if (darkMode == null) {
 			setDarkMode(false);
+		}
+		
+		thickRing       = Store.getValue(Ui.loadResource(Rez.Strings.ThickRing_StorageID));
+		if (thickRing == null) {
+			setThickRing(false);
 		}
     
         periodLength    = Store.getValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID));
@@ -96,6 +102,8 @@ class AppData {
     	darkMode       = Store.getValue(Ui.loadResource(Rez.Strings.DarkMode_StorageID));
 		draw.setDarkMode(darkMode);
     	
+    	thickRing       = Store.getValue(Ui.loadResource(Rez.Strings.ThickRing_StorageID));
+    	
         periodLength   = Store.getValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID));
         numPeriods     = Store.getValue(Ui.loadResource(Rez.Strings.NumPeriods_StorageID));
         breakLength    = Store.getValue(Ui.loadResource(Rez.Strings.BreakLength_StorageID));
@@ -115,6 +123,9 @@ class AppData {
     		case Ui.loadResource(Rez.Strings.DarkMode_StorageID)   :
         		return darkMode;
         		break;
+    		case Ui.loadResource(Rez.Strings.ThickRing_StorageID) :
+    			return thickRing;
+    			break;
             case Ui.loadResource(Rez.Strings.PeriodLength_StorageID)   :
                 return periodLength;
                 break;
@@ -147,6 +158,9 @@ class AppData {
     		case Ui.loadResource(Rez.Strings.DarkMode_StorageID)   :
         		setDarkMode(val);
         		break;
+    		case Ui.loadResource(Rez.Strings.ThickRing_StorageID) :
+    			setThickRing(val);
+    			break;
             case Ui.loadResource(Rez.Strings.PeriodLength_StorageID)   :
                 setPeriodLength(val);
                 break;
@@ -179,6 +193,10 @@ class AppData {
 	
 	static function getDarkMode() {
 		return darkMode;
+	}
+	
+	static function getThickRing() {
+		return thickRing;
 	}
 
     static function getPeriodLength() {
@@ -218,9 +236,14 @@ class AppData {
 	}
 	
 	static function setDarkMode(val) {
-		darkMode= val;
+		darkMode = val;
 		draw.setDarkMode(val);
 		Store.setValue(Ui.loadResource(Rez.Strings.DarkMode_StorageID), val);
+	}
+	
+	static function setThickRing(val) {
+		thickRing = val;
+		Store.setValue(Ui.loadResource(Rez.Strings.ThickRing_StorageID), val);
 	}
 
     static function setPeriodLength(val) {

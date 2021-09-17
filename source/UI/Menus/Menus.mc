@@ -45,6 +45,10 @@ module Menus {
 			new Ui.ToggleMenuItem(Rez.Strings.DarkMode_MenuLabel, null, :DarkMode_MenuID, AppData.getDarkMode(), null)
 		);
 		
+		menu.addItem(
+			new Ui.ToggleMenuItem(Rez.Strings.ThickRing_MenuLabel, null, :ThickRing_MenuID, AppData.getThickRing(), null)
+		);
+		
 		return menu;
 	}
 	

@@ -47,6 +47,9 @@ class MainMenuInputDelegate extends Ui.Menu2InputDelegate {
             case :DarkMode_MenuID       :
             	AppData.setDarkMode(item.isEnabled());
 				break;
+			case :ThickRing_MenuID    :
+				AppData.setThickRing(item.isEnabled());
+				break;
 			default:
 				Sys.println(item.getId());
         }

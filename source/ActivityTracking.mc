@@ -29,7 +29,7 @@ module ActivityTracking {
     }
 
     function startTracking() {
-        actRecSession = ActRec.createSession( { :name=>"Match", :sport=>ActRec.SPORT_SOCCER, :subsport=>ActRec.SUB_SPORT_GENERIC } );
+        actRecSession = ActRec.createSession( { :name=>"Match", :sport=>ActRec.SPORT_RUNNING, :subsport=>ActRec.SUB_SPORT_GENERIC } );
         if( actRecSession != null ) {
             var started = false;
             do {

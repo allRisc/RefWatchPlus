@@ -117,6 +117,11 @@ module ViewDrawables {
         dc.drawArc(xCenter, yCenter, rad    , Gfx.ARC_CLOCKWISE, 90, degFinish);
         dc.drawArc(xCenter, yCenter, rad - 1, Gfx.ARC_CLOCKWISE, 90, degFinish);
         dc.drawArc(xCenter, yCenter, rad - 2, Gfx.ARC_CLOCKWISE, 90, degFinish);
+        if (AppData.getThickRing()) {
+        	dc.drawArc(xCenter, yCenter, rad - 3, Gfx.ARC_CLOCKWISE, 90, degFinish);
+        	dc.drawArc(xCenter, yCenter, rad - 4, Gfx.ARC_CLOCKWISE, 90, degFinish);
+        	dc.drawArc(xCenter, yCenter, rad - 5, Gfx.ARC_CLOCKWISE, 90, degFinish);
+        }
     }
 
 	// Place a text value in the center
