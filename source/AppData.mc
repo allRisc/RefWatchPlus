@@ -26,6 +26,7 @@ using ViewDrawables as draw;
 class AppData {
 	hidden static var batterySaver;
 	hidden static var ncaaMode;
+    hidden static var gpsOff;
 	hidden static var darkMode;
 	hidden static var thickRing;
 	
@@ -49,6 +50,11 @@ class AppData {
         ncaaMode        = Store.getValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID));
         if (ncaaMode == null) {
             setNCAAMode(false);
+        }
+
+        gpsOff        = Store.getValue(Ui.loadResource(Rez.Strings.GPSOff_StorageID));
+        if (gpsOff == null) {
+            setGPSOff(false);
         }
     
 		darkMode        = Store.getValue(Ui.loadResource(Rez.Strings.DarkMode_StorageID));
@@ -95,6 +101,9 @@ class AppData {
 
     static function refreshAppData() {
         ncaaMode       = Store.getValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID));
+
+        gpsOff         = Store.getValue(Ui.loadResource(Rez.Strings.GPSOff_StorageID));
+        setGPSOff(gpsOff);
     	
     	batterySaver   = Store.getValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID));
     	RTime.updateBatterSaver(batterySaver);
@@ -119,6 +128,9 @@ class AppData {
         		break;
     		case Ui.loadResource(Rez.Strings.NCAAMode_StorageID)   :
         		return ncaaMode;
+        		break;
+            case Ui.loadResource(Rez.Strings.GPSOff_StorageID)   :
+        		return gpsOff;
         		break;
     		case Ui.loadResource(Rez.Strings.DarkMode_StorageID)   :
         		return darkMode;
@@ -155,6 +167,9 @@ class AppData {
     		case Ui.loadResource(Rez.Strings.NCAAMode_StorageID)   :
         		setNCAAMode(val);
         		break;
+            case Ui.loadResource(Rez.Strings.GPSOff_StorageID)   :
+        		setGPSOff(val);
+        		break;
     		case Ui.loadResource(Rez.Strings.DarkMode_StorageID)   :
         		setDarkMode(val);
         		break;
@@ -190,6 +205,10 @@ class AppData {
 	static function getNCAAMode() {
 		return ncaaMode;
 	}
+
+    static function getGPSOff() {
+        return gpsOff;
+    }
 	
 	static function getDarkMode() {
 		return darkMode;
@@ -234,6 +253,11 @@ class AppData {
 		ncaaMode = val;
 		Store.setValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID), val);
 	}
+
+    static function setGPSOff(val) {
+        gpsOff = val;
+        Store.setValue(Ui.loadResource(Rez.Strings.GPSOff_StorageID), val);
+    }
 	
 	static function setDarkMode(val) {
 		darkMode = val;

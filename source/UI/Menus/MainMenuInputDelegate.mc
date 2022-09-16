@@ -41,6 +41,9 @@ class MainMenuInputDelegate extends Ui.Menu2InputDelegate {
 		 	case :NCAAMode_MenuID       :
 		 		AppData.setNCAAMode(item.isEnabled());
                 break;
+            case :GPSOff_MenuID       :
+		 		AppData.setGPSOff(item.isEnabled());
+                break;
  			case :BatterySaver_MenuID   :
                 AppData.setBatterySaver(item.isEnabled());
                 break;
