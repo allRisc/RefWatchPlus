@@ -19,6 +19,8 @@ using Toybox.Application.Storage as Store;
 using Toybox.Test;
 using Toybox.WatchUi as Ui;
 using Toybox.Graphics as Gfx;
+using Toybox.Position;
+using Toybox.Lang;
 
 using RefreshTimer as RTime;
 using ViewDrawables as draw;
@@ -256,6 +258,14 @@ class AppData {
 
     static function setGPSOff(val) {
         gpsOff = val;
+
+        var callback = new Lang.Method(RefWatchApp, :onPosition);
+        if (val) {
+            Position.enableLocationEvents(Position.LOCATION_DISABLE, callback);
+        } else {
+            Position.enableLocationEvents(Position.LOCATION_CONTINUOUS, callback);
+        }
+
         Store.setValue(Ui.loadResource(Rez.Strings.GPSOff_StorageID), val);
     }
 	
