@@ -28,7 +28,7 @@ using ViewDrawables as draw;
 class AppData {
 	hidden static var batterySaver;
 	hidden static var ncaaMode;
-    hidden static var gpsOff;
+	hidden static var gpsOff;
 	hidden static var darkMode;
 	hidden static var thickRing;
 	
@@ -131,9 +131,9 @@ class AppData {
     		case Ui.loadResource(Rez.Strings.NCAAMode_StorageID)   :
         		return ncaaMode;
         		break;
-            case Ui.loadResource(Rez.Strings.GPSOff_StorageID)   :
-        		return gpsOff;
-        		break;
+			case Ui.loadResource(Rez.Strings.GPSOff_StorageID)   :
+				return gpsOff;
+				break;
     		case Ui.loadResource(Rez.Strings.DarkMode_StorageID)   :
         		return darkMode;
         		break;
@@ -208,8 +208,8 @@ class AppData {
 		return ncaaMode;
 	}
 
-    static function getGPSOff() {
-        return gpsOff;
+	static function getGPSOff() {
+		return gpsOff;
     }
 	
 	static function getDarkMode() {
@@ -256,18 +256,18 @@ class AppData {
 		Store.setValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID), val);
 	}
 
-    static function setGPSOff(val) {
-        gpsOff = val;
+	static function setGPSOff(val) {
+		gpsOff = val;
 
-        var callback = new Lang.Method(RefWatchApp, :onPosition);
-        if (val) {
-            Position.enableLocationEvents(Position.LOCATION_DISABLE, callback);
-        } else {
-            Position.enableLocationEvents(Position.LOCATION_CONTINUOUS, callback);
-        }
+		var callback = new Lang.Method(RefWatchApp, :onPosition);
+		if (val) {
+			Position.enableLocationEvents(Position.LOCATION_DISABLE, callback);
+		} else {
+			Position.enableLocationEvents(Position.LOCATION_CONTINUOUS, callback);
+		}
 
-        Store.setValue(Ui.loadResource(Rez.Strings.GPSOff_StorageID), val);
-    }
+		Store.setValue(Ui.loadResource(Rez.Strings.GPSOff_StorageID), val);
+	}
 	
 	static function setDarkMode(val) {
 		darkMode = val;
