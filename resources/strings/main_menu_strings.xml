@@ -4,6 +4,7 @@
     <string id="EndMatch_MenuLabel"       >End Match</string>
     <string id="TimingMenu_MenuLabel"     >Match Times</string>
     <string id="BatterySaver_MenuLabel"   >Battery Saver</string>
+    <string id="ReminderInterval_MenuLabel"       >Reminder Interval</string>
     <string id="NCAAMode_MenuLabel"       >NCAA Mode</string>
     <string id="DarkMode_MenuLabel"       >Dark Mode</string>
     <string id="ThickRing_MenuLabel"      >Thick Time Ring</string>
