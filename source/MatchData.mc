@@ -43,13 +43,20 @@ module MatchData {
         if (playingPeriod == 0) {
             nextPeriod();
 
-            Tracker.startTracking();
+            // If the Separate Activities option is on, then
+            // tracking is managed within the PlayingPeriod.
+            // Otherwise start tracking here.
+            if (! AppData.getSeparateActivities()) {
+                Tracker.startTracking();
+            }
         }
     }
 
     // Function which completely ends the match
     function stopMatch() {
-        Tracker.endTracking();
+        if (Tracker.isActiveSession()) {
+            Tracker.endTracking();
+        }
 
         initMatchData();
     }
@@ -83,6 +90,12 @@ module MatchData {
         } else {
             stopMatch();
             return;
+        }
+
+        // If we are not treating each period as a separate
+        // activity, then we'll use laps instead.
+        if (! AppData.getSeparateActivities()) {
+            Tracker.addLap();
         }
     }
 

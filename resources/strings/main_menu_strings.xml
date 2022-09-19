@@ -7,4 +7,5 @@
     <string id="NCAAMode_MenuLabel"       >NCAA Mode</string>
     <string id="DarkMode_MenuLabel"       >Dark Mode</string>
     <string id="ThickRing_MenuLabel"      >Thick Time Ring</string>
+	<string id="SeparateActivities_MenuLabel">Separate Activities</string>
 </strings>

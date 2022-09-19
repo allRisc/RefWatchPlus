@@ -59,6 +59,16 @@ module ActivityTracking {
         actRecSession = null;
     }
 
+    function isActiveSession() {
+        return (actRecSession != null);
+    }
+
+    function addLap() {
+        if (isActiveSession()) {
+            actRecSession.addLap();
+        }
+    }
+
     function getCurHeartRate() {
         var info = Act.getActivityInfo().currentHeartRate;
         if (info != null) {
