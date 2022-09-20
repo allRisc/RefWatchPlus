@@ -159,7 +159,7 @@ module VibrationController {
     function stoppageTrackingReminder() {
 
         if (MatchData.getCurPeriod().isTrackingStoppage()) {
-            if (MatchData.getCurPeriod().getSecStoppage() % 10 == 0) {
+            if (MatchData.getCurPeriod().getSecStoppage() % AppData.getReminderInterval() == 0) {
                 return true;
             }
         }

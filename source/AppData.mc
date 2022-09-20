@@ -24,9 +24,11 @@ using Toybox.Lang;
 
 using RefreshTimer as RTime;
 using ViewDrawables as draw;
+using Toybox.System;
 
 class AppData {
 	hidden static var batterySaver;
+    hidden static var reminderInterval;
 	hidden static var ncaaMode;
 	hidden static var gpsOff;
 	hidden static var darkMode;
@@ -47,6 +49,11 @@ class AppData {
     	batterySaver    = Store.getValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID));
         if (batterySaver == null) {
             setBatterySaver(false);
+        }
+
+        reminderInterval      = Store.getValue(Ui.loadResource(Rez.Strings.ReminderInterval_StorageID));
+        if (reminderInterval == null) {
+            setReminderInterval(10);
         }
         
         ncaaMode        = Store.getValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID));
@@ -115,6 +122,7 @@ class AppData {
     	
     	thickRing       = Store.getValue(Ui.loadResource(Rez.Strings.ThickRing_StorageID));
     	
+        reminderInterval    = Store.getValue(Ui.loadResource(Rez.Strings.ReminderInterval_StorageID));
         periodLength   = Store.getValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID));
         numPeriods     = Store.getValue(Ui.loadResource(Rez.Strings.NumPeriods_StorageID));
         breakLength    = Store.getValue(Ui.loadResource(Rez.Strings.BreakLength_StorageID));
@@ -140,6 +148,9 @@ class AppData {
     		case Ui.loadResource(Rez.Strings.ThickRing_StorageID) :
     			return thickRing;
     			break;
+            case Ui.loadResource(Rez.Strings.ReminderInterval_StorageID) :
+                return reminderInterval;
+                break;
             case Ui.loadResource(Rez.Strings.PeriodLength_StorageID)   :
                 return periodLength;
                 break;
@@ -178,6 +189,9 @@ class AppData {
     		case Ui.loadResource(Rez.Strings.ThickRing_StorageID) :
     			setThickRing(val);
     			break;
+            case Ui.loadResource(Rez.Strings.ReminderInterval_StorageID) :
+                setReminderInterval(val);
+                break;
             case Ui.loadResource(Rez.Strings.PeriodLength_StorageID)   :
                 setPeriodLength(val);
                 break;
@@ -219,6 +233,10 @@ class AppData {
 	static function getThickRing() {
 		return thickRing;
 	}
+
+    static function getReminderInterval() {
+        return reminderInterval;
+    }
 
     static function getPeriodLength() {
         return periodLength;
@@ -283,6 +301,11 @@ class AppData {
     static function setPeriodLength(val) {
         periodLength = val;
         Store.setValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID), val);
+    }
+
+    static function setReminderInterval(val) {
+        reminderInterval = val;
+        Store.setValue(Ui.loadResource(Rez.Strings.ReminderInterval_StorageID), val);
     }
 
     static function setNumPeriods(val) {
