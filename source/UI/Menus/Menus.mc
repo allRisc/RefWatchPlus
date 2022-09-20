@@ -56,6 +56,10 @@ module Menus {
 		menu.addItem(
 			new Ui.ToggleMenuItem(Rez.Strings.ThickRing_MenuLabel, null, :ThickRing_MenuID, AppData.getThickRing(), null)
 		);
+
+		menu.addItem(
+			new Ui.ToggleMenuItem(Rez.Strings.SeparateActivities_MenuLabel, null, :SeparateActivities_MenuID, AppData.getSeparateActivities(), null)
+		);
 		
 		return menu;
 	}

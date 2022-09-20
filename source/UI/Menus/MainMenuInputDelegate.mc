@@ -58,6 +58,9 @@ class MainMenuInputDelegate extends Ui.Menu2InputDelegate {
 			case :ThickRing_MenuID    :
 				AppData.setThickRing(item.isEnabled());
 				break;
+            case :SeparateActivities_MenuID :
+                AppData.setSeparateActivities(item.isEnabled());
+                break;
 			default:
 				Sys.println(item.getId());
         }

@@ -33,6 +33,7 @@ class AppData {
 	hidden static var gpsOff;
 	hidden static var darkMode;
 	hidden static var thickRing;
+    hidden static var separateActivities;
 	
     hidden static var periodLength;
     hidden static var numPeriods;
@@ -75,6 +76,11 @@ class AppData {
 		if (thickRing == null) {
 			setThickRing(false);
 		}
+
+        separateActivities  = Store.getValue(Ui.loadResource(Rez.Strings.SeparateActivities_StorageID));
+        if (separateActivities == null) {
+            setSeparateActivities(false);
+        }
     
         periodLength    = Store.getValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID));
         if (periodLength == null) {
@@ -121,6 +127,8 @@ class AppData {
 		draw.setDarkMode(darkMode);
     	
     	thickRing       = Store.getValue(Ui.loadResource(Rez.Strings.ThickRing_StorageID));
+
+        separateActivities  = Store.getValue(Ui.loadResource(Rez.Strings.SeparateActivities_StorageID));
     	
         reminderInterval    = Store.getValue(Ui.loadResource(Rez.Strings.ReminderInterval_StorageID));
         periodLength   = Store.getValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID));
@@ -148,6 +156,8 @@ class AppData {
     		case Ui.loadResource(Rez.Strings.ThickRing_StorageID) :
     			return thickRing;
     			break;
+            case Ui.loadResource(Rez.Strings.SeparateActivities_StorageID) :
+                return separateActivities;
             case Ui.loadResource(Rez.Strings.ReminderInterval_StorageID) :
                 return reminderInterval;
                 break;
@@ -189,6 +199,8 @@ class AppData {
     		case Ui.loadResource(Rez.Strings.ThickRing_StorageID) :
     			setThickRing(val);
     			break;
+            case Ui.loadResource(Rez.Strings.SeparateActivities_StorageID) :
+                setSeparateActivities(val);
             case Ui.loadResource(Rez.Strings.ReminderInterval_StorageID) :
                 setReminderInterval(val);
                 break;
@@ -233,6 +245,9 @@ class AppData {
 	static function getThickRing() {
 		return thickRing;
 	}
+
+    static function getSeparateActivities() {
+        return separateActivities;
 
     static function getReminderInterval() {
         return reminderInterval;
@@ -297,6 +312,11 @@ class AppData {
 		thickRing = val;
 		Store.setValue(Ui.loadResource(Rez.Strings.ThickRing_StorageID), val);
 	}
+
+    static function setSeparateActivities(val) {
+        separateActivities = val;
+        Store.setValue(Ui.loadResource(Rez.Strings.SeparateActivities_StorageID), val);
+    }
 
     static function setPeriodLength(val) {
         periodLength = val;

@@ -27,8 +27,10 @@ class PlayingPeriod extends Period {
 
     function initialize(dur) {
         Period.initialize(dur);
-
-        Tracker.unpauseTracking();
+        
+        if (AppData.getSeparateActivities() && ! Tracker.isActiveSession()) {
+            Tracker.startTracking();
+        }
 
         stoppageTime      = 0;
         trackingStoppage  = false;
@@ -54,6 +56,14 @@ class PlayingPeriod extends Period {
         Period.stop();
 
         trackingStoppage = false;
+    }
+
+    function end() {
+        Period.end();
+        
+        if (AppData.getSeparateActivities() && Tracker.isActiveSession()) {
+            Tracker.endTracking();
+        }
     }
 
     /**********************************************************/

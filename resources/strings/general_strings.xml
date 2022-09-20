@@ -8,6 +8,7 @@
 	<string id="GPSOff_StorageID"         >gps_off</string>
 	<string id="DarkMode_StorageID"       >background_color</string>
 	<string id="ThickRing_StorageID"       >thick_ring</string>
+	<string id="SeparateActivities_StorageID"       >separate_activities</string>
 
     <string id="PeriodLength_StorageID"   >period_len</string>    
     <string id="NumPeriods_StorageID"     >num_periods</string>
