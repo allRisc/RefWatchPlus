@@ -36,6 +36,10 @@ module Menus {
 		menu.addItem(
 			new Ui.ToggleMenuItem(Rez.Strings.NCAAMode_MenuLabel, null, :NCAAMode_MenuID, AppData.getNCAAMode(), null)
 		);
+
+		menu.addItem(
+			new Ui.ToggleMenuItem(Rez.Strings.GPSOff_MenuLabel, null, :GPSOff_MenuID, AppData.getGPSOff(), null)
+		);
 		
 		menu.addItem(
 			new Ui.ToggleMenuItem(Rez.Strings.BatterySaver_MenuLabel, null, :BatterySaver_MenuID, AppData.getBatterySaver(), null)

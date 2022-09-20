@@ -19,6 +19,8 @@ using Toybox.Application.Storage as Store;
 using Toybox.Test;
 using Toybox.WatchUi as Ui;
 using Toybox.Graphics as Gfx;
+using Toybox.Position;
+using Toybox.Lang;
 
 using RefreshTimer as RTime;
 using ViewDrawables as draw;
@@ -26,6 +28,7 @@ using ViewDrawables as draw;
 class AppData {
 	hidden static var batterySaver;
 	hidden static var ncaaMode;
+	hidden static var gpsOff;
 	hidden static var darkMode;
 	hidden static var thickRing;
 	
@@ -49,6 +52,11 @@ class AppData {
         ncaaMode        = Store.getValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID));
         if (ncaaMode == null) {
             setNCAAMode(false);
+        }
+
+        gpsOff        = Store.getValue(Ui.loadResource(Rez.Strings.GPSOff_StorageID));
+        if (gpsOff == null) {
+            setGPSOff(false);
         }
     
 		darkMode        = Store.getValue(Ui.loadResource(Rez.Strings.DarkMode_StorageID));
@@ -95,6 +103,9 @@ class AppData {
 
     static function refreshAppData() {
         ncaaMode       = Store.getValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID));
+
+        gpsOff         = Store.getValue(Ui.loadResource(Rez.Strings.GPSOff_StorageID));
+        setGPSOff(gpsOff);
     	
     	batterySaver   = Store.getValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID));
     	RTime.updateBatterSaver(batterySaver);
@@ -120,6 +131,9 @@ class AppData {
     		case Ui.loadResource(Rez.Strings.NCAAMode_StorageID)   :
         		return ncaaMode;
         		break;
+			case Ui.loadResource(Rez.Strings.GPSOff_StorageID)   :
+				return gpsOff;
+				break;
     		case Ui.loadResource(Rez.Strings.DarkMode_StorageID)   :
         		return darkMode;
         		break;
@@ -154,6 +168,9 @@ class AppData {
         		break;
     		case Ui.loadResource(Rez.Strings.NCAAMode_StorageID)   :
         		setNCAAMode(val);
+        		break;
+            case Ui.loadResource(Rez.Strings.GPSOff_StorageID)   :
+        		setGPSOff(val);
         		break;
     		case Ui.loadResource(Rez.Strings.DarkMode_StorageID)   :
         		setDarkMode(val);
@@ -190,6 +207,10 @@ class AppData {
 	static function getNCAAMode() {
 		return ncaaMode;
 	}
+
+	static function getGPSOff() {
+		return gpsOff;
+    }
 	
 	static function getDarkMode() {
 		return darkMode;
@@ -233,6 +254,19 @@ class AppData {
 	static function setNCAAMode(val) {
 		ncaaMode = val;
 		Store.setValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID), val);
+	}
+
+	static function setGPSOff(val) {
+		gpsOff = val;
+
+		var callback = new Lang.Method(RefWatchApp, :onPosition);
+		if (val) {
+			Position.enableLocationEvents(Position.LOCATION_DISABLE, callback);
+		} else {
+			Position.enableLocationEvents(Position.LOCATION_CONTINUOUS, callback);
+		}
+
+		Store.setValue(Ui.loadResource(Rez.Strings.GPSOff_StorageID), val);
 	}
 	
 	static function setDarkMode(val) {
