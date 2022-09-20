@@ -2,7 +2,10 @@
     <string id="AppName">RefWatch+</string>
 
 	<string id="BatterySaver_StorageID"   >batter_saver</string>
+    <string id="ReminderInterval_StorageID"       >reminder_interval</string>
+    <string id="Seconds_Label"        >Seconds</string>
 	<string id="NCAAMode_StorageID"       >ncaa_mode</string>
+	<string id="GPSOff_StorageID"         >gps_off</string>
 	<string id="DarkMode_StorageID"       >background_color</string>
 	<string id="ThickRing_StorageID"       >thick_ring</string>
 	<string id="SeparateActivities_StorageID"       >separate_activities</string>

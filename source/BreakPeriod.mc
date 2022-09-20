@@ -18,11 +18,13 @@
 using Toybox.System as Sys;
 using Toybox.Application as app;
 
+using ActivityTracking as Tracker;
 using HelperFunctions as func;
 
 class BreakPeriod extends Period {
     function initialize(dur) {
         Period.initialize(dur);
+        Tracker.pauseTracking();
     }
 
     // Determine if the break is almost complete

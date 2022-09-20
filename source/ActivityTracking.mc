@@ -38,6 +38,24 @@ module ActivityTracking {
         }
     }
 
+    function pauseTracking() {
+        if ( actRecSession != null && actRecSession.isRecording() ) {
+            var stopped = false;
+            do {
+            	stopped = actRecSession.stop();
+            } while( stopped == false );
+        }
+    }
+
+    function unpauseTracking() {
+        if ( actRecSession != null && ! actRecSession.isRecording() ) {
+            var started = false;
+            do {
+                started = actRecSession.start();
+            } while( started == false );
+        }
+    }
+
     function endTracking() {
         if( actRecSession != null && actRecSession.isRecording() )
         {

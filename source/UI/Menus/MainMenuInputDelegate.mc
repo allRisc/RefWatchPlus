@@ -38,9 +38,17 @@ class MainMenuInputDelegate extends Ui.Menu2InputDelegate {
         					 new TimingMenuInputDelegate(), 
         					 Ui.SLIDE_LEFT );
 			 	break;
+            case :ReminderInterval_MenuID   :
+                Ui.pushView(new NumPicker5(Ui.loadResource(Rez.Strings.Seconds_Label), Ui.loadResource(Rez.Strings.ReminderInterval_StorageID)),
+                            new NumPickerDelegate(Ui.loadResource(Rez.Strings.ReminderInterval_StorageID)),
+                            Ui.SLIDE_LEFT);
+                break;
 		 	case :NCAAMode_MenuID       :
 		 		AppData.setNCAAMode(item.isEnabled());
                 break;
+			case :GPSOff_MenuID       :
+				AppData.setGPSOff(item.isEnabled());
+				break;
  			case :BatterySaver_MenuID   :
                 AppData.setBatterySaver(item.isEnabled());
                 break;

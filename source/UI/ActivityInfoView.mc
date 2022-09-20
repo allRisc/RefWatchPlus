@@ -113,6 +113,6 @@ class ActivityInfoView extends Ui.View {
     	}
     
     	draw.centerBottomLabel(draw.DEFAULT_COLOR, label, dc);
-    	draw.centerBottom(draw.DEFAULT_COLOR, dist.format("%02.1f"), dc);
+    	draw.centerBottom(draw.DEFAULT_COLOR, dist.format("%02.2f"), dc);
     }
 }

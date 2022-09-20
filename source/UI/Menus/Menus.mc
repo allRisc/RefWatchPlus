@@ -32,9 +32,17 @@ module Menus {
 		menu.addItem(
 			new Ui.MenuItem(Rez.Strings.TimingMenu_MenuLabel, null, :TimingMenu_MenuID, null)
 		);
+
+		menu.addItem(
+			new Ui.MenuItem(Rez.Strings.ReminderInterval_MenuLabel, null, :ReminderInterval_MenuID, null)
+		);
 		
 		menu.addItem(
 			new Ui.ToggleMenuItem(Rez.Strings.NCAAMode_MenuLabel, null, :NCAAMode_MenuID, AppData.getNCAAMode(), null)
+		);
+
+		menu.addItem(
+			new Ui.ToggleMenuItem(Rez.Strings.GPSOff_MenuLabel, null, :GPSOff_MenuID, AppData.getGPSOff(), null)
 		);
 		
 		menu.addItem(

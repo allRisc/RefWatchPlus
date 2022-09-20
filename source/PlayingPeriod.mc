@@ -27,7 +27,7 @@ class PlayingPeriod extends Period {
 
     function initialize(dur) {
         Period.initialize(dur);
-
+        
         if (AppData.getSeparateActivities() && ! Tracker.isActiveSession()) {
             Tracker.startTracking();
         }

@@ -19,13 +19,18 @@ using Toybox.Application.Storage as Store;
 using Toybox.Test;
 using Toybox.WatchUi as Ui;
 using Toybox.Graphics as Gfx;
+using Toybox.Position;
+using Toybox.Lang;
 
 using RefreshTimer as RTime;
 using ViewDrawables as draw;
+using Toybox.System;
 
 class AppData {
 	hidden static var batterySaver;
+    hidden static var reminderInterval;
 	hidden static var ncaaMode;
+	hidden static var gpsOff;
 	hidden static var darkMode;
 	hidden static var thickRing;
     hidden static var separateActivities;
@@ -46,10 +51,20 @@ class AppData {
         if (batterySaver == null) {
             setBatterySaver(false);
         }
+
+        reminderInterval      = Store.getValue(Ui.loadResource(Rez.Strings.ReminderInterval_StorageID));
+        if (reminderInterval == null) {
+            setReminderInterval(10);
+        }
         
         ncaaMode        = Store.getValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID));
         if (ncaaMode == null) {
             setNCAAMode(false);
+        }
+
+        gpsOff        = Store.getValue(Ui.loadResource(Rez.Strings.GPSOff_StorageID));
+        if (gpsOff == null) {
+            setGPSOff(false);
         }
     
 		darkMode        = Store.getValue(Ui.loadResource(Rez.Strings.DarkMode_StorageID));
@@ -101,6 +116,9 @@ class AppData {
 
     static function refreshAppData() {
         ncaaMode       = Store.getValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID));
+
+        gpsOff         = Store.getValue(Ui.loadResource(Rez.Strings.GPSOff_StorageID));
+        setGPSOff(gpsOff);
     	
     	batterySaver   = Store.getValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID));
     	RTime.updateBatterSaver(batterySaver);
@@ -112,6 +130,7 @@ class AppData {
 
         separateActivities  = Store.getValue(Ui.loadResource(Rez.Strings.SeparateActivities_StorageID));
     	
+        reminderInterval    = Store.getValue(Ui.loadResource(Rez.Strings.ReminderInterval_StorageID));
         periodLength   = Store.getValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID));
         numPeriods     = Store.getValue(Ui.loadResource(Rez.Strings.NumPeriods_StorageID));
         breakLength    = Store.getValue(Ui.loadResource(Rez.Strings.BreakLength_StorageID));
@@ -128,6 +147,9 @@ class AppData {
     		case Ui.loadResource(Rez.Strings.NCAAMode_StorageID)   :
         		return ncaaMode;
         		break;
+			case Ui.loadResource(Rez.Strings.GPSOff_StorageID)   :
+				return gpsOff;
+				break;
     		case Ui.loadResource(Rez.Strings.DarkMode_StorageID)   :
         		return darkMode;
         		break;
@@ -136,6 +158,8 @@ class AppData {
     			break;
             case Ui.loadResource(Rez.Strings.SeparateActivities_StorageID) :
                 return separateActivities;
+            case Ui.loadResource(Rez.Strings.ReminderInterval_StorageID) :
+                return reminderInterval;
                 break;
             case Ui.loadResource(Rez.Strings.PeriodLength_StorageID)   :
                 return periodLength;
@@ -166,6 +190,9 @@ class AppData {
     		case Ui.loadResource(Rez.Strings.NCAAMode_StorageID)   :
         		setNCAAMode(val);
         		break;
+            case Ui.loadResource(Rez.Strings.GPSOff_StorageID)   :
+        		setGPSOff(val);
+        		break;
     		case Ui.loadResource(Rez.Strings.DarkMode_StorageID)   :
         		setDarkMode(val);
         		break;
@@ -174,6 +201,8 @@ class AppData {
     			break;
             case Ui.loadResource(Rez.Strings.SeparateActivities_StorageID) :
                 setSeparateActivities(val);
+            case Ui.loadResource(Rez.Strings.ReminderInterval_StorageID) :
+                setReminderInterval(val);
                 break;
             case Ui.loadResource(Rez.Strings.PeriodLength_StorageID)   :
                 setPeriodLength(val);
@@ -204,6 +233,10 @@ class AppData {
 	static function getNCAAMode() {
 		return ncaaMode;
 	}
+
+	static function getGPSOff() {
+		return gpsOff;
+    }
 	
 	static function getDarkMode() {
 		return darkMode;
@@ -215,6 +248,9 @@ class AppData {
 
     static function getSeparateActivities() {
         return separateActivities;
+
+    static function getReminderInterval() {
+        return reminderInterval;
     }
 
     static function getPeriodLength() {
@@ -252,6 +288,19 @@ class AppData {
 		ncaaMode = val;
 		Store.setValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID), val);
 	}
+
+	static function setGPSOff(val) {
+		gpsOff = val;
+
+		var callback = new Lang.Method(RefWatchApp, :onPosition);
+		if (val) {
+			Position.enableLocationEvents(Position.LOCATION_DISABLE, callback);
+		} else {
+			Position.enableLocationEvents(Position.LOCATION_CONTINUOUS, callback);
+		}
+
+		Store.setValue(Ui.loadResource(Rez.Strings.GPSOff_StorageID), val);
+	}
 	
 	static function setDarkMode(val) {
 		darkMode = val;
@@ -272,6 +321,11 @@ class AppData {
     static function setPeriodLength(val) {
         periodLength = val;
         Store.setValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID), val);
+    }
+
+    static function setReminderInterval(val) {
+        reminderInterval = val;
+        Store.setValue(Ui.loadResource(Rez.Strings.ReminderInterval_StorageID), val);
     }
 
     static function setNumPeriods(val) {
