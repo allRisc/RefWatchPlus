@@ -119,24 +119,22 @@ class AppData {
 
         gpsOff         = Store.getValue(Ui.loadResource(Rez.Strings.GPSOff_StorageID));
         setGPSOff(gpsOff);
-    	
+
     	batterySaver   = Store.getValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID));
     	RTime.updateBatterSaver(batterySaver);
     	
     	darkMode       = Store.getValue(Ui.loadResource(Rez.Strings.DarkMode_StorageID));
 		draw.setDarkMode(darkMode);
-    	
-    	thickRing       = Store.getValue(Ui.loadResource(Rez.Strings.ThickRing_StorageID));
 
-        separateActivities  = Store.getValue(Ui.loadResource(Rez.Strings.SeparateActivities_StorageID));
-    	
-        reminderInterval    = Store.getValue(Ui.loadResource(Rez.Strings.ReminderInterval_StorageID));
-        periodLength   = Store.getValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID));
-        numPeriods     = Store.getValue(Ui.loadResource(Rez.Strings.NumPeriods_StorageID));
-        breakLength    = Store.getValue(Ui.loadResource(Rez.Strings.BreakLength_StorageID));
-        breakAlert     = Store.getValue(Ui.loadResource(Rez.Strings.BreakAlert_StorageID));
-        otPeriodLength = Store.getValue(Ui.loadResource(Rez.Strings.OTPeriodLength_StorageID));
-        numOTPeriods   = Store.getValue(Ui.loadResource(Rez.Strings.NumOTPeriods_StorageID));
+    	thickRing          = Store.getValue(Ui.loadResource(Rez.Strings.ThickRing_StorageID));
+        separateActivities = Store.getValue(Ui.loadResource(Rez.Strings.SeparateActivities_StorageID));
+        reminderInterval   = Store.getValue(Ui.loadResource(Rez.Strings.ReminderInterval_StorageID));
+        periodLength       = Store.getValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID));
+        numPeriods         = Store.getValue(Ui.loadResource(Rez.Strings.NumPeriods_StorageID));
+        breakLength        = Store.getValue(Ui.loadResource(Rez.Strings.BreakLength_StorageID));
+        breakAlert         = Store.getValue(Ui.loadResource(Rez.Strings.BreakAlert_StorageID));
+        otPeriodLength     = Store.getValue(Ui.loadResource(Rez.Strings.OTPeriodLength_StorageID));
+        numOTPeriods       = Store.getValue(Ui.loadResource(Rez.Strings.NumOTPeriods_StorageID));
     }
 
     static function get(id) {
@@ -248,6 +246,7 @@ class AppData {
 
     static function getSeparateActivities() {
         return separateActivities;
+    }
 
     static function getReminderInterval() {
         return reminderInterval;
