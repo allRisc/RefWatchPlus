@@ -17,6 +17,7 @@
 
 using Toybox.System as Sys;
 
+using ActivityTracking as Tracker;
 using HelperFunctions as func;
 
 class PlayingPeriod extends Period {
@@ -26,6 +27,8 @@ class PlayingPeriod extends Period {
 
     function initialize(dur) {
         Period.initialize(dur);
+
+        Tracker.unpauseTracking();
 
         stoppageTime      = 0;
         trackingStoppage  = false;
