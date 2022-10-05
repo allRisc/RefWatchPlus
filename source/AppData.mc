@@ -27,14 +27,14 @@ using ViewDrawables as draw;
 using Toybox.System;
 
 class AppData {
-	hidden static var batterySaver;
+    hidden static var batterySaver;
     hidden static var reminderInterval;
-	hidden static var ncaaMode;
-	hidden static var gpsOff;
-	hidden static var darkMode;
-	hidden static var thickRing;
+    hidden static var ncaaMode;
+    hidden static var gpsOff;
+    hidden static var darkMode;
+    hidden static var thickRing;
     hidden static var separateActivities;
-	
+    
     hidden static var periodLength;
     hidden static var numPeriods;
     hidden static var breakLength;
@@ -47,7 +47,7 @@ class AppData {
     }
 
     static function initAppData() {
-    	batterySaver    = Store.getValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID));
+        batterySaver    = Store.getValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID));
         if (batterySaver == null) {
             setBatterySaver(false);
         }
@@ -67,15 +67,15 @@ class AppData {
             setGPSOff(false);
         }
     
-		darkMode        = Store.getValue(Ui.loadResource(Rez.Strings.DarkMode_StorageID));
-		if (darkMode == null) {
-			setDarkMode(false);
-		}
-		
-		thickRing       = Store.getValue(Ui.loadResource(Rez.Strings.ThickRing_StorageID));
-		if (thickRing == null) {
-			setThickRing(false);
-		}
+        darkMode        = Store.getValue(Ui.loadResource(Rez.Strings.DarkMode_StorageID));
+        if (darkMode == null) {
+            setDarkMode(false);
+        }
+        
+        thickRing       = Store.getValue(Ui.loadResource(Rez.Strings.ThickRing_StorageID));
+        if (thickRing == null) {
+            setThickRing(false);
+        }
 
         separateActivities  = Store.getValue(Ui.loadResource(Rez.Strings.SeparateActivities_StorageID));
         if (separateActivities == null) {
@@ -120,13 +120,13 @@ class AppData {
         gpsOff         = Store.getValue(Ui.loadResource(Rez.Strings.GPSOff_StorageID));
         setGPSOff(gpsOff);
 
-    	batterySaver   = Store.getValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID));
-    	RTime.updateBatterSaver(batterySaver);
-    	
-    	darkMode       = Store.getValue(Ui.loadResource(Rez.Strings.DarkMode_StorageID));
-		draw.setDarkMode(darkMode);
+        batterySaver   = Store.getValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID));
+        RTime.updateBatterSaver(batterySaver);
+        
+        darkMode       = Store.getValue(Ui.loadResource(Rez.Strings.DarkMode_StorageID));
+        draw.setDarkMode(darkMode);
 
-    	thickRing          = Store.getValue(Ui.loadResource(Rez.Strings.ThickRing_StorageID));
+        thickRing          = Store.getValue(Ui.loadResource(Rez.Strings.ThickRing_StorageID));
         separateActivities = Store.getValue(Ui.loadResource(Rez.Strings.SeparateActivities_StorageID));
         reminderInterval   = Store.getValue(Ui.loadResource(Rez.Strings.ReminderInterval_StorageID));
         periodLength       = Store.getValue(Ui.loadResource(Rez.Strings.PeriodLength_StorageID));
@@ -139,21 +139,21 @@ class AppData {
 
     static function get(id) {
         switch (id) {
-        	case Ui.loadResource(Rez.Strings.BatterySaver_StorageID)   :
-        		return batterySaver;
-        		break;
-    		case Ui.loadResource(Rez.Strings.NCAAMode_StorageID)   :
-        		return ncaaMode;
-        		break;
-			case Ui.loadResource(Rez.Strings.GPSOff_StorageID)   :
-				return gpsOff;
-				break;
-    		case Ui.loadResource(Rez.Strings.DarkMode_StorageID)   :
-        		return darkMode;
-        		break;
-    		case Ui.loadResource(Rez.Strings.ThickRing_StorageID) :
-    			return thickRing;
-    			break;
+            case Ui.loadResource(Rez.Strings.BatterySaver_StorageID)   :
+                return batterySaver;
+                break;
+            case Ui.loadResource(Rez.Strings.NCAAMode_StorageID)   :
+                return ncaaMode;
+                break;
+            case Ui.loadResource(Rez.Strings.GPSOff_StorageID)   :
+                return gpsOff;
+                break;
+            case Ui.loadResource(Rez.Strings.DarkMode_StorageID)   :
+                return darkMode;
+                break;
+            case Ui.loadResource(Rez.Strings.ThickRing_StorageID) :
+                return thickRing;
+                break;
             case Ui.loadResource(Rez.Strings.SeparateActivities_StorageID) :
                 return separateActivities;
             case Ui.loadResource(Rez.Strings.ReminderInterval_StorageID) :
@@ -182,23 +182,24 @@ class AppData {
     
     static function set(id, val) {
         switch (id) {
-        	case Ui.loadResource(Rez.Strings.BatterySaver_StorageID)   :
-        		setBatterySaver(val);
-        		break;
-    		case Ui.loadResource(Rez.Strings.NCAAMode_StorageID)   :
-        		setNCAAMode(val);
-        		break;
+            case Ui.loadResource(Rez.Strings.BatterySaver_StorageID)   :
+                setBatterySaver(val);
+                break;
+            case Ui.loadResource(Rez.Strings.NCAAMode_StorageID)   :
+                setNCAAMode(val);
+                break;
             case Ui.loadResource(Rez.Strings.GPSOff_StorageID)   :
-        		setGPSOff(val);
-        		break;
-    		case Ui.loadResource(Rez.Strings.DarkMode_StorageID)   :
-        		setDarkMode(val);
-        		break;
-    		case Ui.loadResource(Rez.Strings.ThickRing_StorageID) :
-    			setThickRing(val);
-    			break;
+                setGPSOff(val);
+                break;
+            case Ui.loadResource(Rez.Strings.DarkMode_StorageID)   :
+                setDarkMode(val);
+                break;
+            case Ui.loadResource(Rez.Strings.ThickRing_StorageID) :
+                setThickRing(val);
+                break;
             case Ui.loadResource(Rez.Strings.SeparateActivities_StorageID) :
                 setSeparateActivities(val);
+                break;
             case Ui.loadResource(Rez.Strings.ReminderInterval_StorageID) :
                 setReminderInterval(val);
                 break;
@@ -224,25 +225,25 @@ class AppData {
     }
     
     // Getter Methods
-	static function getBatterySaver() {
-		return batterySaver;
-	}
-	
-	static function getNCAAMode() {
-		return ncaaMode;
-	}
-
-	static function getGPSOff() {
-		return gpsOff;
+    static function getBatterySaver() {
+        return batterySaver;
     }
-	
-	static function getDarkMode() {
-		return darkMode;
-	}
-	
-	static function getThickRing() {
-		return thickRing;
-	}
+    
+    static function getNCAAMode() {
+        return ncaaMode;
+    }
+
+    static function getGPSOff() {
+        return gpsOff;
+    }
+    
+    static function getDarkMode() {
+        return darkMode;
+    }
+    
+    static function getThickRing() {
+        return thickRing;
+    }
 
     static function getSeparateActivities() {
         return separateActivities;
@@ -276,41 +277,40 @@ class AppData {
         return numOTPeriods;
     }
 
-	// Setter Methods
-	static function setBatterySaver(val) {
-		batterySaver = val;
-		RTime.updateBatterSaver(val);
-        Store.setValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID), val);		
-	}
-	
-	static function setNCAAMode(val) {
-		ncaaMode = val;
-		Store.setValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID), val);
-	}
+    // Setter Methods
+    static function setBatterySaver(val) {
+        batterySaver = val;
+        RTime.updateBatterSaver(val);
+        Store.setValue(Ui.loadResource(Rez.Strings.BatterySaver_StorageID), val);        
+    }
+    
+    static function setNCAAMode(val) {
+        ncaaMode = val;
+        Store.setValue(Ui.loadResource(Rez.Strings.NCAAMode_StorageID), val);
+    }
 
-	static function setGPSOff(val) {
-		gpsOff = val;
+    static function setGPSOff(val) {
+        gpsOff = val;
 
-		var callback = new Lang.Method(RefWatchApp, :onPosition);
-		if (val) {
-			Position.enableLocationEvents(Position.LOCATION_DISABLE, callback);
-		} else {
-			Position.enableLocationEvents(Position.LOCATION_CONTINUOUS, callback);
-		}
+        if (val) {
+            Position.enableLocationEvents(Position.LOCATION_DISABLE, null);
+        } else {
+            Position.enableLocationEvents(Position.LOCATION_CONTINUOUS, null);
+        }
 
-		Store.setValue(Ui.loadResource(Rez.Strings.GPSOff_StorageID), val);
-	}
-	
-	static function setDarkMode(val) {
-		darkMode = val;
-		draw.setDarkMode(val);
-		Store.setValue(Ui.loadResource(Rez.Strings.DarkMode_StorageID), val);
-	}
-	
-	static function setThickRing(val) {
-		thickRing = val;
-		Store.setValue(Ui.loadResource(Rez.Strings.ThickRing_StorageID), val);
-	}
+        Store.setValue(Ui.loadResource(Rez.Strings.GPSOff_StorageID), val);
+    }
+    
+    static function setDarkMode(val) {
+        darkMode = val;
+        draw.setDarkMode(val);
+        Store.setValue(Ui.loadResource(Rez.Strings.DarkMode_StorageID), val);
+    }
+    
+    static function setThickRing(val) {
+        thickRing = val;
+        Store.setValue(Ui.loadResource(Rez.Strings.ThickRing_StorageID), val);
+    }
 
     static function setSeparateActivities(val) {
         separateActivities = val;
