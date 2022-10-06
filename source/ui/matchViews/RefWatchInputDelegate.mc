@@ -16,37 +16,37 @@
  ***************************************************************************/
  
 using Toybox.WatchUi as Ui;
-using Toybox.Application;
 using Toybox.System as Sys;
-using Toybox.Test;
 
-import Toybox.Lang;
+using HelperFunctions as func;
 
-class NumPickerDelegate extends Ui.PickerDelegate {
-  hidden var pickerProperty as String;
+class RefWatchInputDelegate extends GenericDelegate {
 
-  function initialize(prop as String) {
-    if (Toybox has :Test) {
-      Test.assertMessage(prop instanceof String, "NumPickerDelegate \'prop\' not a string");
+    function initialize() {
+        GenericDelegate.initialize();
     }
 
-    PickerDelegate.initialize();
-    pickerProperty = prop;
-  }
+  // Handle a keyed input
+    function onKey(evt) {
+        if (GenericDelegate.onKey(evt)) {
+        return true;
+        } else if (evt.getKey() == Ui.KEY_DOWN) {
+          return dispDevInfoView();
+      } else if (evt.getKey() == Ui.KEY_UP) {
+        return dispActivityView();
+      } 
 
-  function onCancel() as Boolean {
-    Ui.popView(Ui.SLIDE_IMMEDIATE);
-    return true;
-  }
-
-  function onAccept(values as Array) as Boolean {
-    var val = values[0];
-    if (val instanceof Number) {
-      AppSettings.set(pickerProperty, val);
-      Ui.popView(Ui.SLIDE_IMMEDIATE);
-      return true;
-    } else {
-      throw new UnexpectedTypeException("NumPickerDelegate expected Number onAccept()", null, null);
+        return false;
     }
-  }
+
+  // Handle a swipe input
+    function onSwipe(evt) {
+        if (evt.getDirection() == Ui.SWIPE_UP) {
+            return dispDevInfoView();
+        } else if (evt.getDirection() == Ui.SWIPE_DOWN) {
+            return dispActivityView();
+        }
+
+        return false;
+    }
 }

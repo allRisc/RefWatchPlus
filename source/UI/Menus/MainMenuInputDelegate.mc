@@ -14,57 +14,62 @@
  * You should have received a copy of the GNU General Public License       *
  * along with RefWatchPlus.  If not, see <https://www.gnu.org/licenses/>.  *
  ***************************************************************************/
- 
+
 using Toybox.WatchUi as Ui;
-using Toybox.System as Sys;
 
 using Menus;
 
 class MainMenuInputDelegate extends Ui.Menu2InputDelegate {
+  function initialize() {
+    Menu2InputDelegate.initialize();
+  }
 
-    function initialize() {
-        Menu2InputDelegate.initialize();
+  function onSelect(item as Ui.MenuItem) as Void {
+    switch (Menus.itemId(item)) {
+      case :Exit_MenuID :
+        Ui.pushView(new Ui.Confirmation("End Match?"),
+                    new ExitConfirmationDelegate(),
+                    Ui.SLIDE_IMMEDIATE);
+        break;
+
+      case :TimingMenu_MenuID :
+        Ui.pushView(Menus.getTimingMenu(),
+                    new TimingMenuInputDelegate(),
+                    Ui.SLIDE_LEFT);
+        break;
+
+      case :NcaaMode_MenuID :
+        if (item instanceof Ui.ToggleMenuItem) { AppSettings.setNcaaMode(item.isEnabled()); }
+        else { throw new UnexpectedTypeException("ToggleMenuItem required to set Boolean ncaaMode", null, null); }
+        break;
+
+      case :GpsOff_MenuID :
+        if (item instanceof Ui.ToggleMenuItem) { AppSettings.setGpsOff(item.isEnabled()); }
+        else { throw new UnexpectedTypeException("ToggleMenuItem required to set Boolean gpsOff", null, null); }
+        break;
+
+      case :ReminderTimer_MenuID :
+        Ui.pushView(new NumPicker(Ui.loadResource(Rez.Strings.reminderTimer_MenuLabel).toString(), Ui.loadResource(Rez.Strings.reminderTimer_StorageID).toString()),
+                    new NumPickerDelegate(Ui.loadResource(Rez.Strings.reminderTimer_StorageID).toString()),
+                    Ui.SLIDE_LEFT);
+        break;
+
+      case :SeparateActivities_MenuID :
+        if (item instanceof Ui.ToggleMenuItem) { AppSettings.setSeparateActivities(item.isEnabled()); }
+        else { throw new UnexpectedTypeException("ToggleMenuItem required to set Boolean separateActivities", null, null); }
+        break;
+
+      case :DarkMode_MenuID :
+        if (item instanceof Ui.ToggleMenuItem) { AppSettings.setDarkMode(item.isEnabled()); }
+        else { throw new UnexpectedTypeException("ToggleMenuItem required to set Boolean darkMode", null, null); }
+        break;
+
+      case :ThickRing_MenuID :
+        if (item instanceof Ui.ToggleMenuItem) { AppSettings.setThickRing(item.isEnabled()); }
+        else { throw new UnexpectedTypeException("ToggleMenuItem required to set Boolean thickRing", null, null); }
+        break;
+
     }
-
-    function onSelect(item) {
-        switch (item.getId()) {
-            case :EndMatch_MenuID       :
-                Ui.pushView(new Ui.Confirmation("Quit Match?"),
-                            new ExitConfirmationDelegate(),
-                            Ui.SLIDE_IMMEDIATE);
-                break;
-        	case :TimingMenu_MenuID     :
-        		Ui.pushView( Menus.getTimingMenu(), 
-        					 new TimingMenuInputDelegate(), 
-        					 Ui.SLIDE_LEFT );
-			 	break;
-            case :ReminderInterval_MenuID   :
-                Ui.pushView(new NumPicker5(Ui.loadResource(Rez.Strings.Seconds_Label), Ui.loadResource(Rez.Strings.ReminderInterval_StorageID)),
-                            new NumPickerDelegate(Ui.loadResource(Rez.Strings.ReminderInterval_StorageID)),
-                            Ui.SLIDE_LEFT);
-                break;
-		 	case :NCAAMode_MenuID       :
-		 		AppData.setNCAAMode(item.isEnabled());
-                break;
-			case :GPSOff_MenuID       :
-				AppData.setGPSOff(item.isEnabled());
-				break;
- 			case :BatterySaver_MenuID   :
-                AppData.setBatterySaver(item.isEnabled());
-                break;
-            case :DarkMode_MenuID       :
-            	AppData.setDarkMode(item.isEnabled());
-				break;
-			case :ThickRing_MenuID    :
-				AppData.setThickRing(item.isEnabled());
-				break;
-            case :SeparateActivities_MenuID :
-                AppData.setSeparateActivities(item.isEnabled());
-                break;
-			default:
-				Sys.println(item.getId());
-        }
-
-        Ui.requestUpdate();
-    }
+    Ui.requestUpdate();
+  }
 }

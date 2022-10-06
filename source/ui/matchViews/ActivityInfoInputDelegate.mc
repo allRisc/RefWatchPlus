@@ -19,7 +19,6 @@ using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
 
 using HelperFunctions as func;
-using VibrationController as Vib;
 
 class ActivityInfoInputDelegate extends GenericDelegate {
 
@@ -27,13 +26,13 @@ class ActivityInfoInputDelegate extends GenericDelegate {
         GenericDelegate.initialize();
     }
     
-	// Handle a Key Press
+  // Handle a Key Press
     function onKey(evt) {
         if (GenericDelegate.onKey(evt)) {
-    		return true;
+        return true;
         } else if (evt.getKey() == Ui.KEY_DOWN) {
-        	return dispBack();
-    	}
+          return dispBack();
+      }
 
         return false;
     }

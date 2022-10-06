@@ -16,50 +16,51 @@
  ***************************************************************************/
 
 using Toybox.Graphics as Gfx;
-using Toybox.WatchUi;
+using Toybox.WatchUi as Ui;
 
-using ViewDrawables as draw; 
+import Toybox.Lang;
 
-class NumberFactory extends WatchUi.PickerFactory {
-    hidden var startNum;
-    hidden var stopNum;
-    hidden var incVal;
-    hidden var mFormatString;
-    hidden var fontOpts;
+class NumberFactory extends Ui.PickerFactory {
+  hidden var startNum as Number;
+  hidden var stopNum as Number;
+  hidden var incVal as Number;
+  hidden var fontOpts as Gfx.FontType;
 
-    function getIndex(value) {
-        var index = (value / incVal) - startNum;
-        
-        return index;
+  function getIndex(value as Number) as Number {
+    var index = (value / incVal) - startNum;
+
+    return index;
+  }
+
+  function initialize(start as Number, stop as Number, increment as Number, options as {:font as Gfx.FontType}) {
+    var fnt;
+
+    PickerFactory.initialize();
+
+    startNum = start;
+    stopNum = stop;
+    incVal = increment;
+    fontOpts = Gfx.FONT_NUMBER_HOT;
+
+    if(options != null) {
+      fontOpts = options.get(:font);
     }
+  }
 
-    function initialize(start, stop, increment, options) {
-        PickerFactory.initialize();
+  function getDrawable(index as Number, selected as Boolean) as Ui.Drawable? {
+    return new Ui.Text( { :text=>getNum(index).format("%d"), :color=>Gfx.COLOR_WHITE, :font=> fontOpts, :locX =>Ui.LAYOUT_HALIGN_CENTER, :locY=>Ui.LAYOUT_VALIGN_CENTER } );
+  }
 
-        startNum = start;
-        stopNum = stop;
-        incVal = increment;
+  function getNum(index as Number) as Number {
+    return startNum + (index * incVal);
+  }
 
-        if(options != null) {
-            fontOpts = options.get(:font);
-        }
+  function getValue(index as Number) as Object? {
+    return startNum + (index * incVal);
+  }
 
-        if(fontOpts == null) {
-            fontOpts = Graphics.FONT_NUMBER_HOT;
-        }
-
-    }
-
-    function getDrawable(index, selected) {
-        return new WatchUi.Text( { :text=>getValue(index).format("%d"), :color=>Gfx.COLOR_WHITE, :font=> fontOpts, :locX =>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>WatchUi.LAYOUT_VALIGN_CENTER } );
-    }
-
-    function getValue(index) {
-        return startNum + (index * incVal);
-    }
-
-    function getSize() {
-        return (stopNum - startNum) / incVal + 1;
-    }
+  function getSize()  as Number {
+    return (stopNum - startNum) / incVal + 1;
+  }
 
 }

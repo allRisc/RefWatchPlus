@@ -18,98 +18,126 @@
 using Toybox.ActivityRecording as ActRec;
 using Toybox.WatchUi as Ui;
 using Toybox.Activity as Act;
+using Toybox.Position as Pos;
+
+using Toybox.Lang as lang;
+
+import Toybox.Lang;
+
+
 
 module ActivityTracking {
-    const METER_PER_MILE = 1609.344;
 
-    var actRecSession;
+  const METER_PER_MILE = 1609.344;
 
-    function initTracker() {
+  var actRecSession as ActRec.Session?;
 
+  function initTracker(callback as Method(loc as Pos.Info) as Void) as Void {
+    if (AppSettings.getGpsOff()) {
+      Pos.enableLocationEvents( Pos.LOCATION_DISABLE, callback);
+    } else {
+      Pos.enableLocationEvents( Pos.LOCATION_CONTINUOUS, callback);
+    }
+  }
+
+  function startTracking() as Void {
+    actRecSession = ActRec.createSession( { :name=>"Match", :sport=>ActRec.SPORT_RUNNING, :subsport=>ActRec.SUB_SPORT_GENERIC } );
+    if( actRecSession  instanceof ActRec.Session ) {
+      var started = false;
+      do {
+        started = actRecSession.start();
+      } while(!started);
+    }
+  }
+
+  function pauseTracking() as Void{
+    if ( actRecSession  instanceof ActRec.Session ) {
+      if (!actRecSession.isRecording()) {return;}
     }
 
-    function startTracking() {
-        actRecSession = ActRec.createSession( { :name=>"Match", :sport=>ActRec.SPORT_RUNNING, :subsport=>ActRec.SUB_SPORT_GENERIC } );
-        if( actRecSession != null ) {
-            var started = false;
-            do {
-                started = actRecSession.start();
-            } while(!started);
-        }
+    if ( actRecSession  instanceof ActRec.Session ) {
+      var stopped = false;
+      do {
+        stopped = actRecSession.stop();
+      } while( !stopped );
+    }
+  }
+
+  function unpauseTracking() as Void {
+    if( actRecSession instanceof ActRec.Session) {
+      if (actRecSession.isRecording()) {return;}
     }
 
-    function pauseTracking() {
-        if ( actRecSession != null && actRecSession.isRecording() ) {
-            var stopped = false;
-            do {
-            	stopped = actRecSession.stop();
-            } while( stopped == false );
-        }
+    if( actRecSession instanceof ActRec.Session) {
+      var started = false;
+      do {
+        started = actRecSession.start();
+      } while( !started );
+    }
+  }
+
+  function endTracking() as Void {
+    if( actRecSession instanceof ActRec.Session) {
+      if (!actRecSession.isRecording()) {return;}
     }
 
-    function unpauseTracking() {
-        if ( actRecSession != null && ! actRecSession.isRecording() ) {
-            var started = false;
-            do {
-                started = actRecSession.start();
-            } while( started == false );
-        }
+    var stopped = false;
+    var saved   = false;
+
+    if( actRecSession instanceof ActRec.Session) {
+      do {
+        stopped = actRecSession.stop();
+      } while( !stopped );
     }
 
-    function endTracking() {
-        if( actRecSession != null && actRecSession.isRecording() )
-        {
-            var stopped = false;
-            var saved   = false;
-            do {
-            	stopped = actRecSession.stop();
-            } while(stopped == false);
-
-            do {
-                saved = actRecSession.save();
-            } while( saved == false );
-
-
-            actRecSession = null;
-            Ui.requestUpdate();
-        }
-
-        actRecSession = null;
+    if( actRecSession instanceof ActRec.Session) {
+      do {
+        saved = actRecSession.save();
+      } while( !saved );
     }
 
-    function isActiveSession() {
-        return (actRecSession != null);
+      Ui.requestUpdate();
+
+    actRecSession = null;
+  }
+
+  function isActiveSession() as Boolean {
+    return (actRecSession instanceof ActRec.Session);
+  }
+
+  function addLap() as Void {
+    if (actRecSession instanceof ActRec.Session) {
+      actRecSession.addLap();
+    }
+  }
+
+  function getCurHeartRate() as Number {
+    var info = Act.getActivityInfo();
+    if (info != null) {
+      if (info.currentHeartRate != null) {
+        return info.currentHeartRate;
+      }
     }
 
-    function addLap() {
-        if (isActiveSession()) {
-            actRecSession.addLap();
-        }
+    return 0;
+  }
+
+  function getCurDistM() as Numeric {
+    var info = Act.getActivityInfo();
+    if (info != null) {
+      if (info.elapsedDistance != null) {
+        return info.elapsedDistance;
+      }
     }
 
-    function getCurHeartRate() {
-        var info = Act.getActivityInfo().currentHeartRate;
-        if (info != null) {
-            return info;
-        }
+    return 0;
+  }
 
-        return 0;
-    }
+  function getCurDistKM() as Numeric {
+    return getCurDistM().toFloat() / 1000.0;
+  }
 
-    function getCurDistM() {
-        var info = Act.getActivityInfo().elapsedDistance;
-        if (info != null) {
-            return info;
-        }
-
-        return 0;
-    }
-
-    function getCurDistKM() {
-        return getCurDistM().toFloat() / 1000.0;
-    }
-
-    function getCurDistMi() {
-        return getCurDistM().toFloat() / METER_PER_MILE;
-    }
+  function getCurDistMi() as Numeric {
+    return getCurDistM().toFloat() / METER_PER_MILE;
+  }
 }

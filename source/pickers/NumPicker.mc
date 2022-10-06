@@ -17,33 +17,37 @@
  
 using Toybox.WatchUi as Ui;
 using Toybox.Graphics as Gfx;
-using Toybox.Application;
-using Toybox.System as Sys;
 using Toybox.Test;
 
-using ViewDrawables as draw;
+import Toybox.Lang;
 
 class NumPicker extends Ui.Picker {
 
-    function initialize(titleName, prop) {
-        var title;
+  function initialize(titleName as String, prop as String) {
 
-        if (Toybox has :Test) {
-            Test.assertMessage(titleName instanceof String, "NumPicker: \'titleName\' not a string");
-            Test.assertMessage(prop      instanceof String, "NumPicker: \'prop\' not a string");
-            Test.assertMessage(AppData.get(prop) != null, "NumPicker: Invalid Property");
-        }
-
-        title = new Ui.Text({:text=>titleName, :font=>Gfx.FONT_MEDIUM, :locX=>Ui.LAYOUT_HALIGN_CENTER, :locY=>Ui.LAYOUT_VALIGN_BOTTOM, :color=>Gfx.COLOR_WHITE});
-
-        var factories = new [1];
-
-        factories[0] = new NumberFactory(0, 99, 1, {:font=>Graphics.FONT_MEDIUM});
-
-        var defaults = new [1];
-        defaults[0] = factories[0].getIndex(AppData.get(prop));
-
-        Picker.initialize({:title=>title, :pattern=>factories, :defaults=>defaults});
+    if (Toybox has :Test) {
+      Test.assertMessage(titleName instanceof String, "NumPicker: \'titleName\' not a string");
+      Test.assertMessage(prop      instanceof String, "NumPicker: \'prop\' not a string");
+      Test.assertMessage(AppSettings.get(prop) != null, "NumPicker: Invalid Property");
     }
+
+    var title = new Ui.Text({:text=>titleName, :font=>Gfx.FONT_MEDIUM, :locX=>Ui.LAYOUT_HALIGN_CENTER, :locY=>Ui.LAYOUT_VALIGN_BOTTOM, :color=>Gfx.COLOR_WHITE});
+
+    var factories = new Array<NumberFactory>[1];
+
+    factories[0] = new NumberFactory(0, 99, 1, {:font=>Graphics.FONT_MEDIUM});
+
+    var defaults = new [1];
+
+    var idx = AppSettings.get(prop);
+
+    if (idx instanceof Number) {
+      defaults[0] = factories[0].getIndex(idx);
+    } else {
+      throw new UnexpectedTypeException("NumPicker index must be Number!", null, null);
+    }
+
+    Picker.initialize({:title=>title, :pattern=>factories, :defaults=>defaults});
+  }
 }
 

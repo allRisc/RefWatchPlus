@@ -18,16 +18,19 @@
 using Toybox.System as Sys;
 using Toybox.WatchUi as Ui;
 
-class ExitConfirmationDelegate extends Ui.ConfirmationDelegate{
-    function initialize() {
-        ConfirmationDelegate.initialize();
-    }
+import Toybox.Lang;
 
-    function onResponse(response) {
-        if (response == WatchUi.CONFIRM_NO) {
-            Ui.popView(Ui.SLIDE_IMMEDIATE);
-        } else {
-            Sys.exit();
-        }
+class ExitConfirmationDelegate extends Ui.ConfirmationDelegate{
+  function initialize() {
+    ConfirmationDelegate.initialize();
+  }
+
+  function onResponse(response) as Boolean {
+    if (response == WatchUi.CONFIRM_NO) {
+      Ui.popView(Ui.SLIDE_IMMEDIATE);
+      return false;
+    } else {
+      Sys.exit();
     }
+  }
 }

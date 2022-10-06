@@ -14,83 +14,82 @@
  * You should have received a copy of the GNU General Public License       *
  * along with RefWatchPlus.  If not, see <https://www.gnu.org/licenses/>.  *
  ***************************************************************************/
- 
-using Toybox.WatchUi as Ui;
-using Toybox.System as Sys;
-using Toybox.Graphics as Gfx;
 
-using ViewDrawables as draw;
+using Toybox.WatchUi as Ui;
+
+import Toybox.Lang;
 
 module Menus {
-	function getMainMenu() {
-		var menu = new Ui.Menu2({:title=>"Main Menu"});
-		
-		menu.addItem(
-			new Ui.MenuItem(Rez.Strings.EndMatch_MenuLabel, null, :EndMatch_MenuID, null)
-		);
-		
-		menu.addItem(
-			new Ui.MenuItem(Rez.Strings.TimingMenu_MenuLabel, null, :TimingMenu_MenuID, null)
-		);
+  function itemId(item as Ui.MenuItem) as Symbol {
+    return item.getId();
+  }
 
-		menu.addItem(
-			new Ui.MenuItem(Rez.Strings.ReminderInterval_MenuLabel, null, :ReminderInterval_MenuID, null)
-		);
-		
-		menu.addItem(
-			new Ui.ToggleMenuItem(Rez.Strings.NCAAMode_MenuLabel, null, :NCAAMode_MenuID, AppData.getNCAAMode(), null)
-		);
+  function getMainMenu() as Ui.Menu2 {
+    var menu = new Ui.Menu2({:title=>"Main Menu"});
 
-		menu.addItem(
-			new Ui.ToggleMenuItem(Rez.Strings.GPSOff_MenuLabel, null, :GPSOff_MenuID, AppData.getGPSOff(), null)
-		);
-		
-		menu.addItem(
-			new Ui.ToggleMenuItem(Rez.Strings.BatterySaver_MenuLabel, null, :BatterySaver_MenuID, AppData.getBatterySaver(), null)
-		);
-		
-		menu.addItem(
-			new Ui.ToggleMenuItem(Rez.Strings.DarkMode_MenuLabel, null, :DarkMode_MenuID, AppData.getDarkMode(), null)
-		);
-		
-		menu.addItem(
-			new Ui.ToggleMenuItem(Rez.Strings.ThickRing_MenuLabel, null, :ThickRing_MenuID, AppData.getThickRing(), null)
-		);
+    menu.addItem(
+      new Ui.MenuItem("End Match", null, :Exit_MenuID, null)
+    );
 
-		menu.addItem(
-			new Ui.ToggleMenuItem(Rez.Strings.SeparateActivities_MenuLabel, null, :SeparateActivities_MenuID, AppData.getSeparateActivities(), null)
-		);
-		
-		return menu;
-	}
-	
-	function getTimingMenu() {
-		var menu = new Ui.Menu2({:title=>"Timing menu"});
-		 
-		menu.addItem(
-			new Ui.MenuItem(Rez.Strings.PeriodLength_MenuLabel, null, :PeriodLength_MenuID, null)
-		);
-		
-		menu.addItem(
-			new Ui.MenuItem(Rez.Strings.NumPeriods_MenuLabel, null, :NumPeriods_MenuID, null)
-		);
-		
-		menu.addItem(
-			new Ui.MenuItem(Rez.Strings.BreakLength_MenuLabel, null, :BreakLength_MenuID, null)
-		);
-		
-		menu.addItem(
-			new Ui.MenuItem(Rez.Strings.BreakAlert_MenuLabel, null, :BreakAlert_MenuID, null)
-		);
-		
-		menu.addItem(
-			new Ui.MenuItem(Rez.Strings.OTPeriodLength_MenuLabel, null, :OTPeriodLength_MenuID, null)
-		);
-		
-		menu.addItem(
-			new Ui.MenuItem(Rez.Strings.NumOTPeriods_MenuLabel, null, :NumOTPeriods_MenuID, null)
-		);
-		
-		return menu;
-	}
+    menu.addItem(
+      new Ui.MenuItem(Rez.Strings.timingMenu_MenuLabel.toString(), null, :TimingMenu_MenuID, null)
+    );
+
+    menu.addItem(
+      new Ui.ToggleMenuItem(Rez.Strings.ncaaMode_MenuLabel.toString(), null, :NcaaMode_MenuID, AppSettings.getNcaaMode(), null)
+    );
+
+    menu.addItem(
+      new Ui.ToggleMenuItem(Rez.Strings.gpsOff_MenuLabel.toString(), null, :GpsOff_MenuID, AppSettings.getGpsOff(), null)
+    );
+
+    menu.addItem(
+      new Ui.MenuItem(Rez.Strings.reminderTimer_MenuLabel.toString(), null, :ReminderTimer_MenuID, null)
+    );
+
+    menu.addItem(
+      new Ui.ToggleMenuItem(Rez.Strings.separateActivities_MenuLabel.toString(), null, :SeparateActivities_MenuID, AppSettings.getSeparateActivities(), null)
+    );
+
+    menu.addItem(
+      new Ui.ToggleMenuItem(Rez.Strings.darkMode_MenuLabel.toString(), null, :DarkMode_MenuID, AppSettings.getDarkMode(), null)
+    );
+
+    menu.addItem(
+      new Ui.ToggleMenuItem(Rez.Strings.thickRing_MenuLabel.toString(), null, :ThickRing_MenuID, AppSettings.getThickRing(), null)
+    );
+
+    return menu;
+  }
+
+  function getTimingMenu() as Ui.Menu2 {
+    var menu = new Ui.Menu2({:title=>"Timing Menu"});
+
+    menu.addItem(
+      new Ui.MenuItem(Rez.Strings.periodLength_MenuLabel.toString(), null, :PeriodLength_MenuID, null)
+    );
+
+    menu.addItem(
+      new Ui.MenuItem(Rez.Strings.numPeriods_MenuLabel.toString(), null, :NumPeriods_MenuID, null)
+    );
+
+    menu.addItem(
+      new Ui.MenuItem(Rez.Strings.breakLength_MenuLabel.toString(), null, :BreakLength_MenuID, null)
+    );
+
+    menu.addItem(
+      new Ui.MenuItem(Rez.Strings.breakAlert_MenuLabel.toString(), null, :BreakAlert_MenuID, null)
+    );
+
+    menu.addItem(
+      new Ui.MenuItem(Rez.Strings.otPeriodLength_MenuLabel.toString(), null, :OtPeriodLength_MenuID, null)
+    );
+
+    menu.addItem(
+      new Ui.MenuItem(Rez.Strings.numOTPeriods_MenuLabel.toString(), null, :NumOTPeriods_MenuID, null)
+    );
+
+    return menu;
+  }
+
 }

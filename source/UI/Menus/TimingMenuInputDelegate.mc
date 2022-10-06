@@ -14,50 +14,55 @@
  * You should have received a copy of the GNU General Public License       *
  * along with RefWatchPlus.  If not, see <https://www.gnu.org/licenses/>.  *
  ***************************************************************************/
- 
+
 using Toybox.WatchUi as Ui;
-using Toybox.System as Sys;
+
+using Menus;
 
 class TimingMenuInputDelegate extends Ui.Menu2InputDelegate {
+  function initialize() {
+    Menu2InputDelegate.initialize();
+  }
 
-    function initialize() {
-        Menu2InputDelegate.initialize();
+  function onSelect(item as Ui.MenuItem) as Void {
+    switch (Menus.itemId(item)) {
+      case :PeriodLength_MenuID :
+        Ui.pushView(new NumPicker(Ui.loadResource(Rez.Strings.periodLength_MenuLabel).toString(), Ui.loadResource(Rez.Strings.periodLength_StorageID).toString()),
+                    new NumPickerDelegate(Ui.loadResource(Rez.Strings.periodLength_StorageID).toString()),
+                    Ui.SLIDE_LEFT);
+        break;
+
+      case :NumPeriods_MenuID :
+        Ui.pushView(new NumPicker(Ui.loadResource(Rez.Strings.numPeriods_MenuLabel).toString(), Ui.loadResource(Rez.Strings.numPeriods_StorageID).toString()),
+                    new NumPickerDelegate(Ui.loadResource(Rez.Strings.numPeriods_StorageID).toString()),
+                    Ui.SLIDE_LEFT);
+        break;
+
+      case :BreakLength_MenuID :
+        Ui.pushView(new NumPicker(Ui.loadResource(Rez.Strings.breakLength_MenuLabel).toString(), Ui.loadResource(Rez.Strings.breakLength_StorageID).toString()),
+                    new NumPickerDelegate(Ui.loadResource(Rez.Strings.breakLength_StorageID).toString()),
+                    Ui.SLIDE_LEFT);
+        break;
+
+      case :BreakAlert_MenuID :
+        Ui.pushView(new NumPicker(Ui.loadResource(Rez.Strings.breakAlert_MenuLabel).toString(), Ui.loadResource(Rez.Strings.breakAlert_StorageID).toString()),
+                    new NumPickerDelegate(Ui.loadResource(Rez.Strings.breakAlert_StorageID).toString()),
+                    Ui.SLIDE_LEFT);
+        break;
+
+      case :OtPeriodLength_MenuID :
+        Ui.pushView(new NumPicker(Ui.loadResource(Rez.Strings.otPeriodLength_MenuLabel).toString(), Ui.loadResource(Rez.Strings.otPeriodLength_StorageID).toString()),
+                    new NumPickerDelegate(Ui.loadResource(Rez.Strings.otPeriodLength_StorageID).toString()),
+                    Ui.SLIDE_LEFT);
+        break;
+
+      case :NumOTPeriods_MenuID :
+        Ui.pushView(new NumPicker(Ui.loadResource(Rez.Strings.numOTPeriods_MenuLabel).toString(), Ui.loadResource(Rez.Strings.numOTPeriods_StorageID).toString()),
+                    new NumPickerDelegate(Ui.loadResource(Rez.Strings.numOTPeriods_StorageID).toString()),
+                    Ui.SLIDE_LEFT);
+        break;
+
     }
-
-    function onSelect(item) {
-        switch (item.getId()) {
-            case :PeriodLength_MenuID   :
-                Ui.pushView(new NumPicker(Ui.loadResource(Rez.Strings.PeriodLength_MenuLabel), Ui.loadResource(Rez.Strings.PeriodLength_StorageID)),
-                            new NumPickerDelegate(Ui.loadResource(Rez.Strings.PeriodLength_StorageID)),
-                            Ui.SLIDE_LEFT);
-                break;
-            case :NumPeriods_MenuID     :
-                Ui.pushView(new NumPicker(Ui.loadResource(Rez.Strings.NumPeriods_MenuLabel), Ui.loadResource(Rez.Strings.NumPeriods_StorageID)),
-                            new NumPickerDelegate(Ui.loadResource(Rez.Strings.NumPeriods_StorageID)),
-                            Ui.SLIDE_LEFT);
-                break;
-            case :BreakLength_MenuID    :
-                Ui.pushView(new NumPicker(Ui.loadResource(Rez.Strings.BreakLength_MenuLabel), Ui.loadResource(Rez.Strings.BreakLength_StorageID)),
-                            new NumPickerDelegate(Ui.loadResource(Rez.Strings.BreakLength_StorageID)),
-                            Ui.SLIDE_LEFT);
-                break;
-            case :BreakAlert_MenuID     :
-                Ui.pushView(new NumPicker(Ui.loadResource(Rez.Strings.BreakAlert_MenuLabel), Ui.loadResource(Rez.Strings.BreakAlert_StorageID)),
-                            new NumPickerDelegate(Ui.loadResource(Rez.Strings.BreakAlert_StorageID)),
-                            Ui.SLIDE_LEFT);
-                break;
-            case :OTPeriodLength_MenuID :
-                Ui.pushView(new NumPicker(Ui.loadResource(Rez.Strings.OTPeriodLength_MenuLabel), Ui.loadResource(Rez.Strings.OTPeriodLength_StorageID)),
-                            new NumPickerDelegate(Ui.loadResource(Rez.Strings.OTPeriodLength_StorageID)),
-                            Ui.SLIDE_LEFT);
-                break;
-            case :NumOTPeriods_MenuID   :
-                Ui.pushView(new NumPicker(Ui.loadResource(Rez.Strings.NumOTPeriods_MenuLabel), Ui.loadResource(Rez.Strings.NumOTPeriods_StorageID)),
-                            new NumPickerDelegate(Ui.loadResource(Rez.Strings.NumOTPeriods_StorageID)),
-                            Ui.SLIDE_LEFT);
-                break;
-        }
-
-        Ui.requestUpdate();
-    }
+    Ui.requestUpdate();
+  }
 }

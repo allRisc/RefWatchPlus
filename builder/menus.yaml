@@ -1,0 +1,67 @@
+- name: mainMenu
+  type: menu
+  label: Main Menu
+  has_exit: true
+  exit_label: End Match
+
+  items:
+    - name: timingMenu
+      type: menu
+      label: Timing Menu
+      has_exit: false
+
+      items:
+        - name: periodLength
+          type: Number
+          default: 45
+          label: Period Length
+        - name: numPeriods
+          type: Number
+          default: 2
+          label: Periods
+        - name: breakLength
+          type: Number
+          default: 15
+          label: Break Length
+        - name: breakAlert
+          type: Number
+          default: 3
+          label: Break Alert
+        - name: otPeriodLength
+          type: Number
+          default: 15
+          label: OT Length
+        - name: numOTPeriods
+          type: Number
+          default: 0
+          label: OT Periods
+
+    - name: ncaaMode
+      type: Boolean
+      default: false
+      label: NCAA Mode
+  
+    - name: gpsOff
+      type: Boolean
+      default: false
+      label: GPS Off
+
+    - name: reminderTimer
+      type: Number
+      default: 10
+      label: Reminder Timer
+
+    - name: separateActivities
+      type: Boolean
+      default: false
+      label: Separate Activities
+
+    - name: darkMode
+      type: Boolean
+      default: false
+      label: Dark Mode
+
+    - name: thickRing
+      type: Boolean
+      default: false
+      label: Thick Ring

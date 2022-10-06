@@ -1,0 +1,49 @@
+<!--########################################################################
+ * This file is part of RefWatchPlus                                       *
+ *                                                                         *
+ * RefWatchPlus is free software: you can redistribute it and/or modify    *
+ * it under the terms of the GNU General Public License as published by    *
+ * the Free Software Foundation, either version 3 of the License, or       *
+ * (at your option) any later version.                                     *
+ *                                                                         *
+ * RefWatchPlus is distributed in the hope that it will be useful,         *
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of          *
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           *
+ * GNU General Public License for more details.                            *
+ *                                                                         *
+ * You should have received a copy of the GNU General Public License       *
+ * along with RefWatchPlus.  If not, see <https://www.gnu.org/licenses/>.  *
+ #########################################################################-->
+
+<strings>
+  <string id="periodLength_StorageID">periodLength</string>
+  <string id="numPeriods_StorageID">numPeriods</string>
+  <string id="breakLength_StorageID">breakLength</string>
+  <string id="breakAlert_StorageID">breakAlert</string>
+  <string id="otPeriodLength_StorageID">otPeriodLength</string>
+  <string id="numOTPeriods_StorageID">numOTPeriods</string>
+
+  <string id="ncaaMode_StorageID">ncaaMode</string>
+  <string id="gpsOff_StorageID">gpsOff</string>
+  <string id="reminderTimer_StorageID">reminderTimer</string>
+  <string id="separateActivities_StorageID">separateActivities</string>
+  <string id="darkMode_StorageID">darkMode</string>
+  <string id="thickRing_StorageID">thickRing</string>
+
+  <string id="mainMenu_MenuLabel">Main Menu</string>
+  <string id="timingMenu_MenuLabel">Timing Menu</string>
+  <string id="periodLength_MenuLabel">Period Length</string>
+  <string id="numPeriods_MenuLabel">Periods</string>
+  <string id="breakLength_MenuLabel">Break Length</string>
+  <string id="breakAlert_MenuLabel">Break Alert</string>
+  <string id="otPeriodLength_MenuLabel">OT Length</string>
+  <string id="numOTPeriods_MenuLabel">OT Periods</string>
+
+  <string id="ncaaMode_MenuLabel">NCAA Mode</string>
+  <string id="gpsOff_MenuLabel">GPS Off</string>
+  <string id="reminderTimer_MenuLabel">Reminder Timer</string>
+  <string id="separateActivities_MenuLabel">Separate Activities</string>
+  <string id="darkMode_MenuLabel">Dark Mode</string>
+  <string id="thickRing_MenuLabel">Thick Ring</string>
+
+</strings>
