@@ -30,6 +30,8 @@ class PlayingPeriod extends Period {
         
         if (AppData.getSeparateActivities() && ! Tracker.isActiveSession()) {
             Tracker.startTracking();
+        } else {
+            Tracker.unpauseTracking();
         }
 
         stoppageTime      = 0;
