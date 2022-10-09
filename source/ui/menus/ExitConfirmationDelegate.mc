@@ -32,5 +32,6 @@ class ExitConfirmationDelegate extends Ui.ConfirmationDelegate{
     } else {
       Sys.exit();
     }
+    return true;
   }
 }

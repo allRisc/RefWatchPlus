@@ -106,7 +106,7 @@ class GenericView extends Ui.View {
   }
 
   // Draw a ring for a given timeleft vs timetotal set
-  function timeRemainingRing(color as Gfx.ColorValue, timeLeft as Number, timeTotal as Number, dc as Gfx.Dc) as Void {
+  function drawTimeRemainingRing(color as Gfx.ColorValue, timeLeft as Number, timeTotal as Number, dc as Gfx.Dc) as Void {
     var degrees;
 
     if (timeLeft < 0) {
@@ -168,37 +168,37 @@ class GenericView extends Ui.View {
   }
 
   // Display a label at the center top of the screen
-  static function centerTopLabel(color as Gfx.ColorValue, label as String, dc as Gfx.Dc) as Void {
+  static function drawCenterTopLabel(color as Gfx.ColorValue, label as String, dc as Gfx.Dc) as Void {
     dc.setColor(color, Gfx.COLOR_TRANSPARENT);
     dc.drawText(getMidWidth(dc), dc.getHeight()/14, Gfx.FONT_MEDIUM, label, Gfx.TEXT_JUSTIFY_CENTER);
   }
 
   // Display text at the center bottom of the screen
-  static function centerBottom(color as Gfx.ColorValue, txt as String, dc as Gfx.Dc) as Void {
+  static function drawCenterBottomText(color as Gfx.ColorValue, txt as String, dc as Gfx.Dc) as Void {
     dc.setColor(color, Gfx.COLOR_TRANSPARENT);
     dc.drawText(getMidWidth(dc), dc.getHeight()*4/7, Gfx.FONT_NUMBER_HOT, txt, Gfx.TEXT_JUSTIFY_CENTER);
   }
 
-  static function centerBottomLabel(color as Gfx.ColorValue, label as String, dc as Gfx.Dc) as Void {
+  static function drawCenterBottomLabel(color as Gfx.ColorValue, label as String, dc as Gfx.Dc) as Void {
     dc.setColor(color, Gfx.COLOR_TRANSPARENT);
     dc.drawText(getMidWidth(dc), dc.getHeight()/2, Gfx.FONT_MEDIUM, label, Gfx.TEXT_JUSTIFY_CENTER);
   }
 
   // Places a text value into the top-left point    
-  static function topLeft(color as Gfx.ColorValue, txt as String, dc as Gfx.Dc) as Void {
+  static function drawTopLeftText(color as Gfx.ColorValue, txt as String, dc as Gfx.Dc) as Void {
     dc.setColor(color, Gfx.COLOR_TRANSPARENT);
     dc.drawText(dc.getWidth()/3, dc.getHeight()/6, Gfx.FONT_LARGE, txt, Gfx.TEXT_JUSTIFY_CENTER);
   }
 
   // Places a time value into the top-right corner
-  static function topRight(color as Gfx.ColorValue, txt as String, dc as Gfx.Dc) as Void {
+  static function drawTopRightText(color as Gfx.ColorValue, txt as String, dc as Gfx.Dc) as Void {
     dc.setColor(color, Gfx.COLOR_TRANSPARENT);
     dc.drawText(dc.getWidth() * 2/3, dc.getHeight()/6, Gfx.FONT_LARGE, txt, Gfx.TEXT_JUSTIFY_CENTER);
   }
 
 
   // Create a horizontal divider on screen
-  static function hDivider(color as Gfx.ColorValue, x as Numeric, y as Numeric, len as Numeric, dc as Gfx.Dc) as Void {
+  static function drawHDivider(color as Gfx.ColorValue, x as Numeric, y as Numeric, len as Numeric, dc as Gfx.Dc) as Void {
     var yLoc = y - Math.floor(dividerWidth/2);
     var xLoc = x - Math.floor(len/2);
     dc.setColor(color, getBackgroundColor());
@@ -206,10 +206,10 @@ class GenericView extends Ui.View {
   }
 
   // Create vertical divider on screen
-  static function vDivider(color as Gfx.ColorValue, x as Numeric, y as Numeric, len as Numeric, dc as Gfx.Dc) as Void {
-        var xLoc = x - Math.floor(dividerWidth/2);
-        var yLoc = y - Math.floor(len/2);
-        dc.setColor(color, getBackgroundColor());
-        dc.fillRectangle(xLoc, yLoc, dividerWidth, len);
-    }
+  static function drawVDivider(color as Gfx.ColorValue, x as Numeric, y as Numeric, len as Numeric, dc as Gfx.Dc) as Void {
+    var xLoc = x - Math.floor(dividerWidth/2);
+    var yLoc = y - Math.floor(len/2);
+    dc.setColor(color, getBackgroundColor());
+    dc.fillRectangle(xLoc, yLoc, dividerWidth, len);
+  }
 }

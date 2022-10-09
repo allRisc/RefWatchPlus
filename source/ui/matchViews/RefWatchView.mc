@@ -15,16 +15,14 @@
  * along with RefWatchPlus.  If not, see <https://www.gnu.org/licenses/>.  *
  ***************************************************************************/
 
-using Toybox.WatchUi as Ui;
 using Toybox.Graphics as Gfx;
-using Toybox.Attention as Att;
-using Toybox.Lang;
-using Toybox.Math;
-using Toybox.Position as Pos;
-using Toybox.Application as app;
+using Toybox.Application as App;
 using Toybox.System as Sys;
 
 using HelperFunctions as func;
+
+import Toybox.Lang;
+import Toybox.System;
 
 class RefWatchView extends GenericView {
 
@@ -52,57 +50,69 @@ class RefWatchView extends GenericView {
 
   // Control function for main display panel
   function drawScreen(dc as Gfx.Dc) as Void {
+    var app = RefWatchApp.getApp();
+
+    var appState = app.getMatchState();
+
     clearScreen(dc);
 
-    // Get current timing Information
-    if (!MatchData.isStarted()) {
-      drawIdleScreen(dc);
-    } else if (MatchData.isPlayingPeriod()) {
-      drawPlayingScreen(dc);
-    } else {
-      drawBreakScreen(dc);
+    switch (appState) {
+      case IDLE :
+        drawIdleScreen(dc);
+        break;
+      case PLAYING_PERIOD :
+      case TRACKING_STOPPAGE :
+      case WAITING_KICK :
+        drawPlayingScreen(dc);
+        break;
+      case BREAK_PERIOD :
+        drawBreakScreen(dc);
+        break;
     }
   }
 
-    function drawIdleScreen(dc as Gfx.Dc) as Void {
+  function drawIdleScreen(dc as Gfx.Dc) as Void {
 
-        var timeRemaining = func.min2sec( AppSettings.getPeriodLength() );
-        var curStoppage   = 0;
+    var timeRemaining = func.min2sec( AppSettings.getPeriodLength() );
+    var curStoppage   = 0;
 
-        // Set the timing information color based on current state of the timer
-        var timeRemainingColor = getForegroundColor();
-        var timeElapsedColor   = getForegroundColor();
-        var curStoppageColor   = getForegroundColor();
-        var secRingColor       = getGPSQualityColor(Pos.getInfo());
+    // Set the timing information color based on current state of the timer
+    var timeRemainingColor = getForegroundColor();
+    var timeElapsedColor   = getForegroundColor();
+    var curStoppageColor   = getForegroundColor();
+    var secRingColor       = getGPSQualityColor(null);
 
-        topLeft(timeRemainingColor, func.sec2timer(timeRemaining), dc);
-        center(timeElapsedColor, func.clockFace(), dc);
-        topRight(curStoppageColor, func.sec2timer(curStoppage), dc);
-        timeRemainingRing(secRingColor, (60-Sys.getClockTime().sec), 60, dc);
+    drawTopLeftText(timeRemainingColor, func.sec2timer(timeRemaining), dc);
+    drawCenterText(timeElapsedColor, func.clockFace(), dc);
+    drawTopRightText(curStoppageColor, func.sec2timer(curStoppage), dc);
+    drawTimeRemainingRing(secRingColor, (60-Sys.getClockTime().sec), 60, dc);
+  }
+
+  function drawBreakScreen(dc as Gfx.Dc) as Void {
+    var app = RefWatchApp.getApp();
+
+    var timeRemaining = app.getSecRemaining();
+    var curPeriod     = app.getPeriodNum();
+
+    // Set the timing information color based on current state of the timer
+    var timeRemainingColor = getForegroundColor();
+    var curPeriodColor     = getForegroundColor();
+
+    if (app.isNearComplete()) {
+      timeRemainingColor = Gfx.COLOR_RED;
     }
 
-    function drawBreakScreen(dc as Gfx.Dc) as Void {
-        var timeRemaining = MatchData.getCurPeriod().getSecRemaining();
-        var curPeriod     = MatchData.getCurPeriodNum();
-
-        // Set the timing information color based on current state of the timer
-        var timeRemainingColor = getForegroundColor();
-        var curPeriodColor     = getForegroundColor();
-
-        if (MatchData.getCurPeriod().isNearComplete()) {
-            timeRemainingColor = Gfx.COLOR_RED;
-        }
-
-        center(timeRemainingColor, func.sec2timer(timeRemaining), dc);
-        drawPeriod(curPeriodColor, curPeriod, dc);
-    }
+    drawCenterText(timeRemainingColor, func.sec2timer(timeRemaining), dc);
+    drawPeriodText(curPeriodColor, curPeriod, dc);
+  }
 
   function drawPlayingScreen(dc as Gfx.Dc) as Void {
-    var timeRemaining = MatchData.getCurPeriod().getSecRemaining();
-    var timeElapsed   = MatchData.getSecPlayingTime();
-    var curStoppage   = MatchData.getCurPeriod().getSecStoppage();
-    var curPeriod     = MatchData.getCurPeriodNum();
-    var periodTime;
+    var app = RefWatchApp.getApp();
+    var timeRemaining = app.getSecRemaining();
+    var timeElapsed   = app.getSecElapsed();
+    var curStoppage   = app.getSecStoppage();
+    var curPeriod     = app.getPeriodNum();
+    var periodTime    = app.getPeriodTime();
 
     // Set the timing information color based on current state of the timer
     var timeRemainingColor = getForegroundColor();
@@ -111,28 +121,22 @@ class RefWatchView extends GenericView {
     var curPeriodColor     = getForegroundColor();
     var ringColor          = Gfx.COLOR_GREEN;
 
-    if (MatchData.getCurPeriod().isInStoppage()) {
+    if (app.isInStoppage()) {
       timeElapsedColor = Gfx.COLOR_RED;
-    } else if (MatchData.getCurPeriod().isNearStoppage()) {
+    } else if (app.isNearComplete()) {
       timeElapsedColor = Gfx.COLOR_YELLOW;
     }
 
-    if (MatchData.getCurPeriod().isTrackingStoppage()) {
+    if (app.isTrackingStoppage()) {
       curStoppageColor = Gfx.COLOR_ORANGE;
     }
 
-    if (MatchData.isOTPeriod()) {
-      periodTime = func.min2sec(AppData.getOTPeriodLength());
-    } else {
-      periodTime = func.min2sec(AppData.getPeriodLength());
-    }
-
-    topLeft(timeRemainingColor, func.sec2timer(timeRemaining), dc);
+    drawTopLeftText(timeRemainingColor, func.sec2timer(timeRemaining), dc);
     drawCenterText(timeElapsedColor, func.sec2timer(timeElapsed), dc);
-    topRight(curStoppageColor, func.sec2timer(curStoppage), dc);
+    drawTopRightText(curStoppageColor, func.sec2timer(curStoppage), dc);
 
-    drawPeriod(curPeriodColor, curPeriod, dc);
+    drawPeriodText(curPeriodColor, curPeriod, dc);
 
-    timeRemainingRing(ringColor, timeRemaining, periodTime, dc);
+    drawTimeRemainingRing(ringColor, timeRemaining, periodTime, dc);
   }
 }

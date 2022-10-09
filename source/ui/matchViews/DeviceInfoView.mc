@@ -21,7 +21,6 @@ using Toybox.Graphics as Gfx;
 using Toybox.System as Sys;
 
 using HelperFunctions as func;
-using ActivityTracking as Tracker;
 
 class DeviceInfoView extends GenericView {
   function initialize() {
@@ -65,7 +64,7 @@ class DeviceInfoView extends GenericView {
     var y      = getMidHeight(dc);
     var length = dc.getWidth();
 
-    hDivider(color, x, y, length, dc);
+    drawHDivider(color, x, y, length, dc);
   }
 
   function drawTime(dc as Gfx.Dc) as Void {
@@ -83,7 +82,7 @@ class DeviceInfoView extends GenericView {
       batColor = Gfx.COLOR_YELLOW;
     }
 
-    centerBottomLabel(getForegroundColor(), "Battery", dc);
-    centerBottom(batColor, batTxt, dc);
+    drawCenterBottomLabel(getForegroundColor(), "Battery", dc);
+    drawCenterBottomText(batColor, batTxt, dc);
   }
 }

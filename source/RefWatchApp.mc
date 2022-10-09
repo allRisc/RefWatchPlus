@@ -24,6 +24,7 @@ using Toybox.System as Sys;
 
 using ActivityTracking as Act;
 using Vibration;
+using HelperFunctions as func;
 
 import Toybox.Lang;
 
@@ -105,6 +106,84 @@ class RefWatchApp extends App.AppBase {
     Ui.requestUpdate();
   }
 
+  static function getApp() as RefWatchApp {
+    var app = App.getApp();
+
+    if (! (app instanceof RefWatchApp)) {
+      throw new Lang.UnexpectedTypeException("Expected a RefWatchApp from App.getApp()", null, null);
+    }
+
+    return app;
+  }
+
+  function getMatchState() as MatchState {
+    return currentState;
+  }
+
+  function getSecRemaining() as Numeric {
+    if (AppSettings.getNcaaMode()) {
+      return func.msec2sec(period.getMSecRemaining() + stoppage.getMSec());
+    } else {
+      return period.getSecRemaining();
+    }
+  }
+
+  function getPeriodNum() as Number {
+    return curPeriod;
+  }
+
+  function isNearComplete() as Boolean {
+    switch (currentState) {
+      case IDLE :
+      case WAITING_KICK :
+        return false;
+      
+      case PLAYING_PERIOD :
+      case TRACKING_STOPPAGE :
+        return getSecRemaining() < 60;
+    
+      case BREAK_PERIOD :
+        return getSecRemaining() < AppSettings.getBreakAlert();
+
+      default :
+        return false;
+    }
+  }
+
+  function getSecElapsed() as Number {
+    switch (currentState) {
+      case IDLE :
+      case WAITING_KICK :
+        return 0;
+      
+      case PLAYING_PERIOD :
+      case TRACKING_STOPPAGE :
+        if (AppSettings.getNcaaMode()) {
+          return func.msec2sec(period.getMSecElapsed() - stoppage.getMSec());
+        } else {
+          return period.getSecElapsed();
+        }
+    
+      case BREAK_PERIOD :
+        return period.getSecElapsed();
+
+      default :
+        return false;
+    }
+  }
+
+  function getSecStoppage() as Number {
+    return stoppage.getSec();
+  }
+
+  function isInStoppage() as Boolean {
+    return getSecElapsed() > getPeriodTime();
+  }
+
+  function isTrackingStoppage() as Boolen {
+    return stoppage.isTracking();
+  }
+
   /*****************************************************************/
   /*  __  __       _       _      ____            _             _  */
   /* |  \/  | __ _| |_ ___| |__  / ___|___  _ __ | |_ _ __ ___ | | */
@@ -162,7 +241,7 @@ class RefWatchApp extends App.AppBase {
 
   function startPlayingPeriod() as Void {
     curPeriod++;
-    period = new Period(getPeriodTime(curPeriod));
+    period = new Period(getPeriodTime());
     stoppage = new StoppageTracker();
 
     Vibration.startStrongVib();
@@ -187,10 +266,10 @@ class RefWatchApp extends App.AppBase {
     Ui.requestUpdate();
   }
 
-  static function getPeriodTime(per as Number) as Number {
-    if (per <= AppSettings.getNumPeriods()) {
+  function getPeriodTime() as Number {
+    if (curPeriod <= AppSettings.getNumPeriods()) {
       return AppSettings.getPeriodLength();
-    } else if (per <= AppSettings.getNumOTPeriods() + AppSettings.getNumPeriods()) {
+    } else if (curPeriod <= AppSettings.getNumOTPeriods() + AppSettings.getNumPeriods()) {
       return AppSettings.getOtPeriodLength();
     } else {
       return 0;

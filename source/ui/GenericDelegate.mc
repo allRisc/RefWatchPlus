@@ -44,26 +44,6 @@ class GenericDelegate extends Ui.InputDelegate {
       sendEvtToApp(evt);
       return true;
     }
-      // Start the match
-      // if (!MatchData.isStarted()) {
-      //   Vib.startStrongVib();
-      //   MatchData.startMatch();
-      //   MatchData.getCurPeriod().start();
-      //   Ui.requestUpdate();
-      //   return true;
-      // }
-      // else if (MatchData.isPlayingPeriod()) {
-      //   // If the playing period is already underway toggle the stoppage counter
-      //   // Else start it
-      //   if ( MatchData.getCurPeriod().isStarted() ) {
-      //     MatchData.getCurPeriod().stoppage();
-      //   } else {
-      //     Vib.startStrongVib();
-      //     MatchData.getCurPeriod().start();
-      //   }
-      //   return true;
-      // }
-    // }
 
     // Handle the escape key. Only works on double press
     if (evt.getKey() == Ui.KEY_ESC) {
@@ -91,7 +71,7 @@ class GenericDelegate extends Ui.InputDelegate {
     if (app instanceof RefWatchApp) {
       app.handleInput(evt);
     } else {
-      throw new UnexpectedTypeException("Expected RefWatchApp from App.getApp()", null, null);
+      throw new Lang.UnexpectedTypeException("Expected RefWatchApp from App.getApp()", null, null);
     }
   }
 

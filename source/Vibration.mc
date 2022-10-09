@@ -84,94 +84,94 @@ module Vibration {
   // Functions to manage vibrations                                     //
   ////////////////////////////////////////////////////////////////////////
 
-  function handleVibration() {
+  // function handleVibration() {
 
-      if (MatchData.isStarted()) {
-          if (MatchData.isPlayingPeriod()) {
-              if (periodComplete()) {
-                  startStrongVib();
-              } else if (stoppageComplete()) {
-                  startStrongVib();
-              } else if (stoppageTrackingStarted()) {
-                  startMidVib();
-              } else if (stoppageTrackingReminder()) {
-                  startWeakVib();
-              }
-          } else {
-              if (periodComplete()) {
-                  startStrongVib();
-              } else if (breakAlert()) {
-                  startMidVib();
-              }
-          }
-      }
-  }
+  //     if (MatchData.isStarted()) {
+  //         if (MatchData.isPlayingPeriod()) {
+  //             if (periodComplete()) {
+  //                 startStrongVib();
+  //             } else if (stoppageComplete()) {
+  //                 startStrongVib();
+  //             } else if (stoppageTrackingStarted()) {
+  //                 startMidVib();
+  //             } else if (stoppageTrackingReminder()) {
+  //                 startWeakVib();
+  //             }
+  //         } else {
+  //             if (periodComplete()) {
+  //                 startStrongVib();
+  //             } else if (breakAlert()) {
+  //                 startMidVib();
+  //             }
+  //         }
+  //     }
+  // }
 
-  var prevElapsedTime = 0;
-  function periodComplete() {
-      var perLen = func.min2sec(MatchData.getCurPeriod().getPeriodLength());
-      var elapsedTime = MatchData.getCurPeriod().getSecElapsed();
+  // var prevElapsedTime = 0;
+  // function periodComplete() {
+  //     var perLen = func.min2sec(MatchData.getCurPeriod().getPeriodLength());
+  //     var elapsedTime = MatchData.getCurPeriod().getSecElapsed();
       
-      if (AppData.getNCAAMode()) {
-        elapsedTime = MatchData.getCurPeriod().getSecElapsedNCAA();
-      }
+  //     if (AppData.getNCAAMode()) {
+  //       elapsedTime = MatchData.getCurPeriod().getSecElapsedNCAA();
+  //     }
 
-      if ( (prevElapsedTime < perLen) &&
-            (elapsedTime >= perLen) ) {
-          prevElapsedTime = elapsedTime;
-          return true;
-      }
+  //     if ( (prevElapsedTime < perLen) &&
+  //           (elapsedTime >= perLen) ) {
+  //         prevElapsedTime = elapsedTime;
+  //         return true;
+  //     }
 
-      prevElapsedTime = elapsedTime;
-      return false;
-  }
+  //     prevElapsedTime = elapsedTime;
+  //     return false;
+  // }
 
-  var prevRemainingTime = 0;
-  function stoppageComplete() {
+  // var prevRemainingTime = 0;
+  // function stoppageComplete() {
 
-      if ( (prevRemainingTime > 0) &&
-            (MatchData.getCurPeriod().getSecRemaining() <= 0) ) {
-          prevRemainingTime = MatchData.getCurPeriod().getSecRemaining();
-          return true;
-      }
+  //     if ( (prevRemainingTime > 0) &&
+  //           (MatchData.getCurPeriod().getSecRemaining() <= 0) ) {
+  //         prevRemainingTime = MatchData.getCurPeriod().getSecRemaining();
+  //         return true;
+  //     }
 
-      prevRemainingTime = MatchData.getCurPeriod().getSecRemaining();
-      return false;
-  }
+  //     prevRemainingTime = MatchData.getCurPeriod().getSecRemaining();
+  //     return false;
+  // }
 
-  var prevTrackingStatus = false;
-  function stoppageTrackingStarted() {
+  // var prevTrackingStatus = false;
+  // function stoppageTrackingStarted() {
 
-      if ( prevTrackingStatus != MatchData.getCurPeriod().isTrackingStoppage() &&
-            MatchData.getCurPeriod().isTrackingStoppage()) {
-          prevTrackingStatus = MatchData.getCurPeriod().isTrackingStoppage();
-          return true;
-      }
+  //     if ( prevTrackingStatus != MatchData.getCurPeriod().isTrackingStoppage() &&
+  //           MatchData.getCurPeriod().isTrackingStoppage()) {
+  //         prevTrackingStatus = MatchData.getCurPeriod().isTrackingStoppage();
+  //         return true;
+  //     }
 
-      prevTrackingStatus = MatchData.getCurPeriod().isTrackingStoppage();
-      return false;
-  }
+  //     prevTrackingStatus = MatchData.getCurPeriod().isTrackingStoppage();
+  //     return false;
+  // }
 
-  function stoppageTrackingReminder() {
+  // function stoppageTrackingReminder() {
 
-      if (MatchData.getCurPeriod().isTrackingStoppage()) {
-          if (MatchData.getCurPeriod().getSecStoppage() % AppData.getReminderInterval() == 0) {
-              return true;
-          }
-      }
+  //     if (MatchData.getCurPeriod().isTrackingStoppage()) {
+  //         if (MatchData.getCurPeriod().getSecStoppage() % AppData.getReminderInterval() == 0) {
+  //             return true;
+  //         }
+  //     }
 
-      return false;
-  }
+  //     return false;
+  // }
 
-  var prevNearComplete = false;
-  function breakAlert() {
-      if ( prevNearComplete != MatchData.getCurPeriod().isNearComplete() &&
-            MatchData.getCurPeriod().isNearComplete()) {
-          prevNearComplete = MatchData.getCurPeriod().isNearComplete();
-          return true;
-      }
+  // var prevNearComplete = false;
+  // function breakAlert() {
+  //     if ( prevNearComplete != MatchData.getCurPeriod().isNearComplete() &&
+  //           MatchData.getCurPeriod().isNearComplete()) {
+  //         prevNearComplete = MatchData.getCurPeriod().isNearComplete();
+  //         return true;
+  //     }
 
-      prevNearComplete = MatchData.getCurPeriod().isNearComplete();
-      return false;
-  }
+  //     prevNearComplete = MatchData.getCurPeriod().isNearComplete();
+  //     return false;
+  // }
 }

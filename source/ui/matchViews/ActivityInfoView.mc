@@ -65,7 +65,7 @@ class ActivityInfoView extends GenericView {
     var y      = getMidHeight(dc);
     var length = dc.getWidth();
 
-    hDivider(color, x, y, length, dc);
+    drawHDivider(color, x, y, length, dc);
   }
 
   function drawHR(dc as Gfx.Dc) as Void {
@@ -87,7 +87,7 @@ class ActivityInfoView extends GenericView {
       hrColor = Gfx.COLOR_RED;
     }
   
-    centerTopLabel(getForegroundColor(), "HR (bpm):", dc);
+    drawCenterTopLabel(getForegroundColor(), "HR (bpm):", dc);
     drawCenterTopText(hrColor, hr.toString(), dc);
   }
 
@@ -104,7 +104,7 @@ class ActivityInfoView extends GenericView {
       dist = Tracker.getCurDistKM();
     }
 
-    centerBottomLabel(getForegroundColor(), label, dc);
-    centerBottom(getForegroundColor(), dist.format("%02.2f"), dc);
+    drawCenterBottomLabel(getForegroundColor(), label, dc);
+    drawCenterBottomText(getForegroundColor(), dist.format("%02.2f"), dc);
   }
 }

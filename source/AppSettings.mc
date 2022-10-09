@@ -134,40 +134,40 @@ class AppSettings {
   static function set(id as String, val as Number or Boolean ) as Void {
     switch (id) {
       case Ui.loadResource(Rez.Strings.periodLength_StorageID).toString() :
-        if (val instanceof Number) { setPeriodLength(val); } else { throw new UnexpectedTypeException("periodLength expected Number", null, null); }
+        if (val instanceof Number) { setPeriodLength(val); } else { throw new Lang.UnexpectedTypeException("periodLength expected Number", null, null); }
         break;
       case Ui.loadResource(Rez.Strings.numPeriods_StorageID).toString() :
-        if (val instanceof Number) { setNumPeriods(val); } else { throw new UnexpectedTypeException("numPeriods expected Number", null, null); }
+        if (val instanceof Number) { setNumPeriods(val); } else { throw new Lang.UnexpectedTypeException("numPeriods expected Number", null, null); }
         break;
       case Ui.loadResource(Rez.Strings.breakLength_StorageID).toString() :
-        if (val instanceof Number) { setBreakLength(val); } else { throw new UnexpectedTypeException("breakLength expected Number", null, null); }
+        if (val instanceof Number) { setBreakLength(val); } else { throw new Lang.UnexpectedTypeException("breakLength expected Number", null, null); }
         break;
       case Ui.loadResource(Rez.Strings.breakAlert_StorageID).toString() :
-        if (val instanceof Number) { setBreakAlert(val); } else { throw new UnexpectedTypeException("breakAlert expected Number", null, null); }
+        if (val instanceof Number) { setBreakAlert(val); } else { throw new Lang.UnexpectedTypeException("breakAlert expected Number", null, null); }
         break;
       case Ui.loadResource(Rez.Strings.otPeriodLength_StorageID).toString() :
-        if (val instanceof Number) { setOtPeriodLength(val); } else { throw new UnexpectedTypeException("otPeriodLength expected Number", null, null); }
+        if (val instanceof Number) { setOtPeriodLength(val); } else { throw new Lang.UnexpectedTypeException("otPeriodLength expected Number", null, null); }
         break;
       case Ui.loadResource(Rez.Strings.numOTPeriods_StorageID).toString() :
-        if (val instanceof Number) { setNumOTPeriods(val); } else { throw new UnexpectedTypeException("numOTPeriods expected Number", null, null); }
+        if (val instanceof Number) { setNumOTPeriods(val); } else { throw new Lang.UnexpectedTypeException("numOTPeriods expected Number", null, null); }
         break;
       case Ui.loadResource(Rez.Strings.ncaaMode_StorageID).toString() :
-        if (val instanceof Boolean) { setNcaaMode(val); } else { throw new UnexpectedTypeException("ncaaMode expected Boolean", null, null); }
+        if (val instanceof Boolean) { setNcaaMode(val); } else { throw new Lang.UnexpectedTypeException("ncaaMode expected Boolean", null, null); }
         break;
       case Ui.loadResource(Rez.Strings.gpsOff_StorageID).toString() :
-        if (val instanceof Boolean) { setGpsOff(val); } else { throw new UnexpectedTypeException("gpsOff expected Boolean", null, null); }
+        if (val instanceof Boolean) { setGpsOff(val); } else { throw new Lang.UnexpectedTypeException("gpsOff expected Boolean", null, null); }
         break;
       case Ui.loadResource(Rez.Strings.reminderTimer_StorageID).toString() :
-        if (val instanceof Number) { setReminderTimer(val); } else { throw new UnexpectedTypeException("reminderTimer expected Number", null, null); }
+        if (val instanceof Number) { setReminderTimer(val); } else { throw new Lang.UnexpectedTypeException("reminderTimer expected Number", null, null); }
         break;
       case Ui.loadResource(Rez.Strings.separateActivities_StorageID).toString() :
-        if (val instanceof Boolean) { setSeparateActivities(val); } else { throw new UnexpectedTypeException("separateActivities expected Boolean", null, null); }
+        if (val instanceof Boolean) { setSeparateActivities(val); } else { throw new Lang.UnexpectedTypeException("separateActivities expected Boolean", null, null); }
         break;
       case Ui.loadResource(Rez.Strings.darkMode_StorageID).toString() :
-        if (val instanceof Boolean) { setDarkMode(val); } else { throw new UnexpectedTypeException("darkMode expected Boolean", null, null); }
+        if (val instanceof Boolean) { setDarkMode(val); } else { throw new Lang.UnexpectedTypeException("darkMode expected Boolean", null, null); }
         break;
       case Ui.loadResource(Rez.Strings.thickRing_StorageID).toString() :
-        if (val instanceof Boolean) { setThickRing(val); } else { throw new UnexpectedTypeException("thickRing expected Boolean", null, null); }
+        if (val instanceof Boolean) { setThickRing(val); } else { throw new Lang.UnexpectedTypeException("thickRing expected Boolean", null, null); }
         break;
     }
   }
