@@ -1,18 +1,19 @@
 /***************************************************************************
- * This file is part of RefWatchPlus                                       *
- *                                                                         *
- * RefWatchPlus is free software: you can redistribute it and/or modify    *
- * it under the terms of the GNU General Public License as published by    *
- * the Free Software Foundation, either version 3 of the License, or       *
- * (at your option) any later version.                                     *
- *                                                                         *
- * RefWatchPlus is distributed in the hope that it will be useful,         *
- * but WITHOUT ANY WARRANTY; without even the implied warranty of          *
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           *
- * GNU General Public License for more details.                            *
- *                                                                         *
- * You should have received a copy of the GNU General Public License       *
- * along with RefWatchPlus.  If not, see <https://www.gnu.org/licenses/>.  *
+ * RefWatchPlus is a FOSS app made for reffing soccer and tracking time.
+ * Copyright (C) 2023  Benjamin Davis
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ***************************************************************************/
 
 using Toybox.WatchUi as Ui;
@@ -20,7 +21,7 @@ using Toybox.WatchUi as Ui;
 import Toybox.Lang;
 
 module Menus {
-  function itemId(item as Ui.MenuItem) as Symbol {
+  function itemId(item as Ui.MenuItem) as Object? {
     return item.getId();
   }
 
@@ -32,31 +33,31 @@ module Menus {
     );
 
     menu.addItem(
-      new Ui.MenuItem(Rez.Strings.timingMenu_MenuLabel.toString(), null, :TimingMenu_MenuID, null)
+      new Ui.MenuItem(Ui.loadResource(Rez.Strings.timingMenu_MenuLabel), null, :TimingMenu_MenuID, null)
     );
 
     menu.addItem(
-      new Ui.ToggleMenuItem(Rez.Strings.ncaaMode_MenuLabel.toString(), null, :NcaaMode_MenuID, AppSettings.getNcaaMode(), null)
+      new Ui.ToggleMenuItem(Ui.loadResource(Rez.Strings.ncaaMode_MenuLabel), null, :NcaaMode_MenuID, AppSettings.getNcaaMode(), null)
     );
 
     menu.addItem(
-      new Ui.ToggleMenuItem(Rez.Strings.gpsOff_MenuLabel.toString(), null, :GpsOff_MenuID, AppSettings.getGpsOff(), null)
+      new Ui.ToggleMenuItem(Ui.loadResource(Rez.Strings.gpsOff_MenuLabel), null, :GpsOff_MenuID, AppSettings.getGpsOff(), null)
     );
 
     menu.addItem(
-      new Ui.MenuItem(Rez.Strings.reminderTimer_MenuLabel.toString(), null, :ReminderTimer_MenuID, null)
+      new Ui.MenuItem(Ui.loadResource(Rez.Strings.reminderTimer_MenuLabel), null, :ReminderTimer_MenuID, null)
     );
 
     menu.addItem(
-      new Ui.ToggleMenuItem(Rez.Strings.separateActivities_MenuLabel.toString(), null, :SeparateActivities_MenuID, AppSettings.getSeparateActivities(), null)
+      new Ui.ToggleMenuItem(Ui.loadResource(Rez.Strings.separateActivities_MenuLabel), null, :SeparateActivities_MenuID, AppSettings.getSeparateActivities(), null)
     );
 
     menu.addItem(
-      new Ui.ToggleMenuItem(Rez.Strings.darkMode_MenuLabel.toString(), null, :DarkMode_MenuID, AppSettings.getDarkMode(), null)
+      new Ui.ToggleMenuItem(Ui.loadResource(Rez.Strings.darkMode_MenuLabel), null, :DarkMode_MenuID, AppSettings.getDarkMode(), null)
     );
 
     menu.addItem(
-      new Ui.ToggleMenuItem(Rez.Strings.thickRing_MenuLabel.toString(), null, :ThickRing_MenuID, AppSettings.getThickRing(), null)
+      new Ui.ToggleMenuItem(Ui.loadResource(Rez.Strings.thickRing_MenuLabel), null, :ThickRing_MenuID, AppSettings.getThickRing(), null)
     );
 
     return menu;
@@ -66,27 +67,27 @@ module Menus {
     var menu = new Ui.Menu2({:title=>"Timing Menu"});
 
     menu.addItem(
-      new Ui.MenuItem(Rez.Strings.periodLength_MenuLabel.toString(), null, :PeriodLength_MenuID, null)
+      new Ui.MenuItem(Ui.loadResource(Rez.Strings.periodLength_MenuLabel), null, :PeriodLength_MenuID, null)
     );
 
     menu.addItem(
-      new Ui.MenuItem(Rez.Strings.numPeriods_MenuLabel.toString(), null, :NumPeriods_MenuID, null)
+      new Ui.MenuItem(Ui.loadResource(Rez.Strings.numPeriods_MenuLabel), null, :NumPeriods_MenuID, null)
     );
 
     menu.addItem(
-      new Ui.MenuItem(Rez.Strings.breakLength_MenuLabel.toString(), null, :BreakLength_MenuID, null)
+      new Ui.MenuItem(Ui.loadResource(Rez.Strings.breakLength_MenuLabel), null, :BreakLength_MenuID, null)
     );
 
     menu.addItem(
-      new Ui.MenuItem(Rez.Strings.breakAlert_MenuLabel.toString(), null, :BreakAlert_MenuID, null)
+      new Ui.MenuItem(Ui.loadResource(Rez.Strings.breakAlert_MenuLabel), null, :BreakAlert_MenuID, null)
     );
 
     menu.addItem(
-      new Ui.MenuItem(Rez.Strings.otPeriodLength_MenuLabel.toString(), null, :OtPeriodLength_MenuID, null)
+      new Ui.MenuItem(Ui.loadResource(Rez.Strings.otPeriodLength_MenuLabel), null, :OtPeriodLength_MenuID, null)
     );
 
     menu.addItem(
-      new Ui.MenuItem(Rez.Strings.numOTPeriods_MenuLabel.toString(), null, :NumOTPeriods_MenuID, null)
+      new Ui.MenuItem(Ui.loadResource(Rez.Strings.numOTPeriods_MenuLabel), null, :NumOTPeriods_MenuID, null)
     );
 
     return menu;

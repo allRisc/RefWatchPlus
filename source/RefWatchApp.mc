@@ -1,18 +1,19 @@
 /***************************************************************************
- * This file is part of RefWatchPlus                                       *
- *                                                                         *
- * RefWatchPlus is free software: you can redistribute it and/or modify    *
- * it under the terms of the GNU General Public License as published by    *
- * the Free Software Foundation, either version 3 of the License, or       *
- * (at your option) any later version.                                     *
- *                                                                         *
- * RefWatchPlus is distributed in the hope that it will be useful,         *
- * but WITHOUT ANY WARRANTY; without even the implied warranty of          *
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           *
- * GNU General Public License for more details.                            *
- *                                                                         *
- * You should have received a copy of the GNU General Public License       *
- * along with RefWatchPlus.  If not, see <https://www.gnu.org/licenses/>.  *
+ * RefWatchPlus is a FOSS app made for reffing soccer and tracking time.
+ * Copyright (C) 2021  Benjamin Davis
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ***************************************************************************/
 
 using Toybox.Application as App;
@@ -74,10 +75,10 @@ class RefWatchApp extends App.AppBase {
   }
 
   // onStart() is called on application start up
-  function onStart(state as {:resume as Boolean?, :launchedFromGlance as Boolean?}?) as Void {}
+  function onStart(state) as Void {}
 
   // onStop() is called when your application is exiting
-  function onStop(state as {:suspend as Boolean?}?) as Void {
+  function onStop(state) as Void {
     // TODO: Ensure match is stopped on exit
   }
 

@@ -1,0 +1,7 @@
+<layout id="layoutRefWatchView">
+  <drawable id="background" class="RefWatchBackground"/>
+  <drawable id="timeRing" class="RefWatchTimeRing"/>
+  <label id="timeElapsed" text="00:00" x="center" y="33%" font="Gfx.FONT_NUMBER_THAI_HOT" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+  <label id="timeRemaining" text="0:00" x="33%" y="16%" font="Gfx.FONT_LARGE" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+  <label id="curStoppage" text="1:00" x="66%" y="16%" font="Gfx.FONT_LARGE" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+</layout>

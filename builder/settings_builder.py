@@ -49,15 +49,12 @@ def main() :
     fout.write("  }\n\n")
 
     fout.write(f"  static function get(id as String) as {getOrAllTypes(data)} {'{'}\n")
-    fout.write("    switch (id) {\n")
     writeGet(fout, data)
-    fout.write("    }\n")
+    fout.write("    throw new Lang.InvalidValueException(\"AppSettings.get() got invalid ID: \" + id);\n")
     fout.write("  }\n\n")
 
     fout.write(f"  static function set(id as String, val as {getOrAllTypes(data)}) as Void {'{'}\n")
-    fout.write("    switch (id) {\n")
     writeSet(fout, data)
-    fout.write("    }\n")
     fout.write("  }\n\n")
 
     fout.write("  // Getter Methods\n")
@@ -112,8 +109,8 @@ def writeGet(file:TextIOWrapper, data:dict) :
     if (item['type'] == 'menu') :
       writeGet(file, item['items'])
     else :
-      file.write(f"      case {getStorageIdStr(item)} :\n")
-      file.write(f"        return {item['name']};\n")
+      file.write(f"    if (id == {getStorageIdStr(item)}) {'{'}")
+      file.write(f" return {item['name']}; {'}'}\n")
 
 
 def writeSet(file:TextIOWrapper, data:dict) :
@@ -123,9 +120,9 @@ def writeSet(file:TextIOWrapper, data:dict) :
     if (item['type'] == 'menu') :
       writeSet(file, item['items'])
     else :
-      file.write(f"      case {getStorageId(item)} :\n")
+      file.write(f"    if (id == {getStorageIdStr(item)}) {'{'}\n")
       file.write(f"        if (val instanceof {item['type']}) {'{'} set{capFirstLetter(item['name'])}(val); {'}'} else {'{'} throw new UnexpectedTypeException(\"{item['name']} expected {item['type']}\", null, null); {'}'}\n")
-      file.write(f"        break;\n")
+      file.write(f"    {'}'}\n")
 
 
 def writeGetters(file:TextIOWrapper, data:dict) :

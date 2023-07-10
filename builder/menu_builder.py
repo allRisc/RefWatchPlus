@@ -42,7 +42,7 @@ def main() :
 
     fout.write("module Menus {\n")
 
-    fout.write("  function itemId(item as Ui.MenuItem) as Symbol {\n")
+    fout.write("  function itemId(item as Ui.MenuItem) as Object? {\n")
     fout.write("    return item.getId();\n")
     fout.write("  }\n\n")
 
@@ -69,9 +69,9 @@ def writeMenuFunc(file:TextIOWrapper, data:dict) :
     for item in m['items'] :
       file.write(f"    menu.addItem(\n")
       if (item['type'] == 'Boolean') :
-        file.write(f"      new Ui.ToggleMenuItem(Rez.Strings.{defGetMenuLabelKey(item)}.toString(), null, :{capFirstLetter(item['name'])}_MenuID, AppSettings.get{capFirstLetter(item['name'])}(), null)\n")
+        file.write(f"      new Ui.ToggleMenuItem(Ui.loadResource(Rez.Strings.{defGetMenuLabelKey(item)}), null, :{capFirstLetter(item['name'])}_MenuID, AppSettings.get{capFirstLetter(item['name'])}(), null)\n")
       else :
-        file.write(f"      new Ui.MenuItem(Rez.Strings.{defGetMenuLabelKey(item)}.toString(), null, :{capFirstLetter(item['name'])}_MenuID, null)\n")
+        file.write(f"      new Ui.MenuItem(Ui.loadResource(Rez.Strings.{defGetMenuLabelKey(item)}), null, :{capFirstLetter(item['name'])}_MenuID, null)\n")
       file.write("    );\n\n")
       if (item['type'] == 'menu') :
         sub_menus.append(item)
@@ -88,6 +88,7 @@ def createDelegates(dir:str, data:dict) :
 
   with open(dir + delegateName + ".mc", "w") as fout :
     fout.write(LICENSE_HEADER + "\n\n")
+    fout.write("import Toybox.Lang;\n")
     fout.write("using Toybox.WatchUi as Ui;\n\n")
     fout.write("using Menus;\n\n")
     fout.write(f"class {delegateName} extends Ui.Menu2InputDelegate {'{'}\n")

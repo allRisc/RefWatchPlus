@@ -40,7 +40,7 @@
       type: Boolean
       default: false
       label: NCAA Mode
-  
+
     - name: gpsOff
       type: Boolean
       default: false
@@ -58,7 +58,7 @@
 
     - name: darkMode
       type: Boolean
-      default: false
+      default: true
       label: Dark Mode
 
     - name: thickRing
