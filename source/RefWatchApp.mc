@@ -22,9 +22,6 @@ using Toybox.WatchUi as Ui;
 using Toybox.Timer;
 using Toybox.System as Sys;
 
-using ActivityTracking as Act;
-using Vibration;
-using HelperFunctions as func;
 
 import Toybox.Lang;
 
@@ -44,9 +41,6 @@ class RefWatchApp extends App.AppBase {
   hidden var currentState as MatchState;
   hidden var curPeriod as Number;
 
-  hidden var period as Period;
-  hidden var stoppage as StoppageTracker;
-
   hidden var updateTimer as Timer.Timer;
 
   function initialize() {
@@ -55,8 +49,8 @@ class RefWatchApp extends App.AppBase {
     // Initialize the game state
     currentState = IDLE;
     curPeriod = 0;
-    period = new Period(0);
-    stoppage = new StoppageTracker();
+    // period = new Period(0);
+    // stoppage = new StoppageTracker();
 
     // Initialize the settings of the APP
     AppSettings.initAppSettings();
@@ -64,12 +58,10 @@ class RefWatchApp extends App.AppBase {
     // TODO add function to convert from previous save values if necessary
 
     // TODO: Initialize Vibration engine as necessary
-    Vibration.initialize();
 
     // TODO: Initialize Tracker
 
-    // Enable GPS
-    Act.initTracker(method(:onPosition));
+    // TODO: Enable GPS
 
     // Enable HeartRate Sensor
     Sensor.enableSensorType(Sensor.SENSOR_HEARTRATE);
@@ -116,73 +108,6 @@ class RefWatchApp extends App.AppBase {
     return app;
   }
 
-  function getMatchState() as MatchState {
-    return currentState;
-  }
-
-  function getSecRemaining() as Numeric {
-    if (AppSettings.getNcaaMode()) {
-      return func.msec2sec(period.getMSecRemaining() + stoppage.getMSec());
-    } else {
-      return period.getSecRemaining();
-    }
-  }
-
-  function getPeriodNum() as Number {
-    return curPeriod;
-  }
-
-  function isNearComplete() as Boolean {
-    switch (currentState) {
-      case IDLE :
-      case WAITING_KICK :
-        return false;
-      
-      case PLAYING_PERIOD :
-      case TRACKING_STOPPAGE :
-        return getSecRemaining() < 60;
-    
-      case BREAK_PERIOD :
-        return getSecRemaining() < AppSettings.getBreakAlert();
-
-      default :
-        return false;
-    }
-  }
-
-  function getSecElapsed() as Number {
-    switch (currentState) {
-      case IDLE :
-      case WAITING_KICK :
-        return 0;
-      
-      case PLAYING_PERIOD :
-      case TRACKING_STOPPAGE :
-        if (AppSettings.getNcaaMode()) {
-          return func.msec2sec(period.getMSecElapsed() - stoppage.getMSec());
-        } else {
-          return period.getSecElapsed();
-        }
-    
-      case BREAK_PERIOD :
-        return period.getSecElapsed();
-
-      default :
-        return false;
-    }
-  }
-
-  function getSecStoppage() as Number {
-    return stoppage.getSec();
-  }
-
-  function isInStoppage() as Boolean {
-    return getSecElapsed() > getPeriodTime();
-  }
-
-  function isTrackingStoppage() as Boolen {
-    return stoppage.isTracking();
-  }
 
   /*****************************************************************/
   /*  __  __       _       _      ____            _             _  */
@@ -192,89 +117,6 @@ class RefWatchApp extends App.AppBase {
   /* |_|  |_|\__,_|\__\___|_| |_ \____\___/|_| |_|\__|_|  \___/|_| */
   /*****************************************************************/
 
-  // Function to perform app flow
-  // @param evt [Ui.KeyEvent] the user input to handle
-  function handleInput(evt as Ui.KeyEvent) as Void {
-    switch (currentState) {
-      case IDLE :
-        if (evt.getKey() == Ui.KEY_ESC) {
-          Sys.exit();
-        } else if (evt.getKey() == Ui.KEY_ENTER) {
-          startPlayingPeriod();
-        }
-        break;
-
-      case PLAYING_PERIOD :
-        if (evt.getKey() == Ui.KEY_ESC) {
-          leavePlayingPeriod();
-        } else if (evt.getKey() == Ui.KEY_ENTER) {
-          stoppage.start();
-          currentState = TRACKING_STOPPAGE;
-          Vibration.startMidVib();
-        }
-        break;
-
-      case TRACKING_STOPPAGE :
-        if (evt.getKey() == Ui.KEY_ESC) {
-          leavePlayingPeriod();
-        } else if (evt.getKey() == Ui.KEY_ENTER) {
-          stoppage.stop();
-          currentState = PLAYING_PERIOD;
-        }
-        break;
-
-      case BREAK_PERIOD :
-        if (evt.getKey() == Ui.KEY_ESC) {
-          currentState = WAITING_KICK;
-        }
-        break;
-
-      case WAITING_KICK :
-        if (evt.getKey() == Ui.KEY_ESC) {
-          leavePlayingPeriod();
-        } else if (evt.getKey() == Ui.KEY_ENTER) {
-          startPlayingPeriod();
-        }
-        break;
-    }
-  }
-
-  function startPlayingPeriod() as Void {
-    curPeriod++;
-    period = new Period(getPeriodTime());
-    stoppage = new StoppageTracker();
-
-    Vibration.startStrongVib();
-
-    period.start();
-    currentState = PLAYING_PERIOD;
-
-    Ui.requestUpdate();
-  }
-
-  function leavePlayingPeriod() as Void {
-    period.end();
-
-    if (curPeriod >= AppSettings.getNumOTPeriods() + AppSettings.getNumPeriods()) {
-      curPeriod = 0;
-      currentState = IDLE;
-    } else {
-      period = new Period(AppSettings.getBreakLength());
-      currentState = BREAK_PERIOD;
-    }
-
-    Ui.requestUpdate();
-  }
-
-  function getPeriodTime() as Number {
-    if (curPeriod <= AppSettings.getNumPeriods()) {
-      return AppSettings.getPeriodLength();
-    } else if (curPeriod <= AppSettings.getNumOTPeriods() + AppSettings.getNumPeriods()) {
-      return AppSettings.getOtPeriodLength();
-    } else {
-      return 0;
-    }
-  }
 
   /**************************************************************/
   /* __     ___ _        _            _     _              _    */

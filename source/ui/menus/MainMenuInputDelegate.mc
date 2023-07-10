@@ -17,8 +17,6 @@
 
 using Toybox.WatchUi as Ui;
 
-import Toybox.Lang;
-
 using Menus;
 
 class MainMenuInputDelegate extends Ui.Menu2InputDelegate {
@@ -42,12 +40,12 @@ class MainMenuInputDelegate extends Ui.Menu2InputDelegate {
 
       case :NcaaMode_MenuID :
         if (item instanceof Ui.ToggleMenuItem) { AppSettings.setNcaaMode(item.isEnabled()); }
-        else { throw new Lang.UnexpectedTypeException("ToggleMenuItem required to set Boolean ncaaMode", null, null); }
+        else { throw new UnexpectedTypeException("ToggleMenuItem required to set Boolean ncaaMode", null, null); }
         break;
 
       case :GpsOff_MenuID :
         if (item instanceof Ui.ToggleMenuItem) { AppSettings.setGpsOff(item.isEnabled()); }
-        else { throw new Lang.UnexpectedTypeException("ToggleMenuItem required to set Boolean gpsOff", null, null); }
+        else { throw new UnexpectedTypeException("ToggleMenuItem required to set Boolean gpsOff", null, null); }
         break;
 
       case :ReminderTimer_MenuID :
@@ -58,17 +56,17 @@ class MainMenuInputDelegate extends Ui.Menu2InputDelegate {
 
       case :SeparateActivities_MenuID :
         if (item instanceof Ui.ToggleMenuItem) { AppSettings.setSeparateActivities(item.isEnabled()); }
-        else { throw new Lang.UnexpectedTypeException("ToggleMenuItem required to set Boolean separateActivities", null, null); }
+        else { throw new UnexpectedTypeException("ToggleMenuItem required to set Boolean separateActivities", null, null); }
         break;
 
       case :DarkMode_MenuID :
         if (item instanceof Ui.ToggleMenuItem) { AppSettings.setDarkMode(item.isEnabled()); }
-        else { throw new Lang.UnexpectedTypeException("ToggleMenuItem required to set Boolean darkMode", null, null); }
+        else { throw new UnexpectedTypeException("ToggleMenuItem required to set Boolean darkMode", null, null); }
         break;
 
       case :ThickRing_MenuID :
         if (item instanceof Ui.ToggleMenuItem) { AppSettings.setThickRing(item.isEnabled()); }
-        else { throw new Lang.UnexpectedTypeException("ToggleMenuItem required to set Boolean thickRing", null, null); }
+        else { throw new UnexpectedTypeException("ToggleMenuItem required to set Boolean thickRing", null, null); }
         break;
 
     }

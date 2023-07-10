@@ -16,9 +16,9 @@
 ###########################################################################
 
 from io import TextIOWrapper
-from operator import sub
 import yaml
 import argparse
+from pathlib import Path
 
 from common_builder import *
 
@@ -31,6 +31,9 @@ def main() :
   with open(args.input, "r") as fin :
     data = yaml.safe_load(fin)
 
+  if not Path(args.output).exists():
+    Path(args.output).mkdir(parents=True)
+
   with open(args.output + "Menus.mc", "w") as fout :
     fout.write(LICENSE_HEADER + "\n\n")
 
@@ -38,7 +41,7 @@ def main() :
     fout.write("import Toybox.Lang;\n\n")
 
     fout.write("module Menus {\n")
-  
+
     fout.write("  function itemId(item as Ui.MenuItem) as Symbol {\n")
     fout.write("    return item.getId();\n")
     fout.write("  }\n\n")

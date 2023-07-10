@@ -33,7 +33,6 @@ class NumberFactory extends Ui.PickerFactory {
   }
 
   function initialize(start as Number, stop as Number, increment as Number, options as {:font as Gfx.FontType}) {
-    var fnt;
 
     PickerFactory.initialize();
 
