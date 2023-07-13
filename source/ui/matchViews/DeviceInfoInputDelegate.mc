@@ -1,5 +1,15 @@
 /***************************************************************************
  * RefWatchPlus is a FOSS app made for reffing soccer and tracking time.
+ * Copyright (C) 2023  Benjamin Davis
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of/***************************************************************************
+ * RefWatchPlus is a FOSS app made for reffing soccer and tracking time.
  * Copyright (C) 2021  Benjamin Davis
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,13 +27,10 @@
  ***************************************************************************/
 
 using Toybox.WatchUi as Ui;
-using Toybox.System as Sys;
-
-using HelperFunctions as func;
 
 import Toybox.Lang;
 
-class RefWatchInputDelegate extends GenericDelegate {
+class DeviceInfoInputDelegate extends GenericDelegate {
 
   function initialize() {
     GenericDelegate.initialize();
@@ -33,10 +40,8 @@ class RefWatchInputDelegate extends GenericDelegate {
   function onKey(evt as Ui.KeyEvent) as Boolean {
     if (GenericDelegate.onKeyStatic(evt)) {
       return true;
-    } else if (evt.getKey() == Ui.KEY_DOWN) {
-      return dispDevInfoView();
     } else if (evt.getKey() == Ui.KEY_UP) {
-      return dispActivityView();
+      return dispBack();
     }
 
     return false;
@@ -44,10 +49,8 @@ class RefWatchInputDelegate extends GenericDelegate {
 
   // Handle a swipe input
   function onSwipe(evt) {
-    if (evt.getDirection() == Ui.SWIPE_UP) {
-      return dispDevInfoView();
-    } else if (evt.getDirection() == Ui.SWIPE_DOWN) {
-      return dispActivityView();
+    if (evt.getDirection() == Ui.SWIPE_DOWN) {
+      return dispBack();
     }
 
     return false;

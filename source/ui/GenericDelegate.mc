@@ -22,24 +22,25 @@ using Toybox.System as Sys;
 using Toybox.Application as App;
 
 using HelperFunctions as func;
-// using Vibration as Vib;
 using Menus;
 
 import Toybox.Lang;
 
 class GenericDelegate extends Ui.InputDelegate {
 
-  hidden var escPressTime as Number;
+  hidden static var escPressTime = 0;
 
   function initialize() {
     InputDelegate.initialize();
-
-    escPressTime = 0;
   }
 
   // Handle a keyed input
   function onKey(evt as Ui.KeyEvent) as Boolean {
-    Logging.debug(" Handling Key Event: " + evt.getKey().toString());
+    return GenericDelegate.onKeyStatic(evt);
+  }
+
+  static function onKeyStatic(evt as Ui.KeyEvent) as Boolean {
+    Logging.debug("Handling Key Event: " + evt.getKey().toString());
 
     // If the start key is hit
     if (evt.getKey() == Ui.KEY_ENTER) {
@@ -82,7 +83,7 @@ class GenericDelegate extends Ui.InputDelegate {
   }
 
   // Display the main menu
-  function dispMainMenu() as Boolean {
+  static function dispMainMenu() as Boolean {
     var MainMenu = Menus.getMainMenu();
     Ui.pushView( MainMenu, new MainMenuInputDelegate(), Ui.SLIDE_RIGHT );
     Ui.requestUpdate();
@@ -91,15 +92,15 @@ class GenericDelegate extends Ui.InputDelegate {
 
   // Display the activity view
   function dispActivityView() as Boolean {
-    // Ui.pushView( new ActivityInfoView(), new ActivityInfoInputDelegate(), Ui.SLIDE_UP );
-    // Ui.requestUpdate();
+    Ui.pushView( new ActivityInfoView(), new ActivityInfoInputDelegate(), Ui.SLIDE_UP );
+    Ui.requestUpdate();
     return true;
   }
 
   // Display the device info view
   function dispDevInfoView() as Boolean {
-    // Ui.pushView( new DeviceInfoView(), new DeviceInfoInputDelegate(), Ui.SLIDE_DOWN );
-    // Ui.requestUpdate();
+    Ui.pushView( new DeviceInfoView(), new DeviceInfoInputDelegate(), Ui.SLIDE_DOWN );
+    Ui.requestUpdate();
     return true;
   }
 

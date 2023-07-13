@@ -17,13 +17,10 @@
  ***************************************************************************/
 
 using Toybox.WatchUi as Ui;
-using Toybox.System as Sys;
-
-using HelperFunctions as func;
 
 import Toybox.Lang;
 
-class RefWatchInputDelegate extends GenericDelegate {
+class ActivityInfoInputDelegate extends GenericDelegate {
 
   function initialize() {
     GenericDelegate.initialize();
@@ -34,9 +31,7 @@ class RefWatchInputDelegate extends GenericDelegate {
     if (GenericDelegate.onKeyStatic(evt)) {
       return true;
     } else if (evt.getKey() == Ui.KEY_DOWN) {
-      return dispDevInfoView();
-    } else if (evt.getKey() == Ui.KEY_UP) {
-      return dispActivityView();
+      return dispBack();
     }
 
     return false;
@@ -45,9 +40,7 @@ class RefWatchInputDelegate extends GenericDelegate {
   // Handle a swipe input
   function onSwipe(evt) {
     if (evt.getDirection() == Ui.SWIPE_UP) {
-      return dispDevInfoView();
-    } else if (evt.getDirection() == Ui.SWIPE_DOWN) {
-      return dispActivityView();
+      return dispBack();
     }
 
     return false;

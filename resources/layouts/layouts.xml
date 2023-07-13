@@ -1,7 +1,17 @@
-<layout id="layoutRefWatchView">
-  <drawable id="background" class="RefWatchBackground"/>
-  <drawable id="timeRing" class="RefWatchTimeRing"/>
-  <label id="timeElapsed" text="00:00" x="center" y="33%" font="Gfx.FONT_NUMBER_THAI_HOT" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
-  <label id="timeRemaining" text="0:00" x="33%" y="16%" font="Gfx.FONT_LARGE" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
-  <label id="curStoppage" text="1:00" x="66%" y="16%" font="Gfx.FONT_LARGE" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
-</layout>
+<layouts>
+  <layout id="layoutRefWatchView">
+    <drawable id="background" class="RefWatchBackground"/>
+    <drawable id="timeRing" class="RefWatchTimeRing"/>
+    <label id="centerText" text="00:00" x="center" y="33%" font="Gfx.FONT_NUMBER_THAI_HOT" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+    <label id="upperLeftText" text="0:00" x="33%" y="16%" font="Gfx.FONT_LARGE" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+    <label id="upperRightText" text="1:00" x="66%" y="16%" font="Gfx.FONT_LARGE" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+  </layout>
+  <layout id="layoutInfoView">
+    <drawable id="background" class="RefWatchBackground"/>
+    <drawable id="ring" class="RefWatchTimeRing"/>
+    <label id="topLabel"    text="" x="center" y="7%"  font="Gfx.FONT_MEDIUM"     justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+    <label id="topText"     text="" x="center" y="14%" font="Gfx.FONT_NUMBER_HOT" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+    <label id="bottomLabel" text="" x="center" y="50%" font="Gfx.FONT_MEDIUM"     justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+    <label id="bottomText"  text="" x="center" y="57%" font="Gfx.FONT_NUMBER_HOT" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+  </layout>
+</layouts>

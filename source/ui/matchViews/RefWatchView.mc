@@ -66,27 +66,27 @@ class RefWatchView extends Ui.View {
   // Custom Functions
   ///////////////////////////////////////////////////////////////////////////////////////
   function onUpdateIdle(dc) {
-    var timeElapsed = View.findDrawableById("timeElapsed");
-    var timeRemaining = View.findDrawableById("timeRemaining");
-    var curStoppage = View.findDrawableById("curStoppage");
+    var centerText = View.findDrawableById("centerText");
+    var upperLeftText = View.findDrawableById("upperLeftText");
+    var upperRightText = View.findDrawableById("upperRightText");
     var timeRing = View.findDrawableById("timeRing");
 
-    if (timeElapsed instanceof Ui.Text) {
-      timeElapsed.setText(func.clockFace());
+    if (centerText instanceof Ui.Text) {
+      centerText.setText(func.clockFace());
     } else {
-      throw new Lang.UnexpectedTypeException("timeElapsed not the expected type", null, null);
+      throw new Lang.UnexpectedTypeException("centerText not the expected type", null, null);
     }
 
-    if (timeRemaining instanceof Ui.Text) {
-      timeRemaining.setText(func.sec2timer(func.min2sec(AppSettings.getPeriodLength())));
+    if (upperLeftText instanceof Ui.Text) {
+      upperLeftText.setText(func.sec2timer(func.min2sec(AppSettings.getPeriodLength())));
     } else {
-      throw new Lang.UnexpectedTypeException("timeRemaining not the expected type", null, null);
+      throw new Lang.UnexpectedTypeException("upperLeftText not the expected type", null, null);
     }
 
-    if (curStoppage instanceof Ui.Text) {
-      curStoppage.setText(func.sec2timer(0));
+    if (upperRightText instanceof Ui.Text) {
+      upperRightText.setText(func.sec2timer(0));
     } else {
-      throw new Lang.UnexpectedTypeException("curStoppage not the expected type", null, null);
+      throw new Lang.UnexpectedTypeException("upperRightText not the expected type", null, null);
     }
 
     if (timeRing instanceof RefWatchTimeRing) {

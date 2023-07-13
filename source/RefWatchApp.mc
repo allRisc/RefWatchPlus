@@ -102,11 +102,11 @@ class RefWatchApp extends App.AppBase {
   static function getApp() as RefWatchApp {
     var app = App.getApp();
 
-    if (! (app instanceof RefWatchApp)) {
+    if (app instanceof RefWatchApp) {
+      return app;
+    } else {
       throw new Lang.UnexpectedTypeException("Expected a RefWatchApp from App.getApp()", null, null);
     }
-
-    return app;
   }
 
 
