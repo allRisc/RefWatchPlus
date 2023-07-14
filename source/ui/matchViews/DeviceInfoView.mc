@@ -24,7 +24,7 @@ using HelperFunctions as func;
 
 import Toybox.Lang;
 
-class DeviceInfoView extends Ui.View {
+class DeviceInfoView extends GenericView {
   ///////////////////////////////////////////////////////////////////////////////////////
   // Override functions
   ///////////////////////////////////////////////////////////////////////////////////////
@@ -51,6 +51,9 @@ class DeviceInfoView extends Ui.View {
     var bottomText  = View.findDrawableById("bottomText");
     var ring = View.findDrawableById("ring");
 
+    var foregroundColor;
+
+    foregroundColor = GenericView.getForegroundColor();
 
     if (topLabel instanceof Ui.Text) {
       topLabel.setText("");
@@ -60,18 +63,20 @@ class DeviceInfoView extends Ui.View {
 
     if (topText instanceof Ui.Text) {
       topText.setText(func.clockFace());
+      topText.setColor(foregroundColor);
     } else {
       throw new Lang.UnexpectedTypeException("topText not the expected type", null, null);
     }
 
     if (bottomLabel instanceof Ui.Text) {
       bottomLabel.setText("Battery");
+      bottomLabel.setColor(foregroundColor);
     } else {
       throw new Lang.UnexpectedTypeException("bottomLabel not the expected type", null, null);
     }
 
     if (bottomText instanceof Ui.Text) {
-      var batColor = Gfx.COLOR_WHITE; // TODO: FIX TO USE FOREGROUND COLOR
+      var batColor = foregroundColor;
       var bat = Sys.getSystemStats().battery;
       var batTxt = Lang.format("$1$%", [bat.format("%2.0f")]);
 

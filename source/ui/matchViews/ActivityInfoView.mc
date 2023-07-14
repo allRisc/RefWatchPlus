@@ -25,7 +25,7 @@ using ActivityTracking as Tracker;
 
 import Toybox.Lang;
 
-class ActivityInfoView extends Ui.View {
+class ActivityInfoView extends GenericView {
   ///////////////////////////////////////////////////////////////////////////////////////
   // Override functions
   ///////////////////////////////////////////////////////////////////////////////////////
@@ -55,6 +55,9 @@ class ActivityInfoView extends Ui.View {
     var devSettings = Sys.getDeviceSettings();
     var distLabel;
     var dist;
+    var foregroundColor;
+
+    foregroundColor = GenericView.getForegroundColor();
 
     if (devSettings.distanceUnits == Sys.UNIT_STATUTE) {
       distLabel = "Distance (mi)";
@@ -66,17 +69,18 @@ class ActivityInfoView extends Ui.View {
 
     if (topLabel instanceof Ui.Text) {
       topLabel.setText("HR (bpm):");
+      topLabel.setColor(foregroundColor);
     } else {
       throw new Lang.UnexpectedTypeException("topLabel not the expected type", null, null);
     }
 
     if (topText instanceof Ui.Text) {
       var hr = Tracker.getCurHeartRate();
-      var hrColor = Gfx.COLOR_WHITE; // TODO: FIX TO USE FOREGROUND COLOR
+      var hrColor = foregroundColor;
       var zoneInfo = Usr.getHeartRateZones(Usr.HR_ZONE_SPORT_RUNNING);
 
       if (hr <= zoneInfo[0]) {
-        hrColor = Gfx.COLOR_WHITE; // TODO: FIX TO USE FOREGROUND COLOR
+        hrColor = foregroundColor;
       } else if (hr <= zoneInfo [1]) {
         hrColor = Gfx.COLOR_LT_GRAY;
       } else if (hr <= zoneInfo[2]) {
@@ -96,12 +100,14 @@ class ActivityInfoView extends Ui.View {
 
     if (bottomLabel instanceof Ui.Text) {
       bottomLabel.setText(distLabel);
+      bottomLabel.setColor(foregroundColor);
     } else {
       throw new Lang.UnexpectedTypeException("bottomLabel not the expected type", null, null);
     }
 
     if (bottomText instanceof Ui.Text) {
       bottomText.setText(dist.format("%02.2f"));
+      bottomText.setColor(foregroundColor);
     } else {
       throw new Lang.UnexpectedTypeException("bottomText not the expected type", null, null);
     }

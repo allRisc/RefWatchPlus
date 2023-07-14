@@ -24,7 +24,7 @@ using HelperFunctions as func;
 
 import Toybox.Lang;
 
-class RefWatchView extends Ui.View {
+class RefWatchView extends GenericView {
 
   var idle as Boolean;
 
@@ -32,7 +32,7 @@ class RefWatchView extends Ui.View {
   // Override functions
   ///////////////////////////////////////////////////////////////////////////////////////
   function initialize() {
-    View.initialize();
+    GenericView.initialize();
 
     idle = true;
   }
@@ -48,14 +48,13 @@ class RefWatchView extends Ui.View {
 
   // onUpdate() is called periodically to update the View
   function onUpdate(dc) {
+    View.onUpdate(dc);
 
     if (idle) {
       onUpdateIdle(dc);
     } else {
       onUpdateMatch(dc);
     }
-
-    View.onUpdate(dc);
   }
 
   // onHide() is called when this View is removed from the screen
@@ -71,26 +70,34 @@ class RefWatchView extends Ui.View {
     var upperRightText = View.findDrawableById("upperRightText");
     var timeRing = View.findDrawableById("timeRing");
 
+    var foregroundColor;
+
+    foregroundColor = GenericView.getForegroundColor();
+
     if (centerText instanceof Ui.Text) {
       centerText.setText(func.clockFace());
+      centerText.setColor(foregroundColor);
     } else {
       throw new Lang.UnexpectedTypeException("centerText not the expected type", null, null);
     }
 
     if (upperLeftText instanceof Ui.Text) {
       upperLeftText.setText(func.sec2timer(func.min2sec(AppSettings.getPeriodLength())));
+      upperLeftText.setColor(foregroundColor);
     } else {
       throw new Lang.UnexpectedTypeException("upperLeftText not the expected type", null, null);
     }
 
     if (upperRightText instanceof Ui.Text) {
       upperRightText.setText(func.sec2timer(0));
+      upperRightText.setColor(foregroundColor);
     } else {
       throw new Lang.UnexpectedTypeException("upperRightText not the expected type", null, null);
     }
 
     if (timeRing instanceof RefWatchTimeRing) {
       timeRing.degs = Math.ceil(360.0 * (Sys.getClockTime().sec) / 60);
+      // TODO: Set Color
     } else {
       throw new Lang.UnexpectedTypeException("timeRing not the expected type", null, null);
     }

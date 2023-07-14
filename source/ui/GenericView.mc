@@ -17,29 +17,30 @@
  ***************************************************************************/
 
 using Toybox.WatchUi as Ui;
-using Toybox.Application as App;
 using Toybox.Graphics as Gfx;
 
-class RefWatchBackground extends Ui.Drawable {
+import Toybox.Lang;
 
-  static const darkModeBackgroundColor as Gfx.ColorValue = Gfx.COLOR_BLACK;
-  static const lightModeBackgroundColor as Gfx.ColorValue = Gfx.COLOR_WHITE;
+class GenericView extends Ui.View {
 
-  function initialize(dictionary) {
-    Drawable.initialize(dictionary);
+  static const darkModeForegroundColor as Gfx.ColorValue = Gfx.COLOR_WHITE;
+  static const lightModeForegroundColor as Gfx.ColorValue = Gfx.COLOR_BLACK;
+
+  ///////////////////////////////////////////////////////////////////////////////////////
+  // Override functions
+  ///////////////////////////////////////////////////////////////////////////////////////
+  function initialize() {
+    View.initialize();
   }
 
-  function draw(dc) {
-    // Set the background color then call to clear the screen
-    dc.setColor(getBackgroundColor(), getBackgroundColor());
-    dc.clear();
-  }
-
-  static function getBackgroundColor() as Gfx.ColorValue {
+  ///////////////////////////////////////////////////////////////////////////////////////
+  // Custom Functions
+  ///////////////////////////////////////////////////////////////////////////////////////
+  static function getForegroundColor() as Gfx.ColorValue {
     if (AppSettings.getDarkMode()) {
-      return darkModeBackgroundColor;
+      return darkModeForegroundColor;
     } else {
-      return lightModeBackgroundColor;
+      return lightModeForegroundColor;
     }
   }
 }
