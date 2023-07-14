@@ -1,3 +1,6 @@
 <drawables>
     <bitmap id="LauncherIcon" filename="launcher_icon.png" />
+    <drawable-list id="hDivider">
+      <shape type="rectangle" x="left" y="center" width="fill" height="3" color="Gfx.COLOR_WHITE"/>
+    </drawable-list>
 </drawables>

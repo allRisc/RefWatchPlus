@@ -76,7 +76,7 @@ class GenericDelegate extends Ui.InputDelegate {
   static function sendEvtToApp(evt as Ui.KeyEvent) as Void {
     var app = App.getApp();
     if (app instanceof RefWatchApp) {
-      // TODO: app.handleInput(evt);
+      app.handleInput(evt);
     } else {
       throw new Lang.UnexpectedTypeException("Expected RefWatchApp from App.getApp()", null, null);
     }

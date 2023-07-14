@@ -8,6 +8,7 @@
   </layout>
   <layout id="layoutInfoView">
     <drawable id="background" class="RefWatchBackground"/>
+    <drawable id="hDivider"/>
     <drawable id="ring" class="RefWatchTimeRing"/>
     <label id="topLabel"    text="" x="center" y="7%"  font="Gfx.FONT_MEDIUM"     justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
     <label id="topText"     text="" x="center" y="22%" font="Gfx.FONT_NUMBER_HOT" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
