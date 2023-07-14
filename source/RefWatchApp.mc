@@ -65,7 +65,11 @@ class RefWatchApp extends App.AppBase {
     // TODO: Enable GPS
 
     // Enable HeartRate Sensor
-    Sensor.enableSensorType(Sensor.SENSOR_HEARTRATE);
+    if (Sensor has :enableSensorType) {
+      Sensor.enableSensorType(Sensor.SENSOR_HEARTRATE);
+    } else {
+      Sensor.setEnabledSensors([Sensor.SENSOR_HEARTRATE]);
+    }
 
     // TODO: Initialize MatchSession
 

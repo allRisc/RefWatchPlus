@@ -1,3 +1,9 @@
 project.manifest = manifest.xml
 
-
+# All Fenix5 Devices should use the Fenix5 Resources
+fenix5splus.resourcePath = $(fenix5splus.resourcePath);resources-fenix5
+fenix5plus.resourcePath = $(fenix5plus.resourcePath);resources-fenix5
+fenix5s.resourcePath = $(fenix5s.resourcePath);resources-fenix5
+fenix5splus.resourcePath = $(fenix5splus.resourcePath);resources-fenix5
+fenix5x.resourcePath = $(fenix5x.resourcePath);resources-fenix5
+fenix5xplus.resourcePath = $(fenix5xplus.resourcePath);resources-fenix5
