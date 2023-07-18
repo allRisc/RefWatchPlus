@@ -43,7 +43,12 @@ module ActivityTracking {
   }
 
   function startTracking() as Void {
-    actRecSession = ActRec.createSession( { :name=>"Match", :sport=>Activity.SPORT_RUNNING, :subsport=>Activity.SUB_SPORT_GENERIC } );
+    if (Activity has :SPORT_RUNNING) {
+      actRecSession = ActRec.createSession( { :name=>"Match", :sport=>Activity.SPORT_RUNNING, :subsport=>Activity.SUB_SPORT_GENERIC } );
+    } else {
+      actRecSession = ActRec.createSession( { :name=>"Match", :sport=>ActRec.SPORT_RUNNING, :subsport=>ActRec.SUB_SPORT_GENERIC } );
+    }
+
     if( actRecSession  instanceof ActRec.Session ) {
       var started = false;
       do {
@@ -98,7 +103,7 @@ module ActivityTracking {
       } while( !saved );
     }
 
-      Ui.requestUpdate();
+    Ui.requestUpdate();
 
     actRecSession = null;
   }

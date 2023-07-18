@@ -19,6 +19,8 @@
 using Toybox.System as Sys;
 using Toybox.WatchUi as Ui;
 using Toybox.Math;
+using Toybox.Application as App;
+
 
 using HelperFunctions as func;
 
@@ -26,15 +28,11 @@ import Toybox.Lang;
 
 class RefWatchView extends GenericView {
 
-  var idle as Boolean;
-
   ///////////////////////////////////////////////////////////////////////////////////////
   // Override functions
   ///////////////////////////////////////////////////////////////////////////////////////
   function initialize() {
     GenericView.initialize();
-
-    idle = true;
   }
 
   // Resources are loaded here
@@ -48,9 +46,11 @@ class RefWatchView extends GenericView {
 
   // onUpdate() is called periodically to update the View
   function onUpdate(dc) {
+    var app = App.getApp();
+
     View.onUpdate(dc);
 
-    if (idle) {
+    if (app.isIdle()) {
       onUpdateIdle(dc);
     } else {
       onUpdateMatch(dc);

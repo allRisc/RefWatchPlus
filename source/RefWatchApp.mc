@@ -1,6 +1,6 @@
 /***************************************************************************
  * RefWatchPlus is a FOSS app made for reffing soccer and tracking time.
- * Copyright (C) 2021  Benjamin Davis
+ * Copyright (C) 2023  Benjamin Davis
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,6 +23,7 @@ using Toybox.WatchUi as Ui;
 using Toybox.Timer;
 using Toybox.System as Sys;
 
+using ActivityTracking as Act;
 
 import Toybox.Lang;
 
@@ -42,6 +43,9 @@ class RefWatchApp extends App.AppBase {
   hidden var currentState as MatchState;
   hidden var curPeriod as Number;
 
+  hidden var period as Period;
+  hidden var stoppage as StoppageTracker;
+
   hidden var updateTimer as Timer.Timer;
 
   function initialize() {
@@ -50,19 +54,16 @@ class RefWatchApp extends App.AppBase {
     // Initialize the game state
     currentState = IDLE;
     curPeriod = 0;
-    // period = new Period(0);
-    // stoppage = new StoppageTracker();
+    period = new Period(0);
+    stoppage = new StoppageTracker();
 
     // Initialize the settings of the APP
     AppSettings.initAppSettings();
 
     // TODO add function to convert from previous save values if necessary
 
-    // TODO: Initialize Vibration engine as necessary
-
-    // TODO: Initialize Tracker
-
-    // TODO: Enable GPS
+    // Initialize Vibration engine as necessary
+    //  N/A
 
     // Enable HeartRate Sensor
     if (Sensor has :enableSensorType) {
@@ -70,8 +71,6 @@ class RefWatchApp extends App.AppBase {
     } else {
       Sensor.setEnabledSensors([Sensor.SENSOR_HEARTRATE]);
     }
-
-    // TODO: Initialize MatchSession
 
     // Initialize Refresh Timer as necessary
     updateTimer = new Timer.Timer();
@@ -83,6 +82,8 @@ class RefWatchApp extends App.AppBase {
 
   // onStop() is called when your application is exiting
   function onStop(state) as Void {
+    Act.endTracking();
+
     // TODO: Ensure match is stopped on exit
   }
 
@@ -122,7 +123,33 @@ class RefWatchApp extends App.AppBase {
   /* |_|  |_|\__,_|\__\___|_| |_ \____\___/|_| |_|\__|_|  \___/|_| */
   /*****************************************************************/
   function handleInput(evt as Ui.KeyEvent) as Void {
-    return;
+    if (evt.getKey() == Ui.KEY_ENTER) {
+      if (isIdle()) {
+        startMatch();
+      }
+    }
+  }
+
+  function startMatch() as Void {
+    Logging.debug("Starting Match");
+
+    // Initialize Tracker and Enable GPS
+    Act.initTracker(method(:onPosition));
+
+    // Start Activity Tracking
+    Act.startTracking();
+
+    // Start the match state
+    currentState = PLAYING_PERIOD;
+    curPeriod = 1;
+    period = new Period(AppSettings.getPeriodLength());
+    stoppage = new StoppageTracker();
+
+    period.start();
+  }
+
+  function isIdle() as Boolean {
+    return currentState == IDLE;
   }
 
 

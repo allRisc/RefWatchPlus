@@ -30,7 +30,7 @@ class ActivityInfoView extends GenericView {
   // Override functions
   ///////////////////////////////////////////////////////////////////////////////////////
   function initialize() {
-    View.initialize();
+    GenericView.initialize();
   }
 
   // Resources are loaded here

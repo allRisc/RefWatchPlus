@@ -41,15 +41,15 @@
       default: false
       label: NCAA Mode
 
-    - name: gpsOff
-      type: Boolean
-      default: false
-      label: GPS Off
-
     - name: reminderTimer
       type: Number
       default: 10
       label: Reminder Timer
+
+    - name: gpsOff
+      type: Boolean
+      default: false
+      label: GPS Off
 
     - name: separateActivities
       type: Boolean
